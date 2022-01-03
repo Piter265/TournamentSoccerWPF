@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:TournamentSoccer"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <DataTemplate x:Key="MatchTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Path=Name}" Width="50"/>
+                <Button Content="Edit"/>
+            </StackPanel>
+        </DataTemplate>
     </Application.Resources>
 </Application>
