@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TournamentSoccer.ViewModel
 {
-    class MatchesViewModel : ViewModelBase
+    class MatchesViewModel
     {
     }
 }
