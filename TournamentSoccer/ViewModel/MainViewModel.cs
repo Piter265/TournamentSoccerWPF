@@ -8,11 +8,15 @@ namespace TournamentSoccer.ViewModel
 {
     class MainViewModel : ViewModelBase
     {
-        public ViewModelBase CurrentViewModel { get; }
+        public ViewModelBase MatchesViewModel { get; }
+        public ViewModelBase ClubViewModel { get; }
+        public ViewModelBase PlayersViewModel { get; }
 
         public MainViewModel()
         {
-            CurrentViewModel = new MatchesListingViewModel();
+            MatchesViewModel = new MatchesListingViewModel();
+            ClubViewModel = new ClubsListingViewModel();
+            PlayersViewModel = new PlayersListingViewModel();
         }
     }
 }

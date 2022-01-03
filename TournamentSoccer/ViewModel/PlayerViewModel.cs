@@ -12,11 +12,10 @@ namespace TournamentSoccer.ViewModel
         private readonly Player _player;
 
 
-        public string Name => _player.Name.ToString();
-        public string LastName => _player.LastName.ToString();
+        public string Name => _player.Name;
+        public string LastName => _player.LastName;
         public int Age => _player.Age;
-        public string Function => _player.Function.ToString();
-
+        public string Function => _player.Function;
         public int Goals => _player.Goals;
         public int Asists => _player.Asists;
         public int Shots => _player.Shots;

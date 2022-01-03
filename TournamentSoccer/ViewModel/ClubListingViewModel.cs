@@ -4,23 +4,22 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TournamentSoccer.Models;
 
 namespace TournamentSoccer.ViewModel
 {
-    class PlayersListingViewModel : ViewModelBase
+    class ClubsListingViewModel : ViewModelBase
     {
-        private readonly ObservableCollection<PlayerViewModel> _players;
-        public IEnumerable<PlayerViewModel> Players => _players;
+        private readonly ObservableCollection<ClubViewModel> _clubs;
 
-        //public ICommand Maksesc{get;}
+        public IEnumerable<ClubViewModel> Clubs => _clubs;
 
         private string _name;
 
-        public PlayersListingViewModel()
+        public ClubsListingViewModel()
         {
-            _players = new ObservableCollection<PlayerViewModel>();
-            _players.Add(new PlayerViewModel(new Player("dupa", "krupa", "fiuta", 32)));
+            _clubs = new ObservableCollection<ClubViewModel>();
+
+            _clubs.Add(new ClubViewModel(new Models.Club("Jaga", 1, 2, 3)));
         }
 
         public string Name
@@ -35,8 +34,5 @@ namespace TournamentSoccer.ViewModel
                 OnPropertyChanged(nameof(Name));
             }
         }
-
-            
-        
     }
 }
