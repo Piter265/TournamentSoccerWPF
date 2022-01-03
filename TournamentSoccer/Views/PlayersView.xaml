@@ -7,6 +7,20 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <ListView Margin="10 10" ItemsSource="{Binding PlayersCollection}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="155" Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Width="155" Header="Last Name" DisplayMemberBinding="{Binding LastName}"/>
+                    <GridViewColumn Width="40" Header="Age" DisplayMemberBinding="{Binding Age}"/>
+                    <GridViewColumn Width="120" Header="Function" DisplayMemberBinding="{Binding Function}"/>
+                    <GridViewColumn Width="40" Header="Goals" DisplayMemberBinding="{Binding Goals}"/>
+                    <GridViewColumn Width="40" Header="Asists" DisplayMemberBinding="{Binding Asists}"/>
+                    <GridViewColumn Width="70" Header="Shots" DisplayMemberBinding="{Binding Shots}"/>
+                    <GridViewColumn Width="70" Header="Yellow Cards" DisplayMemberBinding="{Binding YellowCards}"/>
+                    <GridViewColumn Width="70" Header="Red Cards" DisplayMemberBinding="{Binding RedCards}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </UserControl>

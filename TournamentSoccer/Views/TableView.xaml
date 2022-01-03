@@ -7,6 +7,17 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <ListView Margin="10 10" ItemsSource="{Binding TeamsCollection}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="400" Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Width="40" Header="Wins" DisplayMemberBinding="{Binding Wins}"/>
+                    <GridViewColumn Width="40" Header="Draws" DisplayMemberBinding="{Binding Draws}"/>
+                    <GridViewColumn Width="40" Header="Losses" DisplayMemberBinding="{Binding Losses}"/>
+                    <GridViewColumn Width="40" Header="Points" DisplayMemberBinding="{Binding Points}"/>
+                    <GridViewColumn Width="80" Header="Balance" DisplayMemberBinding="{Binding Balance}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </UserControl>

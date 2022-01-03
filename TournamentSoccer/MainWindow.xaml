@@ -14,9 +14,6 @@
             <TabItem Header="Table">
                 <views:TableView/>
             </TabItem>
-            <TabItem Header="Teams">
-                <views:TeamsView/>
-            </TabItem>
             <TabItem Header="Players">
                 <views:PlayersView/>
             </TabItem>

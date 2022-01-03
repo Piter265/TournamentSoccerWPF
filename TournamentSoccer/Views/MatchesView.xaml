@@ -7,9 +7,19 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <ListBox IsSynchronizedWithCurrentItem="True"
-                 Name="Matches"
-                 ItemsSource="{Binding}"
-                 ItemTemplate="{StaticResource MatchTemplate}"/>
+        <ListView ItemsSource="{Binding MatchesCollection}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Test3" DisplayMemberBinding="{Binding Test3}" />
+                    <GridViewColumn Header="Button">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button>Edit</Button>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </UserControl>
