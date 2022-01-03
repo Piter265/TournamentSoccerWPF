@@ -9,7 +9,7 @@
     <Grid Margin="5 5">
         <TabControl>
             <TabItem Header="Matches">
-                <views:MatchesView/>
+                <views:MatchesView DataContext="{Binding CurrentViewModel}"/>
             </TabItem>
             <TabItem Header="Table">
                 <views:TableView/>
