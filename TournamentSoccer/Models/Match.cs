@@ -1,35 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace TournamentSoccer.Models
 {
-    class Match
+    class Match : MatchBase
     {
-        public int Goals { get; set; }
-        public int Assists { get; set; }
-        public int Shots { get; set; }
-        public int ShotsOnTarget { get; set; }
-        public int YellowCards { get; set; }
-        public int RedCards { get; set; }
-
-        private List<Player> Squad1;
-        private List<Player> Squad2;
-
-
-        public Match(int goals, int assists, int shots, int shotsOnTarget, int yellowCards, int redCards)
+        public Match(int goals, int assists, int shots, int shotsOnTarget, int yellowCards, int redCards) 
+            : base(goals, assists, shots, shotsOnTarget, yellowCards, redCards)
         {
-            Goals = goals;
-            Assists = assists;
-            Shots = shots;
-            ShotsOnTarget = shotsOnTarget;
-            YellowCards = yellowCards;
-            RedCards = redCards;
-            Squad1 = new List<Player>();
-            Squad2 = new List<Player>();
 
         }
+
+        public Match MakeRematch(Match match1)
+        {
+            Match match2 = (Match)match1.clone();
+
+
+            // Swaping squads
+            List<Player>  tmpSquad1 = new List<Player>();
+            Squad2.ForEach(p => tmpSquad1.Add(p));
+
+            List<Player> tmpSquad2 = new List<Player>();
+            Squad2.ForEach(p => tmpSquad1.Add(p));
+
+            Squad2.Clear();
+            tmpSquad1.ForEach(p => Squad2.Add(p));
+
+            Squad1.Clear();
+            tmpSquad2.ForEach(p => Squad1.Add(p));
+
+
+            return match2;
+        }
+
     }
 }
