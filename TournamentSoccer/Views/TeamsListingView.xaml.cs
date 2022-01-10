@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace TournamentSoccer.Views
 {
     /// <summary>
-    /// Interaction logic for MatchesView.xaml
+    /// Interaction logic for TableView.xaml
     /// </summary>
-    public partial class MatchesView : UserControl
+    public partial class TeamsListingView : UserControl
     {
-        public MatchesView()
+        public TeamsListingView()
         {
             InitializeComponent();
         }

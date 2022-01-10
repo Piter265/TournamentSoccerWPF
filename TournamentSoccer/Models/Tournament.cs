@@ -10,17 +10,19 @@ namespace TournamentSoccer.Models
     {
         public readonly string Name;
         public readonly bool Rematches;
+        public List<Match> Matches { get; set; } = new List<Match>();
+        public List<Team> Teams { get; set; } = new List<Team>();
+        public List<Coach> Coaches { get; set; } = new List<Coach>();
         private static readonly object _lock = new object();
 
         private static Tournament _instance;
 
-        private Tournament(string name, bool rematches)
+        private Tournament()
         {
-            Name = name;
-            Rematches = rematches;
+
         }
 
-        public static Tournament GetInstance(string name, bool rematches)
+        public static Tournament GetInstance()
         {
             if (_instance == null)
             {
@@ -28,7 +30,7 @@ namespace TournamentSoccer.Models
                 {
                     if (_instance == null)
                     {
-                        _instance = new Tournament(name, rematches);
+                        _instance = new Tournament();
                     }
                 }
             }

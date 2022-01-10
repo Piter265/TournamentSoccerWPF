@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using TournamentSoccer.Models;
+using TournamentSoccer.ViewModel;
 
 namespace TournamentSoccer
 {
@@ -13,5 +15,20 @@ namespace TournamentSoccer
     /// </summary>
     public partial class App : Application
     {
+        private readonly Tournament _tournament;
+
+        public App()
+        {
+            _tournament = Tournament.GetInstance();
+        }
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            MainWindow = new MainWindow()
+            {
+                DataContext = new MainViewModel(_tournament)
+            };
+            MainWindow.Show();
+        }
     }
 }

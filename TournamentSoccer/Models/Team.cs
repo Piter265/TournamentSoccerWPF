@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace TournamentSoccer.Models
 {
-    class Club
+    class Team
     {
-        public string Name;
-        public int Wins;
-        public int Losses;
-        public int Draws;
-        private List<Player> Players;
+        public string Name { get; set; }
+        public int Wins { get; set; }
+        public int Losses { get; set; }
+        public int Draws { get; set; }
+        public List<Player> Players { get; set; }
 
-        public Club(string name, int wins, int losses, int draws)
+        public Team(string name, int wins, int losses, int draws)
         {
             Name = name;
             Wins = wins;
