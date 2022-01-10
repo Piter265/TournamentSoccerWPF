@@ -35,5 +35,13 @@ namespace TournamentSoccer.Models
 
             return _instance;
         }
+
+
+        List<Match>DrawMatches(List<Club> clubs)
+        {
+            List<Match> matches = new List<Match>();
+
+            return matches;
+        }
     }
 }
