@@ -17,21 +17,21 @@ namespace TournamentSoccer.Views
     /// <summary>
     /// Interaction logic for AddClubView.xaml
     /// </summary>
-    public partial class AddClubView : UserControl
+    public partial class AddTeamView : UserControl
     {
-        public AddClubView()
+        public AddTeamView()
         {
             InitializeComponent();
         }
 
-        private void button_Copy_Click(object sender, RoutedEventArgs e)
+        private void playerBtn_Checked(object sender, RoutedEventArgs e)
         {
-
+            addToTeamBtn.Content = "Add Player";
         }
 
-        private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void coachBtn_Checked(object sender, RoutedEventArgs e)
         {
-
+            addToTeamBtn.Content = "Add Coach";
         }
     }
 }

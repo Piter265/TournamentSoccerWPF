@@ -17,7 +17,7 @@ namespace TournamentSoccer.ViewModel
 
         private string _name;
 
-        public PlayersListingViewModel()
+        public PlayersListingViewModel(Tournament tournament)
         {
             _players = new ObservableCollection<PlayerViewModel>();
             _players.Add(new PlayerViewModel(new Player("dupa", "krupa", "fiuta", 32)));
@@ -34,9 +34,7 @@ namespace TournamentSoccer.ViewModel
                 _name = value;
                 OnPropertyChanged(nameof(Name));
             }
-        }
-
-            
+        }            
         
     }
 }

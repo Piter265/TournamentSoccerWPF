@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="TournamentSoccer.Views.AddClubView"
+﻿<UserControl x:Class="TournamentSoccer.Views.AddTeamView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -8,31 +8,31 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="12,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="77"><Run Text="Club Name"/><Run Language="pl-pl" Text=":"/></TextBlock>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="100,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="100,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox1_Copy" HorizontalAlignment="Left" Margin="100,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="teamNameTextBox" Text="{Binding TeamName, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="100,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="winsTextBox" Text="{Binding TeamWins, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="100,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="lossesTextBox" Text="{Binding TeamLosses, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="100,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBlock x:Name="textBlock1_Copy1" HorizontalAlignment="Left" Margin="12,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.551,1.323"><Run Language="pl-pl" Text="Draws"/></TextBlock>
-        <TextBox x:Name="textBox1_Copy1" HorizontalAlignment="Left" Margin="100,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="drawsTextBox" Text="{Binding TeamDraws, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="100,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="12,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"><Run FontWeight="Bold" Text="Club Attributes"/></TextBlock>
-        <Button x:Name="submitBtn" Content="Submit" HorizontalAlignment="Left" Margin="700,332,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.698,0.703" Padding="5" Height="28" Width="50"/>
-        <Button x:Name="cancelBtn" Content="Cancel" HorizontalAlignment="Left" Margin="630,332,0,0" VerticalAlignment="Top" Click="button_Copy_Click" Padding="5" Height="28" Width="48"/>
+        <Button x:Name="submitBtn" Content="Submit" Command="{Binding SubmitCommand}" HorizontalAlignment="Left" Margin="700,332,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.698,0.703" Padding="5" Height="28" Width="50"/>
+        <Button x:Name="cancelBtn" Content="Cancel" HorizontalAlignment="Left" Margin="630,332,0,0" VerticalAlignment="Top" Padding="5" Height="28" Width="48"/>
         <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="270,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78"><Run Text="Name"/><Run Text=":"/></TextBlock>
-        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Margin="358,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="nameTextBox" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="358,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBlock x:Name="textBlock1_Copy2" HorizontalAlignment="Left" Margin="270,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.592,1.698"><Run Language="pl-pl" Text="Lastname:"/></TextBlock>
-        <TextBox x:Name="textBox1_Copy2" HorizontalAlignment="Left" Margin="358,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox1_Copy3" HorizontalAlignment="Left" Margin="358,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="lastNameTextBox" HorizontalAlignment="Left" Margin="358,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="positionTextBox" HorizontalAlignment="Left" Margin="358,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="{Binding ElementName=playerBtn, Path=IsChecked}"/>
         <TextBlock x:Name="textBlock1_Copy4" HorizontalAlignment="Left" Margin="270,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.551,1.323"><Run Language="pl-pl" Text="Age:"/></TextBlock>
-        <TextBox x:Name="textBox1_Copy4" HorizontalAlignment="Left" Margin="358,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ageTextBox" HorizontalAlignment="Left" Margin="358,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="270,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78"><Run Language="pl-pl" Text="Goals"/><Run Text=":"/></TextBlock>
-        <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Margin="358,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="goalsTextBox" HorizontalAlignment="Left" Margin="358,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="{Binding ElementName=playerBtn, Path=IsChecked}"/>
         <TextBlock x:Name="textBlock1_Copy5" HorizontalAlignment="Left" Margin="524,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.592,1.698"><Run Language="pl-pl" Text="Assists:"/></TextBlock>
-        <TextBox x:Name="textBox1_Copy5" HorizontalAlignment="Left" Margin="612,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox1_Copy6" HorizontalAlignment="Left" Margin="612,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="assistsTextBox" HorizontalAlignment="Left" Margin="612,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="{Binding ElementName=playerBtn, Path=IsChecked}"/>
+        <TextBox x:Name="shotsTextBox" HorizontalAlignment="Left" Margin="612,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="{Binding ElementName=playerBtn, Path=IsChecked}"/>
         <TextBlock x:Name="textBlock1_Copy7" HorizontalAlignment="Left" Margin="524,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.551,1.323" Height="18"><Run Text="Red cards"/><Run Language="pl-pl" Text=":"/><LineBreak/><Run/></TextBlock>
-        <TextBox x:Name="textBox1_Copy7" HorizontalAlignment="Left" Margin="612,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="redCardsTextBox" HorizontalAlignment="Left" Margin="612,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="{Binding ElementName=playerBtn, Path=IsChecked}"/>
         <TextBlock x:Name="textBlock1_Copy8" HorizontalAlignment="Left" Margin="524,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.551,1.323" Height="18"><Run Text="Yellow "/><Run Text="cards"/><Run Language="pl-pl" Text=":"/><LineBreak/><Run/></TextBlock>
-        <TextBox x:Name="textBox1_Copy8" HorizontalAlignment="Left" Margin="612,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <ListView x:Name="listView" Margin="10,225,357,10" SelectionChanged="listView_SelectionChanged">
+        <TextBox x:Name="yellowCardsTextBox" HorizontalAlignment="Left" Margin="612,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="{Binding ElementName=playerBtn, Path=IsChecked}"/>
+        <ListView x:Name="listView" Margin="10,225,357,10">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
@@ -40,9 +40,9 @@
             </ListView.View>
         </ListView>
         <TextBlock x:Name="textBlock2_Copy1" HorizontalAlignment="Left" Margin="10,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"><Run FontWeight="Bold" Text="Added Players:"/></TextBlock>
-        <Button x:Name="addPlayerBtn" Content="Add to Team" HorizontalAlignment="Left" Margin="630,180,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.698,0.703" Padding="5" Height="28" Width="86"/>
-        <RadioButton Content="Player" HorizontalAlignment="Left" Margin="270,11,0,0" VerticalAlignment="Top" Height="15" Width="51"/>
-        <RadioButton Content="Coach" HorizontalAlignment="Left" Margin="498,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="15" Width="52"/>
+        <Button x:Name="addToTeamBtn" HorizontalAlignment="Left" Margin="630,180,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.698,0.703" Padding="5" Height="28" Width="86"/>
+        <RadioButton x:Name="playerBtn" Content="Player" HorizontalAlignment="Left" Margin="270,11,0,0" VerticalAlignment="Top" Height="15" Width="51" Checked="playerBtn_Checked" IsChecked="True"/>
+        <RadioButton x:Name="coachBtn" Content="Coach" HorizontalAlignment="Left" Margin="498,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="15" Width="52" Checked="coachBtn_Checked"/>
         <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="12,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.592,1.698"><Run Language="pl-pl" Text="Wins:"/></TextBlock>
         <TextBlock x:Name="textBlock1_Copy" HorizontalAlignment="Left" Margin="12,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.551,1.323"><Run Text="Losses"/><Run Language="en-gb" Text=":"/></TextBlock>
         <TextBlock x:Name="textBlock1_Copy3" HorizontalAlignment="Left" Margin="270,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.551,1.323"><Run Language="en-gb" Text="Position"/><Run Text=":"/></TextBlock>

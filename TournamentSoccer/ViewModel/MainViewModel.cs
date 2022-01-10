@@ -3,20 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TournamentSoccer.Models;
 
 namespace TournamentSoccer.ViewModel
 {
     class MainViewModel : ViewModelBase
     {
         public ViewModelBase MatchesViewModel { get; }
-        public ViewModelBase ClubViewModel { get; }
+        public ViewModelBase TeamViewModel { get; }
         public ViewModelBase PlayersViewModel { get; }
+        public ViewModelBase AddTeamViewModel { get; }
 
-        public MainViewModel()
+        public MainViewModel(Tournament tournament)
         {
-            MatchesViewModel = new MatchesListingViewModel();
-            ClubViewModel = new ClubsListingViewModel();
-            PlayersViewModel = new PlayersListingViewModel();
+            MatchesViewModel = new MatchesListingViewModel(tournament);
+            TeamViewModel = new TeamsListingViewModel(tournament);
+            PlayersViewModel = new PlayersListingViewModel(tournament);
+            AddTeamViewModel = new AddTeamViewModel(tournament);
+
         }
     }
 }

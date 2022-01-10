@@ -18,9 +18,9 @@ namespace TournamentSoccer.Views
     /// <summary>
     /// Interaction logic for TableView.xaml
     /// </summary>
-    public partial class TableView : UserControl
+    public partial class TeamsListingView : UserControl
     {
-        public TableView()
+        public TeamsListingView()
         {
             InitializeComponent();
         }

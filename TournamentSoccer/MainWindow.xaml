@@ -74,19 +74,19 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Grid Margin="5 5">
+    <Grid Margin="5 5" >
         <TabControl Style="{DynamicResource TabControlStyle1}">
             <TabItem Header="Matches">
                 <views:MatchesListingView DataContext="{Binding MatchesViewModel}"/>
             </TabItem>
-            <TabItem Header="Table" DataContext="{Binding ClubViewModel}">
-                <views:TableView/>
+            <TabItem Header="Table" DataContext="{Binding TeamViewModel}">
+                <views:TeamsListingView/>
             </TabItem>
             <TabItem Header="Players" DataContext="{Binding PlayersViewModel}">
                 <views:PlayersListingView/>
             </TabItem>
-            <TabItem Header="Add Club" DataContext="{Binding PlayersViewModel}">
-                <views:AddClubView/>
+            <TabItem Header="Add Team" DataContext="{Binding AddTeamViewModel}">
+                <views:AddTeamView/>
             </TabItem>
         </TabControl>
     </Grid>
