@@ -32,7 +32,7 @@
         <TextBox x:Name="redCardsTextBox" HorizontalAlignment="Left" Margin="612,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="{Binding ElementName=playerBtn, Path=IsChecked}"/>
         <TextBlock x:Name="textBlock1_Copy8" HorizontalAlignment="Left" Margin="524,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.551,1.323" Height="18"><Run Text="Yellow "/><Run Text="cards"/><Run Language="pl-pl" Text=":"/><LineBreak/><Run/></TextBlock>
         <TextBox x:Name="yellowCardsTextBox" HorizontalAlignment="Left" Margin="612,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="{Binding ElementName=playerBtn, Path=IsChecked}"/>
-        <ListView x:Name="listView" Margin="10,225,357,10" ItemsSource="{Binding People}">
+        <ListView x:Name="listView" Margin="10,225,357,10" ItemsSource="{Binding People}" SelectedItem="{Binding SelectedPerson}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>

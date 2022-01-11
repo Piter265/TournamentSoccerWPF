@@ -14,6 +14,7 @@ namespace TournamentSoccer.ViewModel
     {
         private ObservableCollection<PersonViewModel> _people { get; set; }
         
+        public PersonViewModel SelectedPerson { get; set; }
 
         public IEnumerable<PersonViewModel> People => _people;
 
@@ -129,9 +130,9 @@ namespace TournamentSoccer.ViewModel
             _people.Add(new PersonViewModel(person));
         }
 
-        public void Delete(Person person)
+        public void Delete(PersonViewModel person)
         {
-            _people.Remove(new PersonViewModel(person));
+            _people.Remove(person);
         }
     }
 }
