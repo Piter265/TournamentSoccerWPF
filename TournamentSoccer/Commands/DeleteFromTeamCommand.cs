@@ -8,12 +8,12 @@ using TournamentSoccer.ViewModel;
 
 namespace TournamentSoccer.Commands
 {
-    class AddTeamCommand : CommandBase
+    class DeleteFromTeamCommand : CommandBase
     {
         private readonly Tournament _tournament;
         private readonly AddTeamViewModel _addTeamViewModel;
 
-        public AddTeamCommand(AddTeamViewModel addTeamViewModel, Tournament tournament)
+        public DeleteFromTeamCommand(AddTeamViewModel addTeamViewModel, Tournament tournament)
         {
             _tournament = tournament;
             _addTeamViewModel = addTeamViewModel;
@@ -23,7 +23,7 @@ namespace TournamentSoccer.Commands
 
         private void OnViewModelPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == nameof(_addTeamViewModel.TeamName))
+            if (e.PropertyName == nameof(_addTeamViewModel.PersonName))
             {
                 OnExecutedChanged();
             }
@@ -31,15 +31,18 @@ namespace TournamentSoccer.Commands
 
         public override bool CanExecute(object parameter)
         {
-            return !string.IsNullOrEmpty(_addTeamViewModel.TeamName) && base.CanExecute(parameter);
+            return true;
         }
 
         public override void Execute(object parameter)
         {
-            Team team = new Team(
-                _addTeamViewModel.TeamName
+            var person = new Coach(
+                _addTeamViewModel.PersonName,
+                _addTeamViewModel.PersonLastName,
+                _addTeamViewModel.PersonFunction,
+                _addTeamViewModel.PersonAge
                 );
-            _tournament.Teams.Add(team);
+            _addTeamViewModel.Delete(person);
         }
     }
 }

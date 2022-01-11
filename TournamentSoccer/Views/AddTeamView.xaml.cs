@@ -33,5 +33,6 @@ namespace TournamentSoccer.Views
         {
             addToTeamBtn.Content = "Add Coach";
         }
+
     }
 }

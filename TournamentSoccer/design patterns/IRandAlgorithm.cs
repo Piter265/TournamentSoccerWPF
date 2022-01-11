@@ -9,6 +9,6 @@ namespace TournamentSoccer
 {
     interface IRandAlgorithm
     {
-        IRandAlgorithm DrawMatches(List<Club> clubs);
+        List<Match> DrawMatches(List<Team> teams);
     }
 }

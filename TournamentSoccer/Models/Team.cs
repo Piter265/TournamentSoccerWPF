@@ -14,12 +14,9 @@ namespace TournamentSoccer.Models
         public int Draws { get; set; }
         public List<Player> Players { get; set; }
 
-        public Team(string name, int wins, int losses, int draws)
+        public Team(string name)
         {
             Name = name;
-            Wins = wins;
-            Losses = losses;
-            Draws = draws;
             Players = new List<Player>();
         }
 

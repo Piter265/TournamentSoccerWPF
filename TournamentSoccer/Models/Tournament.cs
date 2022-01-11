@@ -39,7 +39,7 @@ namespace TournamentSoccer.Models
         }
 
 
-        List<Match>DrawMatches(List<Club> clubs)
+        List<Match>DrawMatches(List<Team> clubs)
         {
             List<Match> matches = new List<Match>();
 

@@ -11,7 +11,7 @@ namespace TournamentSoccer.design_patterns
     {
 
 
-        public List<Match> DrawMatches(List<Club> clubs)
+        public List<Match> DrawMatches(List<Team> teams)
         {
             List<Match> matches = new List<Match>();
 
@@ -20,9 +20,5 @@ namespace TournamentSoccer.design_patterns
             return matches;
         }
 
-        public IRandAlgorithm DrawMatches(List<Club> clubs)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

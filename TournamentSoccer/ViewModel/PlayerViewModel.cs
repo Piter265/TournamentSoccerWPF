@@ -26,5 +26,10 @@ namespace TournamentSoccer.ViewModel
         {
             _player = player;
         }
+
+        public override string ToString()
+        {
+            return Name + LastName + Age + Function + Goals + Asists + Shots + RedCards + YellowCards;
+        }
     }
 }

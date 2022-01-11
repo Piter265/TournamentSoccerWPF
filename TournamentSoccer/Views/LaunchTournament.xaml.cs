@@ -29,14 +29,5 @@ namespace TournamentSoccer.Views
 
         }
 
-        private void radioButton_Checked()
-        {
-
-        }
-
-        private void radioButton_Checked()
-        {
-
-        }
     }
 }

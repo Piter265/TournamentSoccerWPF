@@ -18,7 +18,7 @@ namespace TournamentSoccer.ViewModel
         {
             _teams = new ObservableCollection<TeamViewModel>();
 
-            _teams.Add(new TeamViewModel(new Models.Team("Jaga", 1, 2, 3)));
+            //_teams.Add(new TeamViewModel(new Models.Team("Jaga", 1, 2, 3)));
         }
 
     }

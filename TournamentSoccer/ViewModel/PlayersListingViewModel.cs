@@ -10,7 +10,7 @@ namespace TournamentSoccer.ViewModel
 {
     class PlayersListingViewModel : ViewModelBase
     {
-        private readonly ObservableCollection<PlayerViewModel> _players;
+        private ObservableCollection<PlayerViewModel> _players;
         public IEnumerable<PlayerViewModel> Players => _players;
 
         //public ICommand Maksesc{get;}
