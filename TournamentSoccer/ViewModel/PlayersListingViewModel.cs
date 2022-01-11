@@ -13,28 +13,10 @@ namespace TournamentSoccer.ViewModel
         private ObservableCollection<PlayerViewModel> _players;
         public IEnumerable<PlayerViewModel> Players => _players;
 
-        //public ICommand Maksesc{get;}
-
-        private string _name;
-
         public PlayersListingViewModel(Tournament tournament)
         {
             _players = new ObservableCollection<PlayerViewModel>();
-            _players.Add(new PlayerViewModel(new Player("dupa", "krupa", "fiuta", 32)));
-        }
-
-        public string Name
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-                OnPropertyChanged(nameof(Name));
-            }
-        }            
+        }    
         
     }
 }

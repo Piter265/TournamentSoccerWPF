@@ -24,11 +24,7 @@ namespace TournamentSoccer
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            MainWindow = new MainWindow()
-            {
-                DataContext = new MainViewModel(_tournament)
-            };
-            MainWindow.Show();
+
         }
     }
 }

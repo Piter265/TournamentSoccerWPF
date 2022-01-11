@@ -18,18 +18,15 @@ namespace TournamentSoccer.ViewModel
 
         public IEnumerable<PersonViewModel> People => _people;
 
-        public ICommand SubmitCommand { get; }
+        public ICommand Submit { get; }
         public ICommand AddToTeam { get; }
-        public ICommand UpdateInTeam { get; }
         public ICommand DeleteFromTeam { get; }
-        public ICommand PlayerType { get; set; }
-        public ICommand CoachType { get; set; }
 
 
         public AddTeamViewModel(Tournament tournament)
         {
             _people = new ObservableCollection<PersonViewModel>();
-            SubmitCommand = new AddTeamCommand(this, tournament);
+            Submit = new AddTeamCommand(this, tournament);
             AddToTeam = new AddToTeamCommand(this, tournament);
             DeleteFromTeam = new DeleteFromTeamCommand(this, tournament);
         }
