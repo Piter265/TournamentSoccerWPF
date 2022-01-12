@@ -26,7 +26,7 @@ namespace TournamentSoccer.ViewModel
         public AddTeamViewModel(LaunchTournamentViewModel launchTournamentViewModel)
         {
             _people = new ObservableCollection<PersonViewModel>();
-            Submit = new SubmitTeamCommand(this, launchTournamentViewModel);
+            Submit = new AddTeamCommand(this, launchTournamentViewModel);
             AddToTeam = new AddToTeamCommand(this);
             DeleteFromTeam = new DeleteFromTeamCommand(this);
         }
