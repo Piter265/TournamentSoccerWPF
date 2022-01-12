@@ -10,12 +10,10 @@ namespace TournamentSoccer.Commands
 {
     class AddToTeamCommand : CommandBase
     {
-        private readonly Tournament _tournament;
         private readonly AddTeamViewModel _addTeamViewModel;
 
-        public AddToTeamCommand(AddTeamViewModel addTeamViewModel, Tournament tournament)
+        public AddToTeamCommand(AddTeamViewModel addTeamViewModel)
         {
-            _tournament = tournament;
             _addTeamViewModel = addTeamViewModel;
             _addTeamViewModel.PropertyChanged += OnViewModelPropertyChanged;
         }

@@ -10,12 +10,10 @@ namespace TournamentSoccer.Commands
 {
     class DeleteFromTeamCommand : CommandBase
     {
-        private readonly Tournament _tournament;
         private readonly AddTeamViewModel _addTeamViewModel;
 
-        public DeleteFromTeamCommand(AddTeamViewModel addTeamViewModel, Tournament tournament)
+        public DeleteFromTeamCommand(AddTeamViewModel addTeamViewModel)
         {
-            _tournament = tournament;
             _addTeamViewModel = addTeamViewModel;
         }
 

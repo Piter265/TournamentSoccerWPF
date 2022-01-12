@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace TournamentSoccer.Models
 {
-    class ClassicalTeamBuilder : ITeamBuilder
+    public class ClassicalTeamBuilder : ITeamBuilder
     {
 
         private Coach _coach = new Coach();
-        private LinkedList<Player> _players = new LinkedList<Player>();
+        private LinkedList<Person> _players = new LinkedList<Person>();
 
         public ClassicalTeamBuilder()
         {
@@ -20,7 +20,7 @@ namespace TournamentSoccer.Models
         public void Reset()
         {
             this._coach = new Coach();
-            this._players = new LinkedList<Player>();
+            this._players = new LinkedList<Person>();
         }
 
         public void AddCoach()
@@ -39,7 +39,7 @@ namespace TournamentSoccer.Models
             throw new NotImplementedException();
         }
 
-        public Player CreatePlayer()
+        public Person CreatePlayer()
         {
             throw new NotImplementedException();
         }
@@ -63,7 +63,7 @@ namespace TournamentSoccer.Models
         public Coach GetCoach()
         {
             Coach result = this._coach;
-            LinkedList<Player> players = _players;//return
+            LinkedList<Person> players = _players;//return
             this.Reset();
 
             return result;

@@ -7,19 +7,17 @@ using TournamentSoccer.Models;
 
 namespace TournamentSoccer.ViewModel
 {
-    class MainViewModel : ViewModelBase
+    public class MainViewModel : ViewModelBase
     {
-        public ViewModelBase MatchesViewModel { get; }
+        /*public ViewModelBase MatchesViewModel { get; }
         public ViewModelBase TeamViewModel { get; }
-        public ViewModelBase PlayersViewModel { get; }
-        public ViewModelBase AddTeamViewModel { get; }
+        public ViewModelBase PlayersViewModel { get; }*/
 
-        public MainViewModel(Tournament tournament)
+        public MainViewModel()
         {
-            MatchesViewModel = new MatchesListingViewModel(tournament);
-            TeamViewModel = new TeamsListingViewModel(tournament);
-            PlayersViewModel = new PlayersListingViewModel(tournament);
-            AddTeamViewModel = new AddTeamViewModel(tournament);
+            /*MatchesViewModel = new MatchesListingViewModel();
+            TeamViewModel = new TeamsListingViewModel();
+            PlayersViewModel = new PlayersListingViewModel();*/
 
         }
     }

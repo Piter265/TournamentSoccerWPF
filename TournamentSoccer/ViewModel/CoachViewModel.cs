@@ -7,7 +7,7 @@ using TournamentSoccer.Models;
 
 namespace TournamentSoccer.ViewModel
 {
-    class CoachViewModel : ViewModelBase
+    public class CoachViewModel : ViewModelBase
     {
         private readonly Coach _coach;
 

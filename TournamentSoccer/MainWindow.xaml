@@ -77,16 +77,13 @@
     <Grid Margin="5 5" >
         <TabControl Style="{DynamicResource TabControlStyle1}">
             <TabItem Header="Matches">
-                <views:MatchesListingView DataContext="{Binding MatchesViewModel}"/>
+                <views:MatchesListingView/>
             </TabItem>
-            <TabItem Header="Table" DataContext="{Binding TeamViewModel}">
+            <TabItem Header="Table">
                 <views:TeamsListingView/>
             </TabItem>
-            <TabItem Header="Players" DataContext="{Binding PlayersViewModel}">
+            <TabItem Header="Players">
                 <views:PlayersListingView/>
-            </TabItem>
-            <TabItem Header="Add Team" DataContext="{Binding AddTeamViewModel}">
-                <views:AddTeamView/>
             </TabItem>
         </TabControl>
     </Grid>

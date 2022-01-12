@@ -7,10 +7,10 @@ using TournamentSoccer.Models;
 
 namespace TournamentSoccer.ViewModel
 {
-    class MatchesListingViewModel : ViewModelBase
+    public class MatchesListingViewModel : ViewModelBase
     {
 
-        public MatchesListingViewModel(Tournament tournament)
+        public MatchesListingViewModel()
         {
 
         }

@@ -5,26 +5,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using TournamentSoccer.Commands;
+using TournamentSoccer.Models;
+using TournamentSoccer.Views;
 
 namespace TournamentSoccer.ViewModel
 {
-    class LaunchTournamentViewModel : ViewModelBase
+    public class LaunchTournamentViewModel : ViewModelBase
     {
-        private ObservableCollection<TeamViewModel> _teams;
-        public IEnumerable<TeamViewModel> Teams => _teams;
+        public ObservableCollection<TeamViewModel> Teams { get; set; }
+        public TeamViewModel SelectedTeam { get; set; }
+        public AddTeamViewModel AddTeamVM{get;set;}
 
-        public ICommand AddTeam { get; }
-        public ICommand DeleteTeam { get; }
-        public ICommand LoadRefeeres { get; }
 
         public LaunchTournamentViewModel()
         {
-            _teams = new ObservableCollection<TeamViewModel>();
+            Teams = new ObservableCollection<TeamViewModel>();
         }
 
-        public void Add()
+        public void Add(Team team)
         {
-
+            Teams.Add(new TeamViewModel(team));
         }
+
+        public void Delete(TeamViewModel team)
+        {
+            Teams.Remove(team);
+        }
+
     }
 }

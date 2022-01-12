@@ -10,7 +10,7 @@ using TournamentSoccer.Models;
 
 namespace TournamentSoccer.ViewModel
 {
-    class AddTeamViewModel : ViewModelBase
+    public class AddTeamViewModel : ViewModelBase
     {
         private ObservableCollection<PersonViewModel> _people { get; set; }
         
@@ -23,12 +23,12 @@ namespace TournamentSoccer.ViewModel
         public ICommand DeleteFromTeam { get; }
 
 
-        public AddTeamViewModel(Tournament tournament)
+        public AddTeamViewModel(LaunchTournamentViewModel launchTournamentViewModel)
         {
             _people = new ObservableCollection<PersonViewModel>();
-            Submit = new AddTeamCommand(this, tournament);
-            AddToTeam = new AddToTeamCommand(this, tournament);
-            DeleteFromTeam = new DeleteFromTeamCommand(this, tournament);
+            Submit = new SubmitTeamCommand(this, launchTournamentViewModel);
+            AddToTeam = new AddToTeamCommand(this);
+            DeleteFromTeam = new DeleteFromTeamCommand(this);
         }
 
         private string _teamName;

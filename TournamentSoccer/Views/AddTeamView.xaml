@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="TournamentSoccer.Views.AddTeamView"
+﻿<Window x:Class="TournamentSoccer.Views.AddTeamView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -14,7 +14,7 @@
         <TextBlock x:Name="textBlock1_Copy1" HorizontalAlignment="Left" Margin="12,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.551,1.323"><Run Language="pl-pl" Text="Draws"/></TextBlock>
         <TextBox x:Name="drawsTextBox" Text="{Binding TeamDraws, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="100,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="12,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"><Run FontWeight="Bold" Text="Club Attributes"/></TextBlock>
-        <Button x:Name="submitBtn" Content="Submit" Command="{Binding Submit}" HorizontalAlignment="Left" Margin="700,332,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.698,0.703" Padding="5" Height="28" Width="50"/>
+        <Button x:Name="submitBtn" Content="Submit" Command="{Binding Submit}" HorizontalAlignment="Left" Margin="700,332,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.698,0.703" Padding="5" Height="28" Width="50" Click="submitBtn_Click"/>
         <Button x:Name="cancelBtn" Content="Cancel" HorizontalAlignment="Left" Margin="630,332,0,0" VerticalAlignment="Top" Padding="5" Height="28" Width="48"/>
         <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="270,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78"><Run Text="Name"/><Run Text=":"/></TextBlock>
         <TextBox x:Name="nameTextBox" Text="{Binding PersonName, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="358,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
@@ -49,4 +49,4 @@
         <TextBlock x:Name="textBlock1_Copy6" HorizontalAlignment="Left" Margin="524,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.551,1.323" Height="18"><Run Language="en-gb" Text="Shots"/><Run Text=":"/><LineBreak/><Run/></TextBlock>
         <Button x:Name="deleteFromTeam" Content="Delete" Command="{Binding DeleteFromTeam}" HorizontalAlignment="Left" Margin="474,247,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.698,0.703" Padding="5" Height="28" Width="50"/>
     </Grid>
-</UserControl>
+</Window>

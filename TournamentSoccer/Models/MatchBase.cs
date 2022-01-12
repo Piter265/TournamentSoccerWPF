@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TournamentSoccer.Models
 {
-    abstract class MatchBase : IMatchBase
+    public abstract class MatchBase : IMatchBase
     {
         public int Goals { get; set; }
         public int Assists { get; set; }
@@ -15,8 +15,8 @@ namespace TournamentSoccer.Models
         public int YellowCards { get; set; }
         public int RedCards { get; set; }
 
-        public List<Player> Squad1;
-        public List<Player> Squad2;
+        public List<Person> Squad1;
+        public List<Person> Squad2;
 
 
         public MatchBase(int goals, int assists, int shots, int shotsOnTarget, int yellowCards, int redCards)
@@ -27,8 +27,8 @@ namespace TournamentSoccer.Models
             ShotsOnTarget = shotsOnTarget;
             YellowCards = yellowCards;
             RedCards = redCards;
-            Squad1 = new List<Player>();
-            Squad2 = new List<Player>();
+            Squad1 = new List<Person>();
+            Squad2 = new List<Person>();
 
         }
 

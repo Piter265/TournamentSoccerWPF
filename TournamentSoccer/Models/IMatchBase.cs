@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TournamentSoccer.Models
 {
-    interface IMatchBase
+    public interface IMatchBase
     {
         IMatchBase clone();
     }

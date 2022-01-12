@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace TournamentSoccer.Models
 {
-    class Match : MatchBase
+    public class Match : MatchBase
     {
         public Match(int goals, int assists, int shots, int shotsOnTarget, int yellowCards, int redCards) 
             : base(goals, assists, shots, shotsOnTarget, yellowCards, redCards)
@@ -23,10 +23,10 @@ namespace TournamentSoccer.Models
 
 
             // Swaping squads
-            List<Player>  tmpSquad1 = new List<Player>();
+            List<Person>  tmpSquad1 = new List<Person>();
             Squad2.ForEach(p => tmpSquad1.Add(p));
 
-            List<Player> tmpSquad2 = new List<Player>();
+            List<Person> tmpSquad2 = new List<Person>();
             Squad2.ForEach(p => tmpSquad1.Add(p));
 
             Squad2.Clear();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TournamentSoccer.Models
 {
-    sealed class Tournament
+    public sealed class Tournament
     {
         public readonly string Name;
         public readonly bool Rematches;

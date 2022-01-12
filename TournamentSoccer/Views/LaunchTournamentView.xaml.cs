@@ -11,27 +11,29 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TournamentSoccer.ViewModel;
 
 namespace TournamentSoccer.Views
 {
     /// <summary>
-    /// Interaction logic for LaunchTournament.xaml
+    /// Interaction logic for LaunchTournamentView.xaml
     /// </summary>
-    public partial class LaunchTournament : Window
+    public partial class LaunchTournamentView : Window
     {
-        public LaunchTournament()
+        public readonly LaunchTournamentViewModel _launchTournamentViewModel;
+        public LaunchTournamentView()
         {
             InitializeComponent();
-        }
 
-        private void radioButton_Checked()
-        {
+            _launchTournamentViewModel= new LaunchTournamentViewModel();
 
+            DataContext = _launchTournamentViewModel;
         }
 
         private void addTeamBtn_Click(object sender, RoutedEventArgs e)
         {
-              
+            AddTeamView addTeam = new AddTeamView(_launchTournamentViewModel);
+            addTeam.Show();
         }
     }
 }

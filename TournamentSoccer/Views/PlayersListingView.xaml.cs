@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TournamentSoccer.ViewModel;
 
 namespace TournamentSoccer.Views
 {
@@ -23,6 +24,8 @@ namespace TournamentSoccer.Views
         public PlayersListingView()
         {
             InitializeComponent();
+
+            DataContext = new PlayersListingViewModel();
         }
     }
 }

@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace TournamentSoccer.Models
 {
-    class Team
+    public class Team
     {
         public string Name { get; set; }
         public int Wins { get; set; }
         public int Losses { get; set; }
         public int Draws { get; set; }
-        public List<Player> Players { get; set; }
+        public List<Person> People { get; set; }
 
-        public Team(string name)
+        public Team(string name, List<Person> people)
         {
             Name = name;
-            Players = new List<Player>();
+            People = new List<Person>();
         }
 
-        public void AddPlayer(Player player)
+        public void AddPlayer(Person player)
         {
-            Players.Add(player);
+            People.Add(player);
         }
     }
 }

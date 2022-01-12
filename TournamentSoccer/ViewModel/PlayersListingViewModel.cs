@@ -8,12 +8,12 @@ using TournamentSoccer.Models;
 
 namespace TournamentSoccer.ViewModel
 {
-    class PlayersListingViewModel : ViewModelBase
+    public class PlayersListingViewModel : ViewModelBase
     {
         private ObservableCollection<PlayerViewModel> _players;
         public IEnumerable<PlayerViewModel> Players => _players;
 
-        public PlayersListingViewModel(Tournament tournament)
+        public PlayersListingViewModel()
         {
             _players = new ObservableCollection<PlayerViewModel>();
         }    

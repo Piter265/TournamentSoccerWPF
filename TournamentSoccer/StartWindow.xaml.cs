@@ -27,7 +27,7 @@ namespace TournamentSoccer
 
         private void startNewTournamentBtn_click(object sender, RoutedEventArgs e)
         {
-            LaunchTournament launchTournament = new LaunchTournament();
+            LaunchTournamentView launchTournament = new LaunchTournamentView();
             launchTournament.Show();
             this.Close();
         }

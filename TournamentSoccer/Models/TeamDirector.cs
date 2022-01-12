@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TournamentSoccer.Models
 {
-    class TeamDirector
+    public class TeamDirector
     {
         private ITeamBuilder _builder;
 

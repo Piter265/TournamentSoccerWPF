@@ -7,7 +7,7 @@ using TournamentSoccer.Models;
 
 namespace TournamentSoccer.ViewModel
 {
-    class TeamViewModel
+    public class TeamViewModel
     {
         private readonly Team _team;
 
@@ -15,6 +15,7 @@ namespace TournamentSoccer.ViewModel
         public int Wins => _team.Wins;
         public int Losses => _team.Losses;
         public int Draws => _team.Draws;
+        public List<Person> People => _team.People;
 
         public TeamViewModel(Team team)
         {
