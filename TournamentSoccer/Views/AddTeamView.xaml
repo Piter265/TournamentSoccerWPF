@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TournamentSoccer.Views"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="12,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="77"><Run Text="Club Name"/><Run Language="pl-pl" Text=":"/></TextBlock>
@@ -35,7 +35,10 @@
         <ListView x:Name="listView" Margin="10,225,357,10" ItemsSource="{Binding People}" SelectedItem="{Binding SelectedPerson}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn/>
+                    <GridViewColumn Header="Name"  DisplayMemberBinding="{Binding PersonName}" Width="120"/>
+                    <GridViewColumn Header="Last Name"  DisplayMemberBinding="{Binding PersonLastName}" Width="120"/>
+                    <GridViewColumn Header="Function"  DisplayMemberBinding="{Binding PersonFunction}" Width="100"/>
+                    <GridViewColumn Header="Age"  DisplayMemberBinding="{Binding PersonAge}" Width="37"/>
                 </GridView>
             </ListView.View>
         </ListView>

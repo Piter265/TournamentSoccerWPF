@@ -9,8 +9,7 @@ namespace TournamentSoccer.Models
     public class ClassicalTeamBuilder : ITeamBuilder
     {
 
-        private Coach _coach = new Coach();
-        private LinkedList<Person> _players = new LinkedList<Person>();
+        private LinkedList<Person> _people = new LinkedList<Person>();
 
         public ClassicalTeamBuilder()
         {
@@ -19,19 +18,17 @@ namespace TournamentSoccer.Models
 
         public void Reset()
         {
-            this._coach = new Coach();
-            this._players = new LinkedList<Person>();
+            this._people = new LinkedList<Person>();
         }
 
         public void AddCoach()
         {
-            _coach = new Coach(CreateCoach());
-            _players.AddFirst(CreatePlayer());
+            _people.AddFirst(CreatePlayer());
         }
 
-        public void AddPlayers()
+        public void AddPlayer()
         {
-            _players.AddFirst(CreatePlayer());
+            _people.AddFirst(CreatePlayer());
         }
 
         public Coach CreateCoach()
@@ -44,30 +41,20 @@ namespace TournamentSoccer.Models
             throw new NotImplementedException();
         }
 
-        public void SetDisability(string disability)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SetGroupAge(int age)
-        {
-            throw new NotImplementedException();
-        }
-
         public void SetName(string name)
         {
             throw new NotImplementedException();
         }
 
 
-        public Coach GetCoach()
+        public bool SetDisability(bool isDisable)
         {
-            Coach result = this._coach;
-            LinkedList<Person> players = _players;//return
-            this.Reset();
-
-            return result;
+            throw new NotImplementedException();
         }
 
+        public void SetGroupAge(string groupAge)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

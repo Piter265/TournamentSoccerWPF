@@ -15,22 +15,26 @@ namespace TournamentSoccer.ViewModel
     {
         public ObservableCollection<TeamViewModel> Teams { get; set; }
         public TeamViewModel SelectedTeam { get; set; }
-        public AddTeamViewModel AddTeamVM{get;set;}
+
+        public ICommand DeleteTeam { get; }
 
 
         public LaunchTournamentViewModel()
         {
             Teams = new ObservableCollection<TeamViewModel>();
+            DeleteTeam = new DeleteTeamCommand(this);
         }
 
         public void Add(Team team)
         {
             Teams.Add(new TeamViewModel(team));
+            Tournament.AddTeam(team);
         }
 
         public void Delete(TeamViewModel team)
         {
             Teams.Remove(team);
+            Tournament.DeleteTeam(new Team(team.TeamName, team.People));
         }
 
     }

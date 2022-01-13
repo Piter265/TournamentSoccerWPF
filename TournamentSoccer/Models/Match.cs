@@ -21,13 +21,15 @@ namespace TournamentSoccer.Models
         {
             Match match2 = (Match)match1.clone();
 
+            //List<Person> squad1 = new List<Person>(match2.Squad2);
+            //List<Person> squad2 = new List<Person>(match2.Squad1);
 
             // Swaping squads
             List<Person>  tmpSquad1 = new List<Person>();
             Squad2.ForEach(p => tmpSquad1.Add(p));
 
             List<Person> tmpSquad2 = new List<Person>();
-            Squad2.ForEach(p => tmpSquad1.Add(p));
+            Squad1.ForEach(p => tmpSquad2.Add(p));
 
             Squad2.Clear();
             tmpSquad1.ForEach(p => Squad2.Add(p));

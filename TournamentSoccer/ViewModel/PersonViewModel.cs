@@ -11,20 +11,14 @@ namespace TournamentSoccer.ViewModel
     {
         private readonly Person _person;
 
-        public string Name => _person.Name;
-        public string LastName => _person.LastName;
-        public int Age => _person.Age;
-        public string Function => _person.Function;
+        public string PersonName => _person.Name;
+        public string PersonLastName => _person.LastName;
+        public int PersonAge => _person.Age;
+        public string PersonFunction => _person.Function;
 
         public PersonViewModel(Person person)
         {
             _person = person;
-        }
-
-
-        public override string ToString()
-        {
-            return Name + LastName + Function + Age;
         }
     }
 }

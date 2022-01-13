@@ -16,7 +16,8 @@
         <ListView Margin="10,181,477,128" ItemsSource="{Binding Teams}" SelectedItem="{Binding SelectedTeam}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn/>
+                    <GridViewColumn Header="Name"  DisplayMemberBinding="{Binding TeamName}" Width="120"/>
+
                 </GridView>
             </ListView.View>
         </ListView>
