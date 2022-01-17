@@ -15,6 +15,6 @@ namespace TournamentSoccer.Models
         public void AddPlayer();
 
         public bool SetDisability(bool isDisable);
-        public void SetGroupAge(string groupAge);
+        public void SetAgeGroup(string groupAge);
     }
 }

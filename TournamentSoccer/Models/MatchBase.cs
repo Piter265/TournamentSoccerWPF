@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace TournamentSoccer.Models
 {
     public abstract class MatchBase : IMatchBase
@@ -14,22 +16,17 @@ namespace TournamentSoccer.Models
         public int ShotsOnTarget { get; set; }
         public int YellowCards { get; set; }
         public int RedCards { get; set; }
+        public Person Referee { get; }
 
-        public List<Person> Squad1;
-        public List<Person> Squad2;
+        public Team Team1 { get; }
+        public Team Team2 { get; }
 
 
-        public MatchBase(int goals, int assists, int shots, int shotsOnTarget, int yellowCards, int redCards)
+        public MatchBase(Team team1, Team team2, Referee referee)
         {
-            Goals = goals;
-            Assists = assists;
-            Shots = shots;
-            ShotsOnTarget = shotsOnTarget;
-            YellowCards = yellowCards;
-            RedCards = redCards;
-            Squad1 = new List<Person>();
-            Squad2 = new List<Person>();
-
+            Team1 = team1;
+            Team2 = team2;
+            Referee = referee;
         }
 
         public IMatchBase clone()

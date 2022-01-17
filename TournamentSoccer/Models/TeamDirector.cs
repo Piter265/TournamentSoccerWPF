@@ -27,7 +27,7 @@ namespace TournamentSoccer.Models
             this._builder.AddCoach();
             this._builder.AddPlayer();
             this._builder.SetDisability(true);
-            this._builder.SetGroupAge("U18");
+            this._builder.SetAgeGroup("U18");
         }
     }
 }

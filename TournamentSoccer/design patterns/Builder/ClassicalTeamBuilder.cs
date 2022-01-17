@@ -52,7 +52,7 @@ namespace TournamentSoccer.Models
             throw new NotImplementedException();
         }
 
-        public void SetGroupAge(string groupAge)
+        public void SetAgeGroup(string groupAge)
         {
             throw new NotImplementedException();
         }

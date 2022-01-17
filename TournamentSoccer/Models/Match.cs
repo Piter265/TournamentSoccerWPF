@@ -11,11 +11,14 @@ namespace TournamentSoccer.Models
 {
     public class Match : MatchBase
     {
-        public Match(int goals, int assists, int shots, int shotsOnTarget, int yellowCards, int redCards) 
-            : base(goals, assists, shots, shotsOnTarget, yellowCards, redCards)
+
+
+        public Match(Team team1, Team team2, Referee referee) : base(team1, team2, referee)
         {
 
         }
+
+
 
         public Match MakeRematch(Match match1)
         {
@@ -26,16 +29,16 @@ namespace TournamentSoccer.Models
 
             // Swaping squads
             List<Person>  tmpSquad1 = new List<Person>();
-            Squad2.ForEach(p => tmpSquad1.Add(p));
+            Team2.People.ForEach(p => tmpSquad1.Add(p));
 
             List<Person> tmpSquad2 = new List<Person>();
-            Squad1.ForEach(p => tmpSquad2.Add(p));
+            Team1.People.ForEach(p => tmpSquad2.Add(p));
 
-            Squad2.Clear();
-            tmpSquad1.ForEach(p => Squad2.Add(p));
+            Team2.People.Clear();
+            tmpSquad1.ForEach(p => Team2.People.Add(p));
 
-            Squad1.Clear();
-            tmpSquad2.ForEach(p => Squad1.Add(p));
+            Team1.People.Clear();
+            tmpSquad2.ForEach(p => Team1.People.Add(p));
 
 
             return match2;

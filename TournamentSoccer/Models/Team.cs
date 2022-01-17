@@ -20,9 +20,12 @@ namespace TournamentSoccer.Models
             People = new List<Person>();
         }
 
+
         public void AddPlayer(Person player)
         {
             People.Add(player);
         }
+
+        
     }
 }

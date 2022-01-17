@@ -12,5 +12,25 @@ namespace TournamentSoccer.Models
         {
 
         }
+
+        public void SetName(string name)
+        {
+            this.Name = name;
+        }
+        public string GetName()
+        {
+            return this.Name;
+        }
+
+
+        public void SetLastNameName(string lastName)
+        {
+            this.LastName = lastName;
+        }
+        public string GetLastName()
+        {
+            return this.Name;
+        }
+
     }
 }
