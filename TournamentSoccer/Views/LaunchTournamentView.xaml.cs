@@ -35,5 +35,10 @@ namespace TournamentSoccer.Views
             AddTeamView addTeam = new AddTeamView(_launchTournamentViewModel);
             addTeam.Show();
         }
+
+        private void checkBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
