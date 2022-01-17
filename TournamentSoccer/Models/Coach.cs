@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TournamentSoccer.Models
 {
-    class Coach : Person
+    public class Coach : Person
     {
 
         public Coach()

@@ -1,0 +1,44 @@
+﻿<Window x:Class="TournamentSoccer.Views.LaunchTournamentView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TournamentSoccer.Views"
+        mc:Ignorable="d" Height="450" Width="800">
+    <Grid>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="21,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15" FontWeight="Bold"><Run Language="pl-pl" Text="Launch"/><Run Text=" Tournament"/><LineBreak/><Run/></TextBlock>
+        <Button x:Name="button" Content="Create New Tournament" HorizontalAlignment="Left" Margin="607,351,0,0" VerticalAlignment="Top" Padding="5"/>
+        <ComboBox Margin="314,74,302,307" FontSize="15">
+            <ComboBoxItem>With Rematches</ComboBoxItem>
+            <ComboBoxItem>Without Rematches</ComboBoxItem>
+        </ComboBox>
+        <ComboBox Margin="563,74,53,307" FontSize="15">
+            <ComboBoxItem>Senior</ComboBoxItem>
+            <ComboBoxItem>U-19</ComboBoxItem>
+            <ComboBoxItem>U-18</ComboBoxItem>
+            <ComboBoxItem>U-17</ComboBoxItem>
+        </ComboBox>
+        <Button x:Name="addTeamBtn" Content="Add Team" HorizontalAlignment="Left" Margin="151,147,0,0" VerticalAlignment="Top" Padding="5" Click="addTeamBtn_Click"/>
+        <ListView Margin="10,181,477,128" ItemsSource="{Binding Teams}" SelectedItem="{Binding SelectedTeam}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Teams" HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top" Width="160" FontWeight="Bold" FontSize="15"/>
+        <Label Content="Refeeres" HorizontalAlignment="Left" Margin="477,152,0,0" VerticalAlignment="Top" Width="160" FontWeight="Bold" FontSize="15"/>
+        <Label Content="Rematches" HorizontalAlignment="Left" Margin="314,39,0,0" VerticalAlignment="Top" Width="160" FontWeight="Bold" FontSize="15"/>
+        <Button x:Name="button_Copy" Command="{Binding LoadRefeeres}" Content="Load Refeeres" HorizontalAlignment="Left" Margin="686,148,0,0" VerticalAlignment="Top" Padding="5"/>
+        <ListView Margin="477,181,10,128">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Delete Team" Command="{Binding DeleteTeam}" HorizontalAlignment="Left" Margin="229,147,0,0" VerticalAlignment="Top" Padding="5"/>
+        <CheckBox x:Name="checkBox" Content="Disabilities" HorizontalAlignment="Left" Margin="145,93,0,0" VerticalAlignment="Top" Checked="checkBox_Checked"/>
+        <Label Content="Age Group" HorizontalAlignment="Left" Margin="563,40,0,0" VerticalAlignment="Top" Width="160" FontWeight="Bold" FontSize="15"/>
+    </Grid>
+</Window>

@@ -5,14 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using TournamentSoccer.Models;
 
-namespace TournamentSoccer.ViewModel
+namespace TournamentSoccer
 {
-    public class MatchesListingViewModel : ViewModelBase
+    interface IRandAlgorithm
     {
-
-        public MatchesListingViewModel()
-        {
-
-        }
+        List<Match> DrawMatches(List<Team> teams);
     }
 }

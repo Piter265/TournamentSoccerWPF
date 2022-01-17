@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TournamentSoccer.Models
 {
-    class TeamDirector
+    public class TeamDirector
     {
         private ITeamBuilder _builder;
 
@@ -18,13 +18,16 @@ namespace TournamentSoccer.Models
         public void BuildClassicalTeam()
         {
             this._builder.AddCoach();
-            this._builder.AddPlayers();
+            this._builder.AddPlayer();
+            this._builder.SetDisability(false);
         }
 
         public void BuildUniqueTeam()
         {
             this._builder.AddCoach();
-            this._builder.AddPlayers();
+            this._builder.AddPlayer();
+            this._builder.SetDisability(true);
+            this._builder.SetGroupAge("U18");
         }
     }
 }

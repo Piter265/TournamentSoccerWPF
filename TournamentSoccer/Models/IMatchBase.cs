@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace TournamentSoccer.Models
 {
-    public class Stadium
+    public interface IMatchBase
     {
-        public string Name { get; set; }
-        public string City { get; set; }
+        IMatchBase clone();
     }
 }

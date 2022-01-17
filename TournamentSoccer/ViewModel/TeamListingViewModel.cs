@@ -8,17 +8,17 @@ using TournamentSoccer.Models;
 
 namespace TournamentSoccer.ViewModel
 {
-    class TeamsListingViewModel : ViewModelBase
+    public class TeamsListingViewModel : ViewModelBase
     {
         private readonly ObservableCollection<TeamViewModel> _teams;
 
         public IEnumerable<TeamViewModel> Teams => _teams;
 
-        public TeamsListingViewModel(Tournament tournament)
+        public TeamsListingViewModel()
         {
             _teams = new ObservableCollection<TeamViewModel>();
 
-            _teams.Add(new TeamViewModel(new Models.Team("Jaga", 1, 2, 3)));
+            //_teams.Add(new TeamViewModel(new Models.Team("Jaga", 1, 2, 3)));
         }
 
     }

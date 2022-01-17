@@ -10,22 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TournamentSoccer.ViewModel;
 
 namespace TournamentSoccer.Views
 {
     /// <summary>
-    /// Interaction logic for TableView.xaml
+    /// Interaction logic for LaunchTournamentWindow.xaml
     /// </summary>
-    public partial class TeamsListingView : UserControl
+    public partial class LaunchTournamentWindow : Window
     {
-        public TeamsListingView()
+        public LaunchTournamentWindow()
         {
             InitializeComponent();
-
-            DataContext = new TeamsListingViewModel();
         }
     }
 }

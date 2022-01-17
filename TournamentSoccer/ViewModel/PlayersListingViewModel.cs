@@ -8,33 +8,15 @@ using TournamentSoccer.Models;
 
 namespace TournamentSoccer.ViewModel
 {
-    class PlayersListingViewModel : ViewModelBase
+    public class PlayersListingViewModel : ViewModelBase
     {
-        private readonly ObservableCollection<PlayerViewModel> _players;
+        private ObservableCollection<PlayerViewModel> _players;
         public IEnumerable<PlayerViewModel> Players => _players;
 
-        //public ICommand Maksesc{get;}
-
-        private string _name;
-
-        public PlayersListingViewModel(Tournament tournament)
+        public PlayersListingViewModel()
         {
             _players = new ObservableCollection<PlayerViewModel>();
-            _players.Add(new PlayerViewModel(new Player("dupa", "krupa", "fiuta", 32)));
-        }
-
-        public string Name
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-                OnPropertyChanged(nameof(Name));
-            }
-        }            
+        }    
         
     }
 }

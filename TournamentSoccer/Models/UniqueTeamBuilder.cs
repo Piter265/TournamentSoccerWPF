@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace TournamentSoccer.Models
 {
-    public class ClassicalTeamBuilder : ITeamBuilder
+    public class UniqueTeamBuilder : ITeamBuilder
     {
-
         private LinkedList<Person> _people = new LinkedList<Person>();
 
-        public ClassicalTeamBuilder()
+        public UniqueTeamBuilder()
         {
             this.Reset();
         }

@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace TournamentSoccer.Models
 {
-    interface ITeamBuilder
+    public interface ITeamBuilder
     {
         public void SetName(string name);
         public Coach CreateCoach();
-        public Player CreatePlayer();
+        public Person CreatePlayer();
         public void AddCoach();
-        public void AddPlayers();
+        public void AddPlayer();
 
-        public void SetDisability(string disability);
-        public void SetGroupAge(int age);
+        public bool SetDisability(bool isDisable);
+        public void SetGroupAge(string groupAge);
     }
 }

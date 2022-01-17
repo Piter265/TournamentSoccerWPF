@@ -10,24 +10,33 @@ using TournamentSoccer.Models;
 
 namespace TournamentSoccer.ViewModel
 {
-    class AddTeamViewModel : ViewModelBase
+    public class AddTeamViewModel : ViewModelBase
     {
-        private readonly ObservableCollection<PlayerViewModel> _players;
+        private ObservableCollection<PersonViewModel> _people { get; set; }
+        
+        public PersonViewModel SelectedPerson { get; set; }
 
-        public IEnumerable<PlayerViewModel> Players => _players;
+        public IEnumerable<PersonViewModel> People => _people;
 
-        public ICommand SubmitCommand { get; }
+        public ICommand Submit { get; }
+        public ICommand AddToTeam { get; }
+        public ICommand DeleteFromTeam { get; }
 
-        public AddTeamViewModel(Tournament tournament)
+
+        public AddTeamViewModel(LaunchTournamentViewModel launchTournamentViewModel)
         {
-            _players = new ObservableCollection<PlayerViewModel>();
-            SubmitCommand = new AddTeamCommand(this, tournament);
+            _people = new ObservableCollection<PersonViewModel>();
+            Submit = new AddTeamCommand(this, launchTournamentViewModel);
+            AddToTeam = new AddToTeamCommand(this);
+            DeleteFromTeam = new DeleteFromTeamCommand(this);
         }
 
         private string _teamName;
-        private int _teamWins;
-        private int _teamLosses;
-        private int _teamDraws;
+        private string _personName;
+        private string _personLastName;
+        private string _personFunction;
+        private int _personAge;
+        private string _personType;
 
 
         public string TeamName
@@ -43,42 +52,84 @@ namespace TournamentSoccer.ViewModel
             }
         }
 
-        public int TeamWins
+
+        public string PersonName
         {
             get
             {
-                return _teamWins;
+                return _personName;
             }
             set
             {
-                _teamWins = value;
-                OnPropertyChanged(nameof(TeamWins));
-            }
-        }
-        public int TeamLosses
-        {
-            get
-            {
-                return _teamLosses;
-            }
-            set
-            {
-                _teamLosses = value;
-                OnPropertyChanged(nameof(TeamLosses));
+                _personName = value;
+                OnPropertyChanged(nameof(PersonName));
             }
         }
 
-        public int TeamDraws
+
+        public string PersonLastName
         {
             get
             {
-                return _teamDraws;
+                return _personLastName;
             }
             set
             {
-                _teamDraws = value;
-                OnPropertyChanged(nameof(TeamDraws));
+                _personLastName = value;
+                OnPropertyChanged(nameof(PersonLastName));
             }
+        }
+
+
+        public string PersonFunction
+        {
+            get
+            {
+                return _personFunction;
+            }
+            set
+            {
+                _personFunction = value;
+                OnPropertyChanged(nameof(PersonFunction));
+            }
+        }
+
+
+        public int PersonAge
+        {
+            get
+            {
+                return _personAge;
+            }
+            set
+            {
+                _personAge = value;
+                OnPropertyChanged(nameof(PersonAge));
+            }
+        }
+
+        /*
+        public string PersonType
+        {
+            get
+            {
+                return _personType;
+            }
+            set
+            {
+                _personType = value;
+                OnPropertyChanged(nameof(PersonType));
+            }
+        }*/
+
+        public void Add(Person person)
+        {
+            _people.Add(new PersonViewModel(person));
+        }
+
+        public void Delete(PersonViewModel person)
+        {
+            _people.Remove(person);
         }
     }
 }

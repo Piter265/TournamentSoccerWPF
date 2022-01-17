@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TournamentSoccer.Models
 {
-    class Player : Person
+    public class Player : Person
     {
         public int Goals { get; set; }
         public int Asists { get; set; }
