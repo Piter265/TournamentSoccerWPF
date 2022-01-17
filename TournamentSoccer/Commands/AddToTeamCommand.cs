@@ -8,7 +8,7 @@ using TournamentSoccer.ViewModel;
 
 namespace TournamentSoccer.Commands
 {
-    class AddToTeamCommand : CommandBase
+    public class AddToTeamCommand : CommandBase
     {
         private readonly AddTeamViewModel _addTeamViewModel;
 

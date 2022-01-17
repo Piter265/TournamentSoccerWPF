@@ -7,12 +7,12 @@
         mc:Ignorable="d" Height="450" Width="800">
     <Grid>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="21,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15" FontWeight="Bold"><Run Language="pl-pl" Text="Launch"/><Run Text=" Tournament"/><LineBreak/><Run/></TextBlock>
-        <Button x:Name="button" Content="Create New Tournament" HorizontalAlignment="Left" Margin="607,351,0,0" VerticalAlignment="Top" Padding="5"/>
-        <ComboBox Margin="314,74,302,307" FontSize="15">
+        <Button x:Name="createNewTournamentBtn" Content="Create New Tournament" HorizontalAlignment="Left" Margin="607,351,0,0" VerticalAlignment="Top" Padding="5" Click="createNewTournamentBtn_Click"/>
+        <ComboBox x:Name="rematchesComboBox" Margin="314,74,302,307" FontSize="15" SelectionChanged="rematchesComboBox_SelectionChanged">
             <ComboBoxItem>With Rematches</ComboBoxItem>
             <ComboBoxItem>Without Rematches</ComboBoxItem>
         </ComboBox>
-        <ComboBox Margin="563,74,53,307" FontSize="15">
+        <ComboBox x:Name="ageGroup" Margin="563,74,53,307" FontSize="15" SelectionChanged="ageGroup_SelectionChanged">
             <ComboBoxItem>Senior</ComboBoxItem>
             <ComboBoxItem>U-19</ComboBoxItem>
             <ComboBoxItem>U-18</ComboBoxItem>
@@ -38,7 +38,7 @@
             </ListView.View>
         </ListView>
         <Button Content="Delete Team" Command="{Binding DeleteTeam}" HorizontalAlignment="Left" Margin="229,147,0,0" VerticalAlignment="Top" Padding="5"/>
-        <CheckBox x:Name="checkBox" Content="Disabilities" HorizontalAlignment="Left" Margin="145,93,0,0" VerticalAlignment="Top" Checked="checkBox_Checked"/>
+        <CheckBox x:Name="disabilitiesCheckBox" Content="Disabilities" HorizontalAlignment="Left" Margin="145,93,0,0" VerticalAlignment="Top" Click="disabilitiesCheckBox_Click"/>
         <Label Content="Age Group" HorizontalAlignment="Left" Margin="563,40,0,0" VerticalAlignment="Top" Width="160" FontWeight="Bold" FontSize="15"/>
     </Grid>
 </Window>

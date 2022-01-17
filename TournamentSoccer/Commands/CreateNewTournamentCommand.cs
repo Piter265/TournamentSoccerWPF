@@ -7,19 +7,13 @@ using TournamentSoccer.ViewModel;
 
 namespace TournamentSoccer.Commands
 {
-    public class DeleteTeamCommand : CommandBase
+    public class CreateNewTournamentCommand : CommandBase
     {
-        private readonly LaunchTournamentViewModel _launchTournamentViewModel;//!!
+        private readonly LaunchTournamentViewModel _launchTournamentViewModel;
 
-        public DeleteTeamCommand(LaunchTournamentViewModel launchTournamentViewModel)
+        public CreateNewTournamentCommand(LaunchTournamentViewModel launchTournamentViewModel)
         {
             _launchTournamentViewModel = launchTournamentViewModel;
-        }
-
-
-        private void OnViewModelPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-
         }
 
         public override bool CanExecute(object parameter)
@@ -29,8 +23,8 @@ namespace TournamentSoccer.Commands
 
         public override void Execute(object parameter)
         {
-            _launchTournamentViewModel.Delete(_launchTournamentViewModel.SelectedTeam);
+            
         }
+
     }
 }
-

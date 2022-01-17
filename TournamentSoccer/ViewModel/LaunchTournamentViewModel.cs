@@ -15,26 +15,27 @@ namespace TournamentSoccer.ViewModel
     {
         public ObservableCollection<TeamViewModel> Teams { get; set; }
         public TeamViewModel SelectedTeam { get; set; }
+        public bool Disabilities { get; set; }
+        public string AgeGroup { get; set; }
 
         public ICommand DeleteTeam { get; }
-
+        public ICommand CreateNewTournament { get; }
 
         public LaunchTournamentViewModel()
         {
             Teams = new ObservableCollection<TeamViewModel>();
             DeleteTeam = new DeleteTeamCommand(this);
+            CreateNewTournament = new CreateNewTournamentCommand(this); 
         }
 
         public void Add(Team team)
         {
             Teams.Add(new TeamViewModel(team));
-            Tournament.AddTeam(team);
         }
 
         public void Delete(TeamViewModel team)
         {
             Teams.Remove(team);
-            Tournament.DeleteTeam(new Team(team.TeamName, team.People));
         }
 
     }

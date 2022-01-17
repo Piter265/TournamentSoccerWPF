@@ -13,16 +13,17 @@ namespace TournamentSoccer.Models
         public int Losses { get; set; }
         public int Draws { get; set; }
         public List<Person> People { get; set; }
+        public bool Disability { get; set; }
 
-        public Team(string name, List<Person> people)
+        public Team()
         {
-            Name = name;
-            People = new List<Person>();
+
         }
 
-        public void AddPlayer(Person player)
+        public Team(Team team)
         {
-            People.Add(player);
+            this.Name = Name;
+            this.People = team.People;
         }
     }
 }

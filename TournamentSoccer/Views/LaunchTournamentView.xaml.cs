@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TournamentSoccer.Models;
 using TournamentSoccer.ViewModel;
 
 namespace TournamentSoccer.Views
@@ -20,12 +21,10 @@ namespace TournamentSoccer.Views
     /// </summary>
     public partial class LaunchTournamentView : Window
     {
-        public readonly LaunchTournamentViewModel _launchTournamentViewModel;
+        public readonly LaunchTournamentViewModel _launchTournamentViewModel = new LaunchTournamentViewModel();
         public LaunchTournamentView()
         {
             InitializeComponent();
-
-            _launchTournamentViewModel= new LaunchTournamentViewModel();
 
             DataContext = _launchTournamentViewModel;
         }
@@ -36,9 +35,33 @@ namespace TournamentSoccer.Views
             addTeam.Show();
         }
 
-        private void checkBox_Checked(object sender, RoutedEventArgs e)
+        private void disabilitiesCheckBox_Click(object sender, RoutedEventArgs e)
         {
+            _launchTournamentViewModel.Disabilities = disabilitiesCheckBox.IsEnabled;
+        }
 
+        private void ageGroup_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            _launchTournamentViewModel.AgeGroup = ageGroup.Text;
+        }
+
+        private void createNewTournamentBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if(_launchTournamentViewModel.Teams.Count % 2 == 0)
+            {
+                MainWindow main = new MainWindow();
+                main.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Number of teams must be odd", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
+        private void rematchesComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Tournament.GetInstance().Rematches = rematchesComboBox.SelectedItem;
         }
     }
 }

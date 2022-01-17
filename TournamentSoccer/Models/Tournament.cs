@@ -8,8 +8,8 @@ namespace TournamentSoccer.Models
 {
     public sealed class Tournament
     {
-        public readonly string Name;
-        public readonly bool Rematches;
+        public string Name { get; set; }
+        public bool Rematches { get; set; }
         public static List<Match> Matches { get; set; } = new List<Match>();
         public static List<Team> Teams { get; set; } = new List<Team>();
         public static List<Referee> Referees { get; set; } = new List<Referee>();
@@ -39,7 +39,7 @@ namespace TournamentSoccer.Models
         }
 
 
-        public static List<Match>DrawMatches(List<Team> clubs)
+        public static List<Match> DrawMatches(List<Team> clubs)
         {
             List<Match> matches = new List<Match>();
 
@@ -58,7 +58,7 @@ namespace TournamentSoccer.Models
 
         public static void LoadRefeeres()
         {
-
+            
         }
     }
 }

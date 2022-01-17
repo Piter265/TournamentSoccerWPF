@@ -15,19 +15,18 @@ namespace TournamentSoccer.Models
             set { _builder = value; }
         }
 
-        public void BuildClassicalTeam()
+        public void BuildClassicalTeam(string name, List<Person> people)
         {
-            this._builder.AddCoach();
-            this._builder.AddPlayer();
-            this._builder.SetDisability(false);
+            this._builder.SetName(name);
+            this._builder.AddPlayersAndCoaches(people);
+            this._builder.SetDisability();
         }
 
-        public void BuildUniqueTeam()
+        public void BuildUniqueTeam(string name, List<Person> people)
         {
-            this._builder.AddCoach();
-            this._builder.AddPlayer();
-            this._builder.SetDisability(true);
-            this._builder.SetGroupAge("U18");
+            this._builder.SetName(name);
+            this._builder.AddPlayersAndCoaches(people);
+            this._builder.SetDisability();
         }
     }
 }

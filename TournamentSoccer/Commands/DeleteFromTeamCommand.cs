@@ -24,7 +24,7 @@ namespace TournamentSoccer.Commands
 
         public override void Execute(object parameter)
         {
-           _addTeamViewModel.Delete(_addTeamViewModel.SelectedPerson);
+            _addTeamViewModel.Delete(_addTeamViewModel.SelectedPerson);
         }
     }
 }

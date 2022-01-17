@@ -8,7 +8,7 @@ using TournamentSoccer.ViewModel;
 
 namespace TournamentSoccer.Commands
 {
-    class AddTeamCommand : CommandBase
+    public class AddTeamCommand : CommandBase
     {
         private readonly LaunchTournamentViewModel _launchTournamentViewModel;//!!
         private readonly AddTeamViewModel _addTeamViewModel;
@@ -37,7 +37,22 @@ namespace TournamentSoccer.Commands
                 .ToList()
                 .ForEach(person => people.Add(new Coach(person.PersonName, person.PersonLastName, person.PersonFunction, person.PersonAge)));
 
-            _launchTournamentViewModel.Add(new Team(_addTeamViewModel.TeamName, people));
+            var director = new TeamDirector();
+
+            if (_launchTournamentViewModel.Disabilities)
+            {
+                var builder = new UniqueTeamBuilder();
+                director.TeamBuilder = builder;
+                director.BuildUniqueTeam(_addTeamViewModel.TeamName, people);
+                _launchTournamentViewModel.Add(new Team(builder.GetTeam()));
+            }
+            else
+            {
+                var builder = new ClassicalTeamBuilder();
+                director.TeamBuilder = builder;
+                director.BuildClassicalTeam(_addTeamViewModel.TeamName, people);
+                _launchTournamentViewModel.Add(new Team(builder.GetTeam()));
+            }
         }
     }
 }
