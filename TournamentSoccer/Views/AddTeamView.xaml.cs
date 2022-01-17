@@ -42,5 +42,10 @@ namespace TournamentSoccer.Views
         {
             this.Close();
         }
+
+        private void cancelBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -29,9 +29,9 @@ namespace TournamentSoccer
 
         }
 
-       /* protected override void RegisterTypes(IContainerRegistry containerRegistry)
-        {
-            containerRegistry.Register<IView, AddTeamView>();
-        }*/
+        /* protected override void RegisterTypes(IContainerRegistry containerRegistry)
+         {
+             containerRegistry.Register<IView, AddTeamView>();
+         }*/
     }
 }
