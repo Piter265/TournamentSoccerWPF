@@ -8,14 +8,39 @@ namespace TournamentSoccer.Models
 {
     public class Referee : Person
     {
-        public Referee()
+
+
+        public Referee(string name, string lastName, string function, int age) : base(name, lastName, function, age)
         {
 
         }
 
-        public static List<Person> LoadRefeeres()
+        public Referee(Referee referee)
         {
-            return new List<Person>();
+            this.Name = referee.Name;
+            this.LastName = referee.LastName;
+            this.Function = referee.Function;
+            this.Age = referee.Age;
         }
+
+        public void SetName(string name)
+        {
+            this.Name = name;
+        }
+        public string GetName()
+        {
+            return this.Name;
+        }
+
+
+        public void SetLastNameName(string lastName)
+        {
+            this.LastName = lastName;
+        }
+        public string GetLastName()
+        {
+            return this.Name;
+        }
+
     }
 }
