@@ -29,6 +29,8 @@ namespace TournamentSoccer.design_patterns
             var referee = Tournament.Referees.First();
 
 
+            //Match match = new Match();
+
             // Drawing matches
             while (teamsToDraw.Count > 0)
             {

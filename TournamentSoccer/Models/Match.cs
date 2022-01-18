@@ -9,11 +9,24 @@ using System.Threading.Tasks;
 
 namespace TournamentSoccer.Models
 {
-    public class Match : MatchBase
+    public class Match 
     {
 
+        public int Goals { get; set; }
+        public int Assists { get; set; }
+        public int Shots { get; set; }
+        public int ShotsOnTarget { get; set; }
+        public int YellowCards { get; set; }
+        public int RedCards { get; set; }
 
-        public Match(Team team1, Team team2, Referee referee) : base(team1, team2, referee)
+
+        public Person Referee { get; }
+
+        public Team Team1 { get; }
+        public Team Team2 { get; }
+
+
+        public Match(Team team1, Team team2, Referee referee)
         {
 
         }
@@ -43,6 +56,18 @@ namespace TournamentSoccer.Models
 
             return match2;
         }
+        
 
+        // Deep copy
+        public Match clone()
+        {
+            Match matchClone = (Match)this.MemberwiseClone();
+
+            matchClone.Referee = new Referee(this.Referee);
+            matchClone.Team1 = new List
+            
+
+            return matchClone;
+        }
     }
 }

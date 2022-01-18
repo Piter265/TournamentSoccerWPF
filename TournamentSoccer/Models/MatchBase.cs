@@ -32,6 +32,7 @@ namespace TournamentSoccer.Models
         public IMatchBase clone()
         {
             return (MatchBase)this.MemberwiseClone();
+
         }
     }
 }
