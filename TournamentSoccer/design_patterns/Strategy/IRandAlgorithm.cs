@@ -7,7 +7,7 @@ using TournamentSoccer.Models;
 
 namespace TournamentSoccer
 {
-    interface IRandAlgorithm
+    public interface IRandAlgorithm
     {
         List<Match> DrawMatches(List<Team> teams);
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using TournamentSoccer.Models;
 using TournamentSoccer.ViewModel;
 
@@ -10,7 +11,7 @@ namespace TournamentSoccer.Commands
 {
     public class AddTeamCommand : CommandBase
     {
-        private readonly LaunchTournamentViewModel _launchTournamentViewModel;//!!
+        private readonly LaunchTournamentViewModel _launchTournamentViewModel;
         private readonly AddTeamViewModel _addTeamViewModel;
 
         public AddTeamCommand(AddTeamViewModel addTeamViewModel, LaunchTournamentViewModel launchTournamentViewModel)
@@ -37,9 +38,11 @@ namespace TournamentSoccer.Commands
                 .ToList()
                 .ForEach(person => people.Add(new Coach(person.PersonName, person.PersonLastName, person.PersonFunction, person.PersonAge)));
 
+            //_launchTournamentViewModel.Add(new Team(_addTeamViewModel.TeamName, people));
+
             var director = new TeamDirector();
 
-            if (_launchTournamentViewModel.Disabilities)
+            if (_addTeamViewModel.Disabilities)
             {
                 var builder = new UniqueTeamBuilder();
                 director.TeamBuilder = builder;

@@ -22,8 +22,14 @@ namespace TournamentSoccer.Models
 
         public Team(Team team)
         {
-            this.Name = Name;
+            this.Name = team.Name;
             this.People = new List<Person>(team.People);
+        }
+
+        public Team(string name, List<Person> people)
+        {
+            Name = name;
+            People = new List<Person>(people);
         }
     }
 }

@@ -6,42 +6,41 @@ using System.Threading.Tasks;
 
 namespace TournamentSoccer.Models
 {
-    public class UniqueTeamBuilder : ITeamBuilder
+    public class ClassicalTeamBuilder : ITeamBuilder
     {
-        private Team team = new Team(); 
-        private LinkedList<Person> _people = new LinkedList<Person>();
+        private Team team;
+        //private List<Person> _people = new List<Person>();
 
-        public UniqueTeamBuilder()
+        public ClassicalTeamBuilder()
         {
-            this._people = new LinkedList<Person>();
+            team = new Team(); 
         }
 
-        public void AddPlayersAndCoaches(List<Person> people)
+        public void AddPlayersAndCoaches(List <Person> people)
         {
-
+            team.People = people;
         }
 
         public void SetName(string name)
         {
-            this.team.Name = name;
+            team.Name = name;
         }
 
 
         public void SetDisability()
         {
-            team.Disability = true;
+            team.Disability = false;
         }
+
 
         public void SetGroupAge()
         {
             throw new NotImplementedException();
         }
 
-
         public Team GetTeam()
         {
             return team;
         }
-
     }
 }

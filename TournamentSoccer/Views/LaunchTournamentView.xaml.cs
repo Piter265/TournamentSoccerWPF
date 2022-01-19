@@ -35,11 +35,6 @@ namespace TournamentSoccer.Views
             addTeam.Show();
         }
 
-        private void disabilitiesCheckBox_Click(object sender, RoutedEventArgs e)
-        {
-            _launchTournamentViewModel.Disabilities = disabilitiesCheckBox.IsEnabled;
-        }
-
         private void ageGroup_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             _launchTournamentViewModel.AgeGroup = ageGroup.Text;
@@ -59,9 +54,9 @@ namespace TournamentSoccer.Views
             }
         }
 
-        private void rematchesComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void rematchesCheckBox_Click(object sender, RoutedEventArgs e)
         {
-            Tournament.GetInstance().Rematches = rematchesComboBox.SelectedItem;
+            _launchTournamentViewModel.Rematches = (bool)rematchesCheckBox.IsChecked;
         }
     }
 }

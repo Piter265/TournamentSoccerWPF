@@ -8,7 +8,7 @@ using TournamentSoccer.ViewModel;
 
 namespace TournamentSoccer.Commands
 {
-    public class AddToTeamCommand : CommandBase
+    class AddToTeamCommand : CommandBase
     {
         private readonly AddTeamViewModel _addTeamViewModel;
 
@@ -53,26 +53,24 @@ namespace TournamentSoccer.Commands
 
         public override void Execute(object parameter)
         {
-            /*if (_addTeamViewModel.PersonType.Equals("Player"))
+            var person = new Person(
+                _addTeamViewModel.PersonName,
+            _addTeamViewModel.PersonLastName,
+            _addTeamViewModel.PersonFunction,
+            _addTeamViewModel.PersonAge
+                );
+
+            //if (_addTeamViewModel.PersonType.Equals("Player"))
             {
-                var person = new Player(
-                _addTeamViewModel.PersonName,
-                _addTeamViewModel.PersonLastName,
-                _addTeamViewModel.PersonFunction,
-                _addTeamViewModel.PersonAge
-                );
-            }*/
+                var player = (Player)person.clone();
+                this._addTeamViewModel.Add(player);
+            }
             //else
-            //{
-            var person = new Coach(
-                _addTeamViewModel.PersonName,
-                _addTeamViewModel.PersonLastName,
-                _addTeamViewModel.PersonFunction,
-                _addTeamViewModel.PersonAge
-                );
-            //}
-            
-            this._addTeamViewModel.Add(person);
+            {
+                var coach = (Coach)person.clone();
+                this._addTeamViewModel.Add(coach);
+            }
+
         }
     }
 }

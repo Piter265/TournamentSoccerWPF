@@ -22,6 +22,7 @@ namespace TournamentSoccer.ViewModel
         public ICommand AddToTeam { get; }
         public ICommand DeleteFromTeam { get; }
 
+        public bool Disabilities { get; set; }
 
         public AddTeamViewModel(LaunchTournamentViewModel launchTournamentViewModel)
         {
@@ -108,7 +109,7 @@ namespace TournamentSoccer.ViewModel
             }
         }
 
-        /*
+        
         public string PersonType
         {
             get
@@ -120,7 +121,7 @@ namespace TournamentSoccer.ViewModel
                 _personType = value;
                 OnPropertyChanged(nameof(PersonType));
             }
-        }*/
+        }
 
         public void Add(Person person)
         {

@@ -15,7 +15,7 @@ namespace TournamentSoccer.ViewModel
     {
         public ObservableCollection<TeamViewModel> Teams { get; set; }
         public TeamViewModel SelectedTeam { get; set; }
-        public bool Disabilities { get; set; }
+        public bool Rematches { get; set; }
         public string AgeGroup { get; set; }
 
         public ICommand DeleteTeam { get; }

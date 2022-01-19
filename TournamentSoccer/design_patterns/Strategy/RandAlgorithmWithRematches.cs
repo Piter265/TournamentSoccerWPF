@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TournamentSoccer.design_patterns.Strategy;
 using TournamentSoccer.Models;
 
 namespace TournamentSoccer.design_patterns
 {
-    class RandAlgorithmWithoutRematches : IRandAlgorithm
+    class RandAlgorithmWithRematches : IRandAlgorithm
     {
+
+
         public List<Match> DrawMatches(List<Team> teams)
         {
             List<Match> matches = new List<Match>();
@@ -26,10 +27,8 @@ namespace TournamentSoccer.design_patterns
 
 
             // Get Reffere (Mockup)
-            var referee = Tournament.Referees.First();
+            var referee = new Referee("a", "b", "c", 43);
 
-
-            //Match match = new Match();
 
             // Drawing matches
             while (teamsToDraw.Count > 0)
@@ -46,8 +45,12 @@ namespace TournamentSoccer.design_patterns
 
                 var firstTeam = teamsToDraw.ElementAt(firstTeamNum);
                 var secondTeam = teamsToDraw.ElementAt(secondTeamNum);
-                Match newMatch = new Match(teamsToDraw.ElementAt(firstTeamNum), teamsToDraw.ElementAt(secondTeamNum), referee);
-                matches.Add(newMatch);
+
+                Match match = new Match(teamsToDraw.ElementAt(firstTeamNum), teamsToDraw.ElementAt(secondTeamNum), referee);
+                Match rematch = match.MakeRematch(match);
+
+                matches.Add(match);
+                matches.Add(rematch);
 
 
                 teamsToDraw.Remove(firstTeam);
@@ -58,6 +61,7 @@ namespace TournamentSoccer.design_patterns
 
 
             return matches;
+
         }
     }
 }

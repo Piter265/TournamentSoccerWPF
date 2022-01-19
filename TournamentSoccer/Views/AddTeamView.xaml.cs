@@ -21,11 +21,14 @@ namespace TournamentSoccer.Views
     /// </summary>
     public partial class AddTeamView : Window
     {
+        private AddTeamViewModel _addTeamViewModel;
         public AddTeamView(LaunchTournamentViewModel launchTournamentViewModel)
         {
             InitializeComponent();
 
-            DataContext = new AddTeamViewModel(launchTournamentViewModel);
+            _addTeamViewModel = new AddTeamViewModel(launchTournamentViewModel);
+
+            DataContext = _addTeamViewModel;
         }
 
         private void playerBtn_Checked(object sender, RoutedEventArgs e)
@@ -46,6 +49,11 @@ namespace TournamentSoccer.Views
         private void cancelBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void disabilitiesCheckBox_Click(object sender, RoutedEventArgs e)
+        {
+            _addTeamViewModel.Disabilities = (bool)disabilitiesCheckBox.IsChecked;
         }
     }
 }
