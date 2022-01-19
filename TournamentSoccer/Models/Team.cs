@@ -20,6 +20,12 @@ namespace TournamentSoccer.Models
             People = new List<Person>();
         }
 
+        public Team(Team team)
+        {
+            this.Name = Name;
+            this.People = new List<Person>(team.People);
+        }
+
 
         public void AddPlayer(Person player)
         {

@@ -12,18 +12,20 @@ namespace TournamentSoccer.Models
     public class Match 
     {
 
-        public int Goals { get; set; }
-        public int Assists { get; set; }
-        public int Shots { get; set; }
-        public int ShotsOnTarget { get; set; }
-        public int YellowCards { get; set; }
-        public int RedCards { get; set; }
+        public int Goals { get; set; } = 0;
+        public int Assists { get; set; } = 0;
+        public int Shots { get; set; } = 0;
+        public int ShotsOnTarget { get; set; } = 0;
+        public int YellowCards { get; set; } = 0;
+        public int RedCards { get; set; } = 0;
 
 
         public Person Referee { get; }
 
         public Team Team1 { get; }
         public Team Team2 { get; }
+
+
 
 
         public Match(Team team1, Team team2, Referee referee)
@@ -63,9 +65,9 @@ namespace TournamentSoccer.Models
         {
             Match matchClone = (Match)this.MemberwiseClone();
 
-            matchClone.Referee = new Referee(this.Referee);
-            matchClone.Team1 = new List
-            
+            matchClone.Referee = new Referee(Referee);
+            matchClone.Team1 = new Team(Team1);
+            matchClone.Team2 = new Team(Team2);
 
             return matchClone;
         }

@@ -17,7 +17,10 @@ namespace TournamentSoccer.Models
 
         public Referee(Referee referee)
         {
-
+            this.Name = referee.Name;
+            this.LastName = referee.LastName;
+            this.Function = referee.Function;
+            this.Age = referee.Age;
         }
 
         public void SetName(string name)

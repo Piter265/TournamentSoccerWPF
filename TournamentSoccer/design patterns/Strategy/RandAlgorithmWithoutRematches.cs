@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TournamentSoccer.design_patterns.Strategy;
 using TournamentSoccer.Models;
 
 namespace TournamentSoccer.design_patterns
@@ -28,8 +25,6 @@ namespace TournamentSoccer.design_patterns
             // Get Reffere (Mockup)
             var referee = Tournament.Referees.First();
 
-
-            //Match match = new Match();
 
             // Drawing matches
             while (teamsToDraw.Count > 0)
