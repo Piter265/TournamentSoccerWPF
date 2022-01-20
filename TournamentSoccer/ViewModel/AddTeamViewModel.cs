@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace TournamentSoccer.ViewModel
         public ICommand Submit { get; }
         public ICommand AddToTeam { get; }
         public ICommand DeleteFromTeam { get; }
-
+        public ICommand PlayerType { get; set; }
         public bool Disabilities { get; set; }
 
         public AddTeamViewModel(LaunchTournamentViewModel launchTournamentViewModel)
@@ -30,6 +31,7 @@ namespace TournamentSoccer.ViewModel
             Submit = new AddTeamCommand(this, launchTournamentViewModel);
             AddToTeam = new AddToTeamCommand(this);
             DeleteFromTeam = new DeleteFromTeamCommand(this);
+            //PlayerType = new PlayerTypeRadioBtn(executemethod, canexecutemethod);
         }
 
         private string _teamName;
@@ -109,7 +111,7 @@ namespace TournamentSoccer.ViewModel
             }
         }
 
-        
+        /*
         public string PersonType
         {
             get
@@ -121,7 +123,7 @@ namespace TournamentSoccer.ViewModel
                 _personType = value;
                 OnPropertyChanged(nameof(PersonType));
             }
-        }
+        }*/
 
         public void Add(Person person)
         {
@@ -132,5 +134,37 @@ namespace TournamentSoccer.ViewModel
         {
             _people.Remove(person);
         }
+
+
+        /*
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void OnPropertyChange(string propertyname)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyname));
+            }
+        }
+
+
+
+        private bool canexecutemethod(object parameter)
+        {
+            if (parameter != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void executemethod(object parameter)
+        {
+            PersonType = (string)parameter;
+        }*/
     }
 }
+

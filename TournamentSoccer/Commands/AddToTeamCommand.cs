@@ -60,15 +60,15 @@ namespace TournamentSoccer.Commands
             _addTeamViewModel.PersonAge
                 );
 
-            //if (_addTeamViewModel.PersonType.Equals("Player"))
+            //if (_addTeamViewModel.PlayerType)
             {
-                var player = (Player)person.clone();
-                this._addTeamViewModel.Add(player);
+                //var player = (Player)person.clone();
+                this._addTeamViewModel.Add(person);
             }
             //else
             {
-                var coach = (Coach)person.clone();
-                this._addTeamViewModel.Add(coach);
+                //var coach = (Coach)person.clone();
+                this._addTeamViewModel.Add(person);
             }
 
         }
