@@ -10,7 +10,6 @@ namespace TournamentSoccer.Models
     public sealed class Tournament
     {
         public string Name { get; set; }
-        public bool Rematches { get; set; }
         public List<Match> Matches { get; set; } = new List<Match>();
         public List<Team> Teams { get; set; } = new List<Team>();
         public List<Referee> Referees { get; set; } = new List<Referee>();
@@ -43,19 +42,7 @@ namespace TournamentSoccer.Models
 
         public List<Match> DrawMatches()
         {
-            List<Match> matches = new List<Match>();
-            if (Rematches)
-            {
-                Algorithm = new RandAlgorithmWithRematches();
-            }
-            else
-            {
-                Algorithm = new RandAlgorithmWithoutRematches();
-            }
-
-            Algorithm.DrawMatches(Teams);
-
-            return matches;
+            return Algorithm.DrawMatches(Teams);
         }
 
         public void AddTeam(Team team)

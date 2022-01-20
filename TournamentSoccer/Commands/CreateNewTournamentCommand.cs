@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TournamentSoccer.design_patterns;
 using TournamentSoccer.Models;
 using TournamentSoccer.ViewModel;
 
@@ -24,11 +25,27 @@ namespace TournamentSoccer.Commands
 
         public override void Execute(object parameter)
         {
+            //List<Team> teams = new List<Team>();
+
             _launchTournamentViewModel.Teams
                 .ToList()
-                .ForEach(team => Tournament.GetInstance().AddTeam((new Team(team.TeamName, team.People))));
+                .ForEach(team => {
+                Team newTeam = new Team(team.TeamName, team.People);
+                    Tournament.GetInstance().AddTeam(newTeam);
+                    //teams.Add(newTeam);
+                });
 
-            Tournament.GetInstance().DrawMatches();
+
+            if (_launchTournamentViewModel.Rematches)
+            {
+                Tournament.GetInstance().Algorithm = new RandAlgorithmWithRematches();
+            }
+            else
+            {
+                Tournament.GetInstance().Algorithm = new RandAlgorithmWithoutRematches();
+            }
+
+            
         }
 
     }
