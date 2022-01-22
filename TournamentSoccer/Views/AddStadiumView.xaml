@@ -1,0 +1,40 @@
+﻿<Window x:Class="TournamentSoccer.Views.AddStadiumView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TournamentSoccer.Views"
+        mc:Ignorable="d"
+        Title="AddStadiumView" Height="450" Width="800">
+    <Grid>
+
+        <ComboBox x:Name="stands" HorizontalAlignment="Left" Margin="90,69,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem>5000</ComboBoxItem>
+            <ComboBoxItem>10000</ComboBoxItem>
+            <ComboBoxItem>20000</ComboBoxItem>
+            <ComboBoxItem>None</ComboBoxItem>
+        </ComboBox>
+        <TextBox x:Name="textBox1_Copy" HorizontalAlignment="Left" Margin="90,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text=""/>
+        <Label x:Name="label" Content="Stands" HorizontalAlignment="Left" Margin="6,65,0,0" VerticalAlignment="Top" Width="116"/>
+        <Label x:Name="label_Copy" Content="Name" HorizontalAlignment="Left" Margin="6,32,0,0" VerticalAlignment="Top" Width="116"/>
+        <Label x:Name="label_Copy1" Content="Add Stadium" HorizontalAlignment="Left" Margin="4,2,0,0" VerticalAlignment="Top" Width="118" FontWeight="Bold"/>
+        <Button x:Name="button" Content="Add Stadium" HorizontalAlignment="Left" Margin="338,68,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.312,0.102"/>
+        <ListView x:Name="listView" Margin="10,182,350,53" ItemsSource="{Binding }" SelectedItem="{Binding }">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name"  DisplayMemberBinding="{Binding }" Width="120"/>
+                    <GridViewColumn Header="Localization"  DisplayMemberBinding="{Binding }" Width="120"/>
+                    <GridViewColumn Header="Stands"  DisplayMemberBinding="{Binding }" Width="100"/>
+                    <GridViewColumn Header="Turf"  DisplayMemberBinding="{Binding }" Width="37"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="submitBtn" Content="Submit" Command="{Binding Submit}" HorizontalAlignment="Left" Margin="724,353,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.698,0.703" Padding="5" Height="28" Width="50" Click="submitBtn_Click"/>
+        <Button x:Name="cancelBtn" Content="Cancel" HorizontalAlignment="Left" Margin="655,353,0,0" VerticalAlignment="Top" Padding="5" Height="28" Width="48" RenderTransformOrigin="0.188,0.001" Click="cancelBtn_Click"/>
+        <TextBlock x:Name="textBlock2_Copy1" HorizontalAlignment="Left" Margin="14,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"><Run Text="Added"/><Run Language="pl-pl" Text=" Stadiums"/><Run Text=":"/></TextBlock>
+        <Button x:Name="deleteFromTeam" Content="Delete Player" Command="{Binding }" HorizontalAlignment="Left" Margin="131,152,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.698,0.703" Padding="2" Height="23" Width="79"/>
+        <TextBox x:Name="textBox1_Copy1" HorizontalAlignment="Left" Margin="338,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text=""/>
+        <Label x:Name="label_Copy2" Content="City" HorizontalAlignment="Left" Margin="255,32,0,0" VerticalAlignment="Top" Width="116"/>
+
+    </Grid>
+</Window>

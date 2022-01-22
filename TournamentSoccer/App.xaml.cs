@@ -21,7 +21,7 @@ namespace TournamentSoccer
 
         public App()
         {
-            _tournament = Tournament.GetInstance();
+
         }
 
         protected override void OnStartup(StartupEventArgs e)

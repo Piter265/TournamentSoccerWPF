@@ -18,6 +18,7 @@ namespace TournamentSoccer.Commands
 
         public abstract void Execute(object parameter);
 
+
         protected void OnExecutedChanged()
         {
             CanExecuteChanged?.Invoke(this, new EventArgs());

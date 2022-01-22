@@ -25,24 +25,28 @@ namespace TournamentSoccer.Commands
 
         public override void Execute(object parameter)
         {
+            //Tournament tournament = (Tournament)parameter;
+            Tournament tournament = Tournament.GetInstance();
+
             //List<Team> teams = new List<Team>();
 
             _launchTournamentViewModel.Teams
                 .ToList()
                 .ForEach(team => {
                 Team newTeam = new Team(team.TeamName, team.People);
-                    Tournament.GetInstance().AddTeam(newTeam);
+                    tournament.AddTeam(newTeam);
                     //teams.Add(newTeam);
                 });
 
 
             if (_launchTournamentViewModel.Rematches)
             {
-                Tournament.GetInstance().Algorithm = new RandAlgorithmWithRematches();
+                
+                tournament.Algorithm = new RandAlgorithmWithRematches();
             }
             else
             {
-                Tournament.GetInstance().Algorithm = new RandAlgorithmWithoutRematches();
+                tournament.Algorithm = new RandAlgorithmWithoutRematches();
             }
 
             
