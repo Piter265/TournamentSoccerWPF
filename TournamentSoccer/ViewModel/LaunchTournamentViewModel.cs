@@ -21,11 +21,14 @@ namespace TournamentSoccer.ViewModel
         public ICommand DeleteTeam { get; }
         public ICommand CreateNewTournament { get; }
 
+        Tournament tournament = Tournament.GetInstance();
+
+
         public LaunchTournamentViewModel()
         {
             Teams = new ObservableCollection<TeamViewModel>();
             DeleteTeam = new DeleteTeamCommand(this);
-            CreateNewTournament = new CreateNewTournamentCommand(this); 
+            CreateNewTournament = new CreateNewTournamentCommand(this, tournament); 
         }
 
         public void Add(Team team)
