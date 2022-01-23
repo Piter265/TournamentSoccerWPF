@@ -10,5 +10,16 @@ namespace TournamentSoccer.Models
     {
         public string Name { get; set; }
         public string City { get; set; }
+
+        public Stadium()
+        {
+
+        }
+
+        public Stadium(Stadium stadium)
+        {
+            Name = stadium.Name;
+            City = stadium.City;
+        }
     }
 }

@@ -14,7 +14,6 @@ namespace TournamentSoccer.Models
         public List<Match> Matches { get; set; } = new List<Match>();
         public List<Team> Teams { get; set; } = new List<Team>();
         public List<Referee> Referees { get; set; } = new List<Referee>();
-        public IRandAlgorithm Algorithm { get; set; }
         private static readonly object _lock = new object();
 
         private static Tournament _instance;
@@ -41,9 +40,9 @@ namespace TournamentSoccer.Models
         }
 
 
-        public List<Match> DrawMatches()
+        public List<Match> DrawMatches(IRandAlgorithm algorithm)
         {
-            return Algorithm.DrawMatches(Teams);
+            return algorithm.DrawMatches(Teams);
         }
 
         public void AddTeam(Team team)
@@ -58,7 +57,7 @@ namespace TournamentSoccer.Models
 
         public void LoadRefeeres()
         {
-
+            //klasa wczytujaca za fasada
         }
 
         public bool LoadTournamentFromFile()

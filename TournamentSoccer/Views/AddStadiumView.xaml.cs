@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TournamentSoccer.ViewModel;
+
 
 namespace TournamentSoccer.Views
 {
@@ -19,7 +21,35 @@ namespace TournamentSoccer.Views
     /// </summary>
     public partial class AddStadiumView : Window
     {
+        private AddStadiumViewModel _addStadiumViewModel;
 
+        public AddStadiumView(LaunchTournamentViewModel launchTournamentViewModel)
+        {
+            InitializeComponent();
 
+            _addStadiumViewModel = new AddStadiumViewModel(launchTournamentViewModel);
+
+            DataContext = _addStadiumViewModel;
+        }
+
+        private void cancelBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void submitBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void matchStadiumRadioBtn_Click(object sender, RoutedEventArgs e)
+        {
+            _addStadiumViewModel.MatchStadium = true;
+        }
+
+        private void trainingStadiumRadioBtn_Click(object sender, RoutedEventArgs e)
+        {
+            _addStadiumViewModel.MatchStadium = false;
+        }
     }
 }

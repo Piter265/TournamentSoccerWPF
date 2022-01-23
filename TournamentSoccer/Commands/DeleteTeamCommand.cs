@@ -29,7 +29,7 @@ namespace TournamentSoccer.Commands
 
         public override void Execute(object parameter)
         {
-            _launchTournamentViewModel.Delete(_launchTournamentViewModel.SelectedTeam);
+            _launchTournamentViewModel.DeleteTeam(_launchTournamentViewModel.SelectedTeam);
         }
     }
 }

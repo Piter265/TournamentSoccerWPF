@@ -29,7 +29,6 @@ namespace TournamentSoccer.Commands
         {
             //Tournament tournament = (Tournament)parameter;
             //Tournament tournament = Tournament.GetInstance();
-
             //List<Team> teams = new List<Team>();
 
             _launchTournamentViewModel.Teams
@@ -40,7 +39,6 @@ namespace TournamentSoccer.Commands
                     //teams.Add(newTeam);
                 });
 
-
             if (_launchTournamentViewModel.Rematches)
             {
                 _tournament.Algorithm = new RandAlgorithmWithRematches();
@@ -49,9 +47,8 @@ namespace TournamentSoccer.Commands
             {
                 _tournament.Algorithm = new RandAlgorithmWithoutRematches();
             }
-
-            
         }
+
 
     }
 }
