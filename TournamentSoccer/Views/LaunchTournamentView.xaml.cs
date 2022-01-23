@@ -31,7 +31,7 @@ namespace TournamentSoccer.Views
 
         private void addTeamBtn_Click(object sender, RoutedEventArgs e)
         {
-            AddTeamView addTeam = new AddTeamView(_launchTournamentViewModel);
+            AddStadiumView addTeam = new AddTeamView(_launchTournamentViewModel);
             addTeam.Show();
         }
 

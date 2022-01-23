@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using TournamentSoccer.Models;
 
 namespace TournamentSoccer.Commands
 {
@@ -11,12 +12,16 @@ namespace TournamentSoccer.Commands
     {
         public event EventHandler CanExecuteChanged;
 
+
         public virtual bool CanExecute(object parameter)
         {
             return true;
         }
 
         public abstract void Execute(object parameter);
+
+
+
 
         protected void OnExecutedChanged()
         {

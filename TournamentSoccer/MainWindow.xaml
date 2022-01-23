@@ -74,8 +74,12 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Grid Margin="5 5" >
-        <TabControl Style="{DynamicResource TabControlStyle1}">
+    <Grid Margin="5,49,5,5" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="101*"/>
+            <ColumnDefinition Width="294*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl Style="{DynamicResource TabControlStyle1}" Grid.ColumnSpan="2">
             <TabItem Header="Matches">
                 <views:MatchesListingView/>
             </TabItem>
@@ -86,5 +90,6 @@
                 <views:PlayersListingView/>
             </TabItem>
         </TabControl>
+        <Button x:Name="saveTournamentBtn" Content="Save Tournament" HorizontalAlignment="Left" Margin="465,-37,0,0" VerticalAlignment="Top" Width="102" Click="button_Click" Grid.Column="1"/>
     </Grid>
 </Window>

@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TournamentSoccer.design_patterns;
+using TournamentSoccer.FilesHandlers;
 
 namespace TournamentSoccer.Models
 {
     public sealed class Tournament
     {
         public string Name { get; set; }
-        public bool Rematches { get; set; }
         public List<Match> Matches { get; set; } = new List<Match>();
         public List<Team> Teams { get; set; } = new List<Team>();
         public List<Referee> Referees { get; set; } = new List<Referee>();
@@ -58,6 +58,26 @@ namespace TournamentSoccer.Models
         public void LoadRefeeres()
         {
             //klasa wczytujaca za fasada
+        }
+
+        public bool LoadTournamentFromFile()
+        {
+            LoadFormFile loadFromFile = new LoadFormFile(_instance);
+
+            // if false there is no file to load
+            if(!loadFromFile.LoadData())
+            {
+                return false;
+            }
+
+            return true;
+            
+        }
+
+        public void SaveTournamentToFile()
+        {
+            SavetoFile savetoFile = new SavetoFile(_instance);
+            savetoFile.SaveData();
         }
     }
 }

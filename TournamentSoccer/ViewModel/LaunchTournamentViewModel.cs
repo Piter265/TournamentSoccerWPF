@@ -26,9 +26,13 @@ namespace TournamentSoccer.ViewModel
 
         public ICommand CreateNewTournament { get; }
 
+        Tournament tournament = Tournament.GetInstance();
+
+
         public LaunchTournamentViewModel()
         {
             Teams = new ObservableCollection<TeamViewModel>();
+
             DeleteTeamCommand = new DeleteTeamCommand(this);
             CreateNewTournament = new CreateNewTournamentCommand(this);
             Stadiums = new ObservableCollection<StadiumViewModel>();

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TournamentSoccer.ViewModel;
 
+
 namespace TournamentSoccer.Views
 {
     /// <summary>
