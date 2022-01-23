@@ -17,11 +17,9 @@ namespace TournamentSoccer
     /// </summary>
     public partial class App : Application
     {
-        private readonly Tournament _tournament;
-
         public App()
         {
-            _tournament = Tournament.GetInstance();
+            
         }
 
         protected override void OnStartup(StartupEventArgs e)

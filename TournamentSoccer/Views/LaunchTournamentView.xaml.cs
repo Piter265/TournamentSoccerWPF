@@ -35,11 +35,6 @@ namespace TournamentSoccer.Views
             addTeam.Show();
         }
 
-        private void ageGroup_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            _launchTournamentViewModel.AgeGroup = ageGroup.Text;
-        }
-
         private void createNewTournamentBtn_Click(object sender, RoutedEventArgs e)
         {
             if(_launchTournamentViewModel.Teams.Count % 2 == 0)
@@ -54,9 +49,10 @@ namespace TournamentSoccer.Views
             }
         }
 
-        private void rematchesCheckBox_Click(object sender, RoutedEventArgs e)
+        private void addStadiumBtn_Click(object sender, RoutedEventArgs e)
         {
-            _launchTournamentViewModel.Rematches = (bool)rematchesCheckBox.IsChecked;
+            AddStadiumView addStadium = new AddStadiumView(_launchTournamentViewModel);
+            addStadium.Show();
         }
     }
 }

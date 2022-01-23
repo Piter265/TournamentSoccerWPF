@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using TournamentSoccer.design_patterns;
 using TournamentSoccer.Models;
 using TournamentSoccer.ViewModel;
 
@@ -38,24 +39,7 @@ namespace TournamentSoccer.Commands
                 .ToList()
                 .ForEach(person => people.Add(new Coach(person.PersonName, person.PersonLastName, person.PersonFunction, person.PersonAge)));
 
-            //_launchTournamentViewModel.Add(new Team(_addTeamViewModel.TeamName, people));
-
-            var director = new TeamDirector();
-
-            if (_addTeamViewModel.Disabilities)
-            {
-                var builder = new UniqueTeamBuilder();
-                director.TeamBuilder = builder;
-                director.BuildUniqueTeam(_addTeamViewModel.TeamName, people);
-                _launchTournamentViewModel.Add(new Team(builder.GetTeam()));
-            }
-            else
-            {
-                var builder = new ClassicalTeamBuilder();
-                director.TeamBuilder = builder;
-                director.BuildClassicalTeam(_addTeamViewModel.TeamName, people);
-                _launchTournamentViewModel.Add(new Team(builder.GetTeam()));
-            }
+            _launchTournamentViewModel.AddTeam(new Team(_addTeamViewModel.TeamName, people));
         }
     }
 }
