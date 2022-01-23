@@ -43,7 +43,6 @@ namespace TournamentSoccer.Commands
 
             if (_launchTournamentViewModel.Rematches)
             {
-                
                 _tournament.Algorithm = new RandAlgorithmWithRematches();
             }
             else

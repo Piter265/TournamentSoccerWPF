@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using TournamentSoccer.Models;
 
 namespace TournamentSoccer
 {
@@ -23,6 +26,11 @@ namespace TournamentSoccer
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            Tournament.GetInstance().SaveTournamentToFile();
         }
     }
 }

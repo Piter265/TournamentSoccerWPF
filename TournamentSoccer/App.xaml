@@ -7,7 +7,7 @@
              StartupUri="StartWindow.xaml">
     <Application.Resources>
         <DataTemplate DataType="{x:Type viewmodels:AddTeamViewModel}">
-            <views:AddStadiumView/>
+            <!--<views:AddStadiumView/>-->
         </DataTemplate>
     </Application.Resources>
 </Application>

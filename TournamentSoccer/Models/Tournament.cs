@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TournamentSoccer.design_patterns;
+using TournamentSoccer.FilesHandlers;
 
 namespace TournamentSoccer.Models
 {
@@ -58,6 +59,26 @@ namespace TournamentSoccer.Models
         public void LoadRefeeres()
         {
 
+        }
+
+        public bool LoadTournamentFromFile()
+        {
+            LoadFormFile loadFromFile = new LoadFormFile(_instance);
+
+            // if false there is no file to load
+            if(!loadFromFile.LoadData())
+            {
+                return false;
+            }
+
+            return true;
+            
+        }
+
+        public void SaveTournamentToFile()
+        {
+            SavetoFile savetoFile = new SavetoFile(_instance);
+            savetoFile.SaveData();
         }
     }
 }

@@ -17,7 +17,6 @@ namespace TournamentSoccer
     /// </summary>
     public partial class App : Application
     {
-        private readonly Tournament _tournament;
 
         public App()
         {
