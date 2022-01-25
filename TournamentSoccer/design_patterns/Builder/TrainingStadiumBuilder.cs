@@ -26,7 +26,7 @@ namespace TournamentSoccer.design_patterns.Builder
             _stadium.Name = name;
         }
 
-        public void SetTribune(int quantity)
+        public void SetTribuneSize(int quantity)
         {
             _stadium.TribuneSize = quantity;
         }

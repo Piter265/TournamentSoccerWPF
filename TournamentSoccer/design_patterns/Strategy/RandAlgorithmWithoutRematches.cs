@@ -8,9 +8,9 @@ using TournamentSoccer.Models;
 
 namespace TournamentSoccer.design_patterns
 {
-    class RandAlgorithmWithoutRematches : IRandAlgorithm
+    public class RandAlgorithmWithoutRematches : IRandAlgorithm
     {
-        public List<Match> DrawMatches(List<Team> teams)
+        public List<Match> DrawMatches(List<Team> teams, List<Referee> referees, List<Stadium> stadiums)
         {
             List<Match> matches = new List<Match>();
             List<Team> teamsToDraw = new List<Team>();
@@ -20,42 +20,32 @@ namespace TournamentSoccer.design_patterns
             {
                 Team team = t;
                 teamsToDraw.Add(team);
-                //Match newMatch = new Match(0, 0, 0, 0, 0, 0);
-                //matches.Add(newMatch);
             });
 
 
-            // Get Reffere (Mockup)
-            var referee = new Referee("a", "b", "c", 43);
-
-
-            //Match match = new Match();
-
             // Drawing matches
-            while (teamsToDraw.Count > 0)
+            teams.ForEach(t1 =>
             {
-                Random rand = new Random();
-
-                int firstTeamNum = rand.Next(0, teamsToDraw.Count);
-                int secondTeamNum = -1;
-
-                do
+                teamsToDraw.ForEach(t2 =>
                 {
-                    secondTeamNum = rand.Next(0, teamsToDraw.Count);
-                } while (firstTeamNum == secondTeamNum);
+                    if (t1 != t2)
+                    {
+                        // Get Reffere 
+                        Random rand = new Random();
+                        int refereeNum = rand.Next(0, referees.Count);
+                        Referee referee = referees.ElementAt(refereeNum);
 
-                var firstTeam = teamsToDraw.ElementAt(firstTeamNum);
-                var secondTeam = teamsToDraw.ElementAt(secondTeamNum);
-                Match newMatch = new Match(teamsToDraw.ElementAt(firstTeamNum), teamsToDraw.ElementAt(secondTeamNum), referee);
-                matches.Add(newMatch);
+                        //Get Stadium
+                        int stadiumNum = rand.Next(0, stadiums.Count);
+                        Stadium stadium = stadiums.ElementAt(stadiumNum);
 
+                        Match newMatch = new Match(t1, t2, referee, stadium);
+                        matches.Add(newMatch);
+                    }
+                });
 
-                teamsToDraw.Remove(firstTeam);
-                teamsToDraw.Remove(secondTeam);
-
-            }
-
-
+                teamsToDraw.Remove(t1); // Removing team to avoid rematches
+            });
 
             return matches;
         }

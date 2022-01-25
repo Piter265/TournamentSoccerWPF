@@ -21,6 +21,7 @@
         <TextBox x:Name="positionTextBox" Text="{Binding PersonFunction, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="358,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBlock x:Name="textBlock1_Copy4" HorizontalAlignment="Left" Margin="270,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.551,1.323"><Run Language="pl-pl" Text="Age:"/></TextBlock>
         <TextBox Text="{Binding PersonAge, UpdateSourceTrigger=PropertyChanged}" x:Name="ageTextBox" HorizontalAlignment="Left" Margin="358,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
         <ListView x:Name="listView" Margin="10,225,357,10" ItemsSource="{Binding People}" SelectedItem="{Binding SelectedPerson}">
             <ListView.View>
                 <GridView>
@@ -31,11 +32,10 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <CheckBox x:Name="disabilitiesCheckBox" Content="Disabilities" HorizontalAlignment="Left" Margin="100,90,0,0" VerticalAlignment="Top" Click="disabilitiesCheckBox_Click"/>
         <TextBlock x:Name="textBlock2_Copy1" HorizontalAlignment="Left" Margin="10,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"><Run FontWeight="Bold" Text="Added Players:"/></TextBlock>
         <Button Command="{Binding AddToTeam}" x:Name="addToTeamBtn" HorizontalAlignment="Left" Margin="392,179,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.698,0.703" Padding="5" Height="28" Width="86"/>
-        <RadioButton x:Name="playerBtn" Content="Player" HorizontalAlignment="Left" Margin="270,11,0,0" VerticalAlignment="Top" Height="15" Width="51" Checked="playerBtn_Checked"/>
-        <RadioButton x:Name="coachBtn" Content="Coach" HorizontalAlignment="Left" Margin="426,11,0,0" VerticalAlignment="Top" Height="15" Width="52" Checked="coachBtn_Checked"/>
+        <RadioButton x:Name="playerBtn" Content="Player" HorizontalAlignment="Left" Margin="270,11,0,0" VerticalAlignment="Top" Height="15" Width="51" Checked="playerBtn_Checked" Click="playerBtn_Click"/>
+        <RadioButton x:Name="coachBtn" Content="Coach" HorizontalAlignment="Left" Margin="426,11,0,0" VerticalAlignment="Top" Height="15" Width="52" Checked="coachBtn_Checked" Click="coachBtn_Click"/>
         <TextBlock x:Name="textBlock1_Copy3" HorizontalAlignment="Left" Margin="270,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.551,1.323"><Run Language="en-gb" Text="Position"/><Run Text=":"/></TextBlock>
         <Button x:Name="deleteFromTeam" Content="Delete Player" Command="{Binding DeleteFromTeam}" HorizontalAlignment="Left" Margin="127,196,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.698,0.703" Padding="5" Height="28" Width="96"/>
     </Grid>

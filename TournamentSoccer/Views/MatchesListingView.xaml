@@ -7,28 +7,19 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <ListView ItemsSource="{Binding MatchesCollection}">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Width="150" Header="" DisplayMemberBinding="{Binding TeamName1}" />
-                    <GridViewColumn Width="20" Header="VS" />
-                    <GridViewColumn Width="150" Header="" DisplayMemberBinding="{Binding TeamName1}" />
-                    <GridViewColumn Width="60" Header="Score" DisplayMemberBinding="{Binding Goals}" />
-                    <GridViewColumn Width="60" Header="Asists" DisplayMemberBinding="{Binding Asists}" />
-                    <GridViewColumn Width="70" Header="Shots" DisplayMemberBinding="{Binding Shots}" />
-                    <GridViewColumn Width="90" Header="Shots On Target" DisplayMemberBinding="{Binding ShotsOnTarget}" />
-                    <GridViewColumn Width="90" Header="Yellow Cards" DisplayMemberBinding="{Binding YellowCards}" />
-                    <GridViewColumn Width="90" Header="Red Cards" DisplayMemberBinding="{Binding RedCards}" />
-                    <GridViewColumn Width="90" Header="Referee" DisplayMemberBinding="{Binding RefereeName}" />
-                    <GridViewColumn Header="">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button>Edit</Button>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <DataGrid x:Name="matchesList" ItemsSource="{Binding Matches}" Margin="0,10,10,0" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="" Binding="{Binding Team1.Name, UpdateSourceTrigger=PropertyChanged}" Width="140"/>
+                <DataGridTextColumn Header="VS"/>
+                <DataGridTextColumn Header="" Binding="{Binding Team2.Name, UpdateSourceTrigger=PropertyChanged}" Width="140"/>
+                <DataGridTextColumn Header="Goals" Binding="{Binding Goals, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Asists" Binding="{Binding Assists, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Shots" Binding="{Binding Shots, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Shots On Target" Binding="{Binding ShotsOnTarget, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Yellow Cards" Binding="{Binding YellowCards, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Red Cards" Binding="{Binding RedCards, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Red Cards" Binding="{Binding RedCards, UpdateSourceTrigger=PropertyChanged}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

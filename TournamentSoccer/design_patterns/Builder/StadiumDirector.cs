@@ -18,7 +18,7 @@ namespace TournamentSoccer.design_patterns.Builder
         public void BuildMatchStadium(string name, string city, int quantity)
         {
             this._builder.SetName(name);
-            this._builder.SetTribune(quantity);
+            this._builder.SetTribuneSize(quantity);
             this._builder.SetCity(city);
             this._builder.SetTypeTurf();
             this._builder.SetRoof();
@@ -28,7 +28,7 @@ namespace TournamentSoccer.design_patterns.Builder
         public void BuildTrainingStadium(string name, string city, int quantity)
         {
             this._builder.SetName(name);
-            this._builder.SetTribune(quantity);
+            this._builder.SetTribuneSize(quantity);
             this._builder.SetCity(city);
             this._builder.SetTypeTurf();
             this._builder.SetRoof();

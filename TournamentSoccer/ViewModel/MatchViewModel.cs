@@ -9,7 +9,7 @@ namespace TournamentSoccer.ViewModel
 {
     public class MatchViewModel
     {
-        private readonly Match _match;
+        private Match _match;
 
         public string TeamName1 => _match.Team1.Name;
         public string TeamName2 => _match.Team2.Name;

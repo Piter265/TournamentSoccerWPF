@@ -34,7 +34,6 @@ namespace TournamentSoccer.Commands
                 .ForEach(team => {
                     Team newTeam = new Team(team.TeamName, team.People);
                     _tournament.AddTeam(newTeam);
-                    
                     //teams.Add(newTeam);
                 });
 
@@ -42,8 +41,7 @@ namespace TournamentSoccer.Commands
                 .ToList()
                 .ForEach(stadium =>
                 {
-                    Stadium newStadium = new Stadium();//TODO - przekazywanie pól
-                    _tournament.AddStadium(newStadium);
+                    _tournament.AddStadium(stadium.Stadium);
                 });
 
             IRandAlgorithm algorithm;
@@ -57,10 +55,13 @@ namespace TournamentSoccer.Commands
                 algorithm = new RandAlgorithmWithoutRematches();
             }
 
-            _tournament.DrawMatches(algorithm);
+            _tournament.LoadRefeeres();
+
+            var matches = _tournament.DrawAndAddMatches(algorithm);
+
+            matches.ToList().ForEach(match => MatchesListingViewModel.Matches.Add(match));
 
         }
-
 
     }
 }

@@ -9,17 +9,17 @@ namespace TournamentSoccer.ViewModel
 {
     public class StadiumViewModel : ViewModelBase
     {
-        private readonly Stadium _stadium;
+        public Stadium Stadium { get; }
 
-        public string StadiumName => _stadium.Name;
-        public string StadiumCity => _stadium.City;
-        public int StadiumTribuneSize => _stadium.TribuneSize;
-        public string StadiumSize => _stadium.StadiumSize;
+        public string StadiumName => Stadium.Name;
+        public string StadiumCity => Stadium.City;
+        public int StadiumTribuneSize => Stadium.TribuneSize;
+        public string StadiumSize => Stadium.StadiumSize;
 
 
         public StadiumViewModel(Stadium stadium)
         {
-            _stadium = stadium;
+            Stadium = stadium;
         }
     }
 }

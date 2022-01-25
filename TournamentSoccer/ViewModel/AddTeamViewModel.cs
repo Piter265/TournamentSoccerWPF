@@ -18,7 +18,6 @@ namespace TournamentSoccer.ViewModel
         public PersonViewModel SelectedPerson { get; set; }
 
         public IEnumerable<PersonViewModel> People => _people;
-
         public bool PlayerType { get; set; }
 
         public ICommand Submit { get; }

@@ -37,8 +37,12 @@ namespace TournamentSoccer.Commands
             List<Person> people = new List<Person>();
             _addTeamViewModel.People
                 .ToList()
-                .ForEach(person => people.Add(new Coach(person.PersonName, person.PersonLastName, person.PersonFunction, person.PersonAge)));//TODO - get person type
-
+                .ForEach(person =>
+                {
+                    if (person.Person is Player) people.Add(new Player(person.PersonName, person.PersonLastName, person.PersonFunction, person.PersonAge));
+                    else people.Add(new Coach(person.PersonName, person.PersonLastName, person.PersonFunction, person.PersonAge));
+                });
+            
             _launchTournamentViewModel.AddTeam(new Team(_addTeamViewModel.TeamName, people));
         }
     }

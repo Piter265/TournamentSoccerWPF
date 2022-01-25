@@ -55,7 +55,7 @@ namespace TournamentSoccer.Commands
         {
             if (_addTeamViewModel.PlayerType)
             {
-                var person = new Player(
+                Player person = new Player(
                 _addTeamViewModel.PersonName,
                 _addTeamViewModel.PersonLastName,
                 _addTeamViewModel.PersonFunction,
@@ -65,7 +65,7 @@ namespace TournamentSoccer.Commands
             }
             else
             {
-                var person = new Coach(
+                Coach person = new Coach(
                 _addTeamViewModel.PersonName,
                 _addTeamViewModel.PersonLastName,
                 _addTeamViewModel.PersonFunction,

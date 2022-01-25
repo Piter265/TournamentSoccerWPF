@@ -16,11 +16,6 @@ namespace TournamentSoccer.ViewModel
         public string LastName => _player.LastName;
         public int Age => _player.Age;
         public string Function => _player.Function;
-        public int Goals => _player.Goals;
-        public int Asists => _player.Asists;
-        public int Shots => _player.Shots;
-        public int RedCards => _player.RedCards;
-        public int YellowCards => _player.YellowCards;
 
         public PlayerViewModel(Player player)
         {
@@ -29,7 +24,7 @@ namespace TournamentSoccer.ViewModel
 
         public override string ToString()
         {
-            return Name + LastName + Age + Function + Goals + Asists + Shots + RedCards + YellowCards;
+            return Name + LastName + Age + Function;
         }
     }
 }

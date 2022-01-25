@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TournamentSoccer.design_patterns;
 using TournamentSoccer.FilesHandlers;
+using TournamentSoccer.ViewModel;
 
 namespace TournamentSoccer.Models
 {
@@ -42,9 +43,14 @@ namespace TournamentSoccer.Models
         }
 
 
-        public List<Match> DrawMatches(IRandAlgorithm algorithm)
+        public List<Match> DrawAndAddMatches(IRandAlgorithm algorithm)
         {
-            return algorithm.DrawMatches(Teams);
+            return algorithm.DrawMatches(Teams, Referees, Stadiums);
+        }
+
+        public void AddMatches()
+        {
+            
         }
 
         public void AddTeam(Team team)
@@ -69,7 +75,7 @@ namespace TournamentSoccer.Models
 
         public void LoadRefeeres()
         {
-            //klasa wczytujaca za fasada
+            Referees = new List<Referee>(RandReferees.drawReferees());
         }
 
         public bool LoadTournamentFromFile()

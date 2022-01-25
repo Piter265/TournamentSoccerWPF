@@ -15,6 +15,9 @@ namespace TournamentSoccer.ViewModel
         public int TeamWins => _team.Wins;
         public int TeamLosses => _team.Losses;
         public int TeamDraws => _team.Draws;
+        public int PlayersQuantity => _team.People.Where(person => person is Player).Count();
+        public int CoachQuantity => _team.People.Where(person => person is Coach).Count();
+
         public List<Person> People => _team.People;
 
         public TeamViewModel(Team team)

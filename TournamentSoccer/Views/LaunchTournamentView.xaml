@@ -7,12 +7,14 @@
         mc:Ignorable="d" Height="450" Width="800">
     <Grid>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="21,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15" FontWeight="Bold"><Run Language="pl-pl" Text="Launch"/><Run Text=" Tournament"/><LineBreak/><Run/></TextBlock>
-        <Button x:Name="createNewTournamentBtn" Content="Create New Tournament" HorizontalAlignment="Left" Margin="628,382,0,0" VerticalAlignment="Top" Padding="5" Click="createNewTournamentBtn_Click"/>
+        <Button x:Name="createNewTournamentBtn" Command="{Binding CreateNewTournament}" Content="Create New Tournament" HorizontalAlignment="Left" Margin="628,382,0,0" VerticalAlignment="Top" Padding="5" Click="createNewTournamentBtn_Click"/>
         <Button x:Name="addTeamBtn" Content="Add Team" HorizontalAlignment="Left" Margin="177,58,0,0" VerticalAlignment="Top" Padding="5" Click="addTeamBtn_Click"/>
         <ListView Margin="10,92,466,217" ItemsSource="{Binding Teams}" SelectedItem="{Binding SelectedTeam}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Team Name" DisplayMemberBinding="{Binding TeamName}"/>
+                    <GridViewColumn Header="Players" DisplayMemberBinding="{Binding PlayersQuantity}"/>
+                    <GridViewColumn Header="Coaches" DisplayMemberBinding="{Binding CoachQuantity}"/>
                 </GridView>
             </ListView.View>
         </ListView>
