@@ -24,20 +24,22 @@ namespace TournamentSoccer.Models
 
         public Team Team1 { get; set; }
         public Team Team2 { get; set; }
+        public Stadium Stadium { get; set; }
 
 
-        public Match(Team team1, Team team2, Referee referee)
+        public Match(Team team1, Team team2, Referee referee, Stadium stadium)
         {
             Team1 = team1;
             Team2 = team2;
             Referee = referee;
+            Stadium = stadium;
         }
 
 
 
         public Match MakeRematch(Match match1)
         {
-            Match match2 = new Match(new Team(Team2), new Team(Team1), match1.Referee);
+            Match match2 = new Match(new Team(Team2), new Team(Team1), match1.Referee, match1.Stadium);
 
             return match2;
         }
