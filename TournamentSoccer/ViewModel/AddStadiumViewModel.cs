@@ -20,6 +20,7 @@ namespace TournamentSoccer.ViewModel
 
         private string _stadiumName;
         private string _stadiumCity;
+        private int _stadiumTribuneSize;
 
 
         public string StadiumName
@@ -46,6 +47,19 @@ namespace TournamentSoccer.ViewModel
             {
                 _stadiumCity = value;
                 OnPropertyChanged(nameof(StadiumCity));
+            }
+        }
+
+        public int StadiumTribuneSize
+        {
+            get
+            {
+                return _stadiumTribuneSize;
+            }
+            set
+            {
+                _stadiumTribuneSize = value;
+                OnPropertyChanged(nameof(StadiumTribuneSize));
             }
         }
     }

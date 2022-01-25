@@ -15,21 +15,24 @@ namespace TournamentSoccer.design_patterns.Builder
             set { _builder = value; }
         }
 
-        public void BuildMatchStadium(string name, string city)
+        public void BuildMatchStadium(string name, string city, int quantity)
         {
             this._builder.SetName(name);
-            this._builder.SetTribune();
+            this._builder.SetTribune(quantity);
             this._builder.SetCity(city);
-            this._builder.SetNaturalTurf();
-            this._builder.SetClosedRoof();
+            this._builder.SetTypeTurf();
+            this._builder.SetRoof();
+            this._builder.SetSize();
         }
 
-        public void BuildTrainingStadium(string name, string city)
+        public void BuildTrainingStadium(string name, string city, int quantity)
         {
             this._builder.SetName(name);
+            this._builder.SetTribune(quantity);
             this._builder.SetCity(city);
-            this._builder.SetUnnaturalTurf();
-            this._builder.SetOpenedRoof();
+            this._builder.SetTypeTurf();
+            this._builder.SetRoof();
+            this._builder.SetSize();
         }
     }
 }

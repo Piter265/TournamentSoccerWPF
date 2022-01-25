@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TournamentSoccer.Models
 {
-    public class Person
+    public abstract class Person
     {
         public string Name { get; set; }
         public string LastName { get; set; }
@@ -27,10 +27,6 @@ namespace TournamentSoccer.Models
         }
 
         // Deep copy
-        public Person clone()
-        {
-            Person personClone = (Person)this.MemberwiseClone();
-            return personClone;
-        }
+        public abstract Person clone();
     }
 }

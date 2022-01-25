@@ -12,10 +12,12 @@ namespace TournamentSoccer.Commands
     public class CreateNewTournamentCommand : CommandBase
     {
         private readonly LaunchTournamentViewModel _launchTournamentViewModel;
+        private Tournament _tournament;
 
-        public CreateNewTournamentCommand(LaunchTournamentViewModel launchTournamentViewModel)
+        public CreateNewTournamentCommand(LaunchTournamentViewModel launchTournamentViewModel, Tournament tournament)
         {
             _launchTournamentViewModel = launchTournamentViewModel;
+            _tournament = tournament;
         }
 
         public override bool CanExecute(object parameter)
@@ -31,23 +33,31 @@ namespace TournamentSoccer.Commands
                 .ToList()
                 .ForEach(team => {
                     Team newTeam = new Team(team.TeamName, team.People);
-                    Tournament.GetInstance().AddTeam(newTeam);
+                    _tournament.AddTeam(newTeam);
+                    
                     //teams.Add(newTeam);
                 });
 
+            _launchTournamentViewModel.Stadiums
+                .ToList()
+                .ForEach(stadium =>
+                {
+                    Stadium newStadium = new Stadium();//TODO - przekazywanie pól
+                    _tournament.AddStadium(newStadium);
+                });
 
-            IRandAlgorithm Algorithm;
+            IRandAlgorithm algorithm;
 
             if (_launchTournamentViewModel.Rematches)
             {
-                Algorithm = new RandAlgorithmWithRematches();
+                algorithm = new RandAlgorithmWithRematches();
             }
             else
             {
-                Algorithm = new RandAlgorithmWithoutRematches();
+                algorithm = new RandAlgorithmWithoutRematches();
             }
 
-            Tournament.GetInstance().DrawMatches(Algorithm);
+            _tournament.DrawMatches(algorithm);
 
         }
 

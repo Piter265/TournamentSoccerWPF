@@ -12,16 +12,12 @@ namespace TournamentSoccer.Models
 
         public Referee(string name, string lastName, string function, int age) : base(name, lastName, function, age)
         {
-
+            this.Name = Name;
+            this.LastName = LastName;
+            this.Age = Age;
+            this.Function = Function;
         }
 
-        public Referee(Referee referee)
-        {
-            this.Name = referee.Name;
-            this.LastName = referee.LastName;
-            this.Function = referee.Function;
-            this.Age = referee.Age;
-        }
 
         public void SetName(string name)
         {
@@ -42,5 +38,10 @@ namespace TournamentSoccer.Models
             return this.Name;
         }
 
+        public override Person clone()
+        {
+            return (Referee)this.MemberwiseClone();
+
+        }
     }
 }

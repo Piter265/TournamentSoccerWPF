@@ -19,10 +19,11 @@ namespace TournamentSoccer.ViewModel
 
         public IEnumerable<PersonViewModel> People => _people;
 
+        public bool PlayerType { get; set; }
+
         public ICommand Submit { get; }
         public ICommand AddToTeam { get; }
         public ICommand DeleteFromTeam { get; }
-        public ICommand PlayerType { get; set; }
         public bool Disabilities { get; set; }
 
         public AddTeamViewModel(LaunchTournamentViewModel launchTournamentViewModel)
@@ -31,7 +32,6 @@ namespace TournamentSoccer.ViewModel
             Submit = new AddTeamCommand(this, launchTournamentViewModel);
             AddToTeam = new AddToTeamCommand(this);
             DeleteFromTeam = new DeleteFromTeamCommand(this);
-            //PlayerType = new PlayerTypeRadioBtn(executemethod, canexecutemethod);
         }
 
         private string _teamName;

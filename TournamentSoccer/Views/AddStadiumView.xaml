@@ -7,24 +7,17 @@
         mc:Ignorable="d"
         Title="AddStadiumView" Height="450" Width="800">
     <Grid>
-
-        <ComboBox x:Name="stands" HorizontalAlignment="Left" Margin="63,159,0,0" VerticalAlignment="Top" Width="120">
-            <ComboBoxItem>5000</ComboBoxItem>
-            <ComboBoxItem>10000</ComboBoxItem>
-            <ComboBoxItem>20000</ComboBoxItem>
-            <ComboBoxItem>None</ComboBoxItem>
-        </ComboBox>
         <TextBox x:Name="textBox1_Copy" Text="{Binding StadiumName, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Margin="63,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="label" Content="Stands" HorizontalAlignment="Left" Margin="10,157,0,0" VerticalAlignment="Top" Width="57"/>
         <Label x:Name="label_Copy" Content="Name" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Width="48"/>
         <Label x:Name="label_Copy1" Content="Add Stadium" HorizontalAlignment="Left" Margin="4,2,0,0" VerticalAlignment="Top" Width="118" FontWeight="Bold"/>
-        <Button x:Name="button" Command="{Binding AddStadiumCommand}" Content="Add Stadium" HorizontalAlignment="Left" Margin="342,155,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.312,0.102" Padding="5"/>
         <Button x:Name="submitBtn" Content="Submit" Command="{Binding AddStadiumCommand}" HorizontalAlignment="Left" Margin="724,353,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.698,0.703" Padding="5" Height="28" Width="50" Click="submitBtn_Click"/>
         <Button x:Name="cancelBtn" Content="Cancel" HorizontalAlignment="Left" Margin="655,353,0,0" VerticalAlignment="Top" Padding="5" Height="28" Width="48" RenderTransformOrigin="0.188,0.001" Click="cancelBtn_Click"/>
         <TextBox x:Name="textBox1_Copy1" Text="{Binding StadiumCity, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Margin="302,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
         <Label x:Name="label_Copy2" Content="City" HorizontalAlignment="Left" Margin="257,105,0,0" VerticalAlignment="Top" Width="45"/>
         <RadioButton x:Name="matchStadiumRadioBtn" Content="Match Stadium" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Click="matchStadiumRadioBtn_Click"/>
         <RadioButton x:Name="trainingStadiumRadioBtn" Content="Training Stadium" HorizontalAlignment="Left" Margin="203,52,0,0" VerticalAlignment="Top" Click="trainingStadiumRadioBtn_Click"/>
+        <TextBox x:Name="textBox1_Copy2" Text="{Binding StadiumTribuneSize, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Margin="63,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
 
     </Grid>
 </Window>

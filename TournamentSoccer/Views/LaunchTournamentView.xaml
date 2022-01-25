@@ -31,7 +31,9 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Stadium Name" DisplayMemberBinding="{Binding StadiumName}"/>
-                    <GridViewColumn Header="Stadium Name" DisplayMemberBinding="{Binding StadiumCity}"/>
+                    <GridViewColumn Header="Stadium City" DisplayMemberBinding="{Binding StadiumCity}"/>
+                    <GridViewColumn Header="Tribune Size" DisplayMemberBinding="{Binding StadiumTribuneSize}"/>
+                    <GridViewColumn Header="Stadium Size" DisplayMemberBinding="{Binding StadiumSize}"/>
                 </GridView>
             </ListView.View>
         </ListView>

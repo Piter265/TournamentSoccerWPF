@@ -40,14 +40,14 @@ namespace TournamentSoccer.Commands
             {
                 var builder = new MatchStadiumBuilder();
                 director.Builder = builder;
-                director.BuildMatchStadium(_addStadiumViewModel.StadiumName, _addStadiumViewModel.StadiumCity);
+                director.BuildMatchStadium(_addStadiumViewModel.StadiumName, _addStadiumViewModel.StadiumCity, _addStadiumViewModel.StadiumTribuneSize);
                 _launchTournamentViewModel.AddStadium(new Stadium(builder.GetStadium()));
             }
             else
             {
                 var builder = new TrainingStadiumBuilder();
                 director.Builder = builder;
-                director.BuildTrainingStadium(_addStadiumViewModel.StadiumName, _addStadiumViewModel.StadiumCity);
+                director.BuildTrainingStadium(_addStadiumViewModel.StadiumName, _addStadiumViewModel.StadiumCity, _addStadiumViewModel.StadiumTribuneSize);
                 _launchTournamentViewModel.AddStadium(new Stadium(builder.GetStadium()));
             }
         }

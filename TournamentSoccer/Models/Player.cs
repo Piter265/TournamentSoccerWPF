@@ -18,5 +18,10 @@ namespace TournamentSoccer.Models
         {
 
         }
+
+        public override Person clone()
+        {
+            return (Player)this.MemberwiseClone();
+        }
     }
 }

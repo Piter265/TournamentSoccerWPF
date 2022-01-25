@@ -53,24 +53,26 @@ namespace TournamentSoccer.Commands
 
         public override void Execute(object parameter)
         {
-            var person = new Person(
+            if (_addTeamViewModel.PlayerType)
+            {
+                var person = new Player(
                 _addTeamViewModel.PersonName,
-            _addTeamViewModel.PersonLastName,
-            _addTeamViewModel.PersonFunction,
-            _addTeamViewModel.PersonAge
+                _addTeamViewModel.PersonLastName,
+                _addTeamViewModel.PersonFunction,
+                _addTeamViewModel.PersonAge
                 );
-
-            //if (_addTeamViewModel.PlayerType)
-            {
-                //var player = (Player)person.clone();
                 this._addTeamViewModel.Add(person);
             }
-            //else
+            else
             {
-                //var coach = (Coach)person.clone();
+                var person = new Coach(
+                _addTeamViewModel.PersonName,
+                _addTeamViewModel.PersonLastName,
+                _addTeamViewModel.PersonFunction,
+                _addTeamViewModel.PersonAge
+                );
                 this._addTeamViewModel.Add(person);
             }
-
         }
     }
 }

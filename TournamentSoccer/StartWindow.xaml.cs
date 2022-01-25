@@ -35,6 +35,17 @@ namespace TournamentSoccer
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
+            if (!Tournament.GetInstance().LoadTournamentFromFile())
+            {
+                return;
+            }
+            else
+            {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                this.Close();
+            }
+
 
         }
     }

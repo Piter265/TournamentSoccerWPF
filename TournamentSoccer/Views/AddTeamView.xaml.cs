@@ -34,11 +34,13 @@ namespace TournamentSoccer.Views
         private void playerBtn_Checked(object sender, RoutedEventArgs e)
         {
             addToTeamBtn.Content = "Add Player";
+            _addTeamViewModel.PlayerType = true;
         }
 
         private void coachBtn_Checked(object sender, RoutedEventArgs e)
         {
             addToTeamBtn.Content = "Add Coach";
+            _addTeamViewModel.PlayerType = false;
         }
 
         private void submitBtn_Click(object sender, RoutedEventArgs e)

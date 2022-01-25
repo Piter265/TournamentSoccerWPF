@@ -27,6 +27,9 @@ namespace TournamentSoccer.Models
             this.Function = coach.Function;
         }
 
-        //metody pobierające dane, i setujące
+        public override Person clone()
+        {
+            return (Coach)this.MemberwiseClone();
+        }
     }
 }

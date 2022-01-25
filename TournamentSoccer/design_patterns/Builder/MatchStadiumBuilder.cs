@@ -21,39 +21,35 @@ namespace TournamentSoccer.design_patterns.Builder
             _stadium.City = city;
         }
 
-        public void SetClosedRoof()
-        {
-            
-        }
-
         public void SetName(string name)
         {
             _stadium.Name = name;
         }
 
-        public void SetNaturalTurf()
+        public void SetTribune(int quantity)
         {
-            
+            _stadium.TribuneSize = quantity;
         }
 
-        public void SetOpenedRoof()
+        public void SetTypeTurf()
         {
-            
+            _stadium.TurfType = "Natural";
         }
 
-        public void SetTribune()
+        public void SetRoof()
         {
-            
+            _stadium.OpenedRoof = false;
         }
 
-        public void SetUnnaturalTurf()
+        public void SetSize()
         {
-            
+            _stadium.StadiumSize = "105x68m";
         }
 
         public Stadium GetStadium()
         {
             return _stadium;
         }
+
     }
 }

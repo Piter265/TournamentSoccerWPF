@@ -10,14 +10,16 @@
         <ListView ItemsSource="{Binding MatchesCollection}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Width="150" Header="" DisplayMemberBinding="{Binding Test3}" />
+                    <GridViewColumn Width="150" Header="" DisplayMemberBinding="{Binding TeamName1}" />
                     <GridViewColumn Width="20" Header="VS" />
-                    <GridViewColumn Width="150" Header="" DisplayMemberBinding="{Binding Test3}" />
-                    <GridViewColumn Width="60" Header="Score" DisplayMemberBinding="{Binding Test3}" />
+                    <GridViewColumn Width="150" Header="" DisplayMemberBinding="{Binding TeamName1}" />
+                    <GridViewColumn Width="60" Header="Score" DisplayMemberBinding="{Binding Goals}" />
+                    <GridViewColumn Width="60" Header="Asists" DisplayMemberBinding="{Binding Asists}" />
                     <GridViewColumn Width="70" Header="Shots" DisplayMemberBinding="{Binding Shots}" />
                     <GridViewColumn Width="90" Header="Shots On Target" DisplayMemberBinding="{Binding ShotsOnTarget}" />
                     <GridViewColumn Width="90" Header="Yellow Cards" DisplayMemberBinding="{Binding YellowCards}" />
                     <GridViewColumn Width="90" Header="Red Cards" DisplayMemberBinding="{Binding RedCards}" />
+                    <GridViewColumn Width="90" Header="Referee" DisplayMemberBinding="{Binding RefereeName}" />
                     <GridViewColumn Header="">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>

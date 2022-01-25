@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TournamentSoccer.design_patterns;
+using TournamentSoccer.FilesHandlers;
 
 namespace TournamentSoccer.Models
 {
@@ -14,6 +15,7 @@ namespace TournamentSoccer.Models
         public List<Match> Matches { get; set; } = new List<Match>();
         public List<Team> Teams { get; set; } = new List<Team>();
         public List<Referee> Referees { get; set; } = new List<Referee>();
+        public List<Stadium> Stadiums { get; set; } = new List<Stadium>();
         private static readonly object _lock = new object();
 
         private static Tournament _instance;
@@ -55,9 +57,40 @@ namespace TournamentSoccer.Models
             Teams.Remove(team);
         }
 
+        public void AddStadium(Stadium stadium)
+        {
+            Stadiums.Add(stadium);
+        }
+
+        public void DeleteStadium(Stadium stadium)
+        {
+            Stadiums.Remove(stadium);
+        }
+
         public void LoadRefeeres()
         {
             //klasa wczytujaca za fasada
         }
+
+        public bool LoadTournamentFromFile()
+        {
+            LoadFromFile loadFromFile = new LoadFromFile(_instance);
+
+            // if false there is no file to load
+            if (!loadFromFile.LoadData())
+            {
+                return false;
+            }
+
+            return true;
+
+        }
+
+        public void SaveTournamentToFile()
+        {
+            SavetoFile savetoFile = new SavetoFile(_instance);
+            savetoFile.SaveData();
+        }
+
     }
 }
