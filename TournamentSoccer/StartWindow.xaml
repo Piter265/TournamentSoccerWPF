@@ -6,13 +6,64 @@
         xmlns:local="clr-namespace:TournamentSoccer.Views"
         mc:Ignorable="d"
         Title="startWindow" Height="150" Width="200">
-    <Grid>
+    <Grid  Background="#0F0F2D">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="47*"/>
             <ColumnDefinition Width="153*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="startNewTournamentBtn" Content="Start New Tournamemt" HorizontalAlignment="Left" Margin="38,29,0,0" VerticalAlignment="Top" Click="startNewTournamentBtn_click" Grid.ColumnSpan="2"/>
-        <Button x:Name="button1" Content="Load Tournamemt" HorizontalAlignment="Left" Margin="38,67,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="124" Click="button1_Click"/>
+        <Button x:Name="startNewTournamentBtn" Content="Start New Tournament" HorizontalAlignment="Left" Margin="17,29,0,0"  VerticalAlignment="Top" Click="startNewTournamentBtn_click" Grid.ColumnSpan="2" Width="170">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="TextElement.FontFamily" Value="Arial"/>
+                    <Setter Property="Background" Value="#FE6584"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FE4C70"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+                        Width="145"
+                        Height="30"
+                        CornerRadius="12"
+                        Background="{TemplateBinding Background}">
+
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="button1" Content="Load Tournament" HorizontalAlignment="Left" Margin="17,67,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="170" Click="button1_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="TextElement.FontFamily" Value="Arial"/>
+                    <Setter Property="Background" Value="#FE6584"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FE4C70"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+                        Width="145"
+                        Height="30"
+                        CornerRadius="12"
+                        Background="{TemplateBinding Background}">
+
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
 
     </Grid>
 </Window>

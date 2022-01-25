@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:viewmodel="clr-namespace:TournamentSoccer.ViewModel" xmlns:views="clr-namespace:TournamentSoccer.Views" d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"
         mc:Ignorable="d"
         Title="MainWindow" Height="452" Width="800"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"  Background="#0F0F2D">
     <Window.Resources>
         <SolidColorBrush x:Key="TabItem.Selected.Background" Color="#FFFFFF"/>
         <SolidColorBrush x:Key="TabItem.Selected.Border" Color="#ACACAC"/>
@@ -74,7 +74,7 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Grid Margin="5,49,5,-6" >
+    <Grid Margin="5,49,5,-6"  Background="#0F0F2D">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10*"/>
             <ColumnDefinition Width="192*"/>
@@ -83,7 +83,7 @@
         </Grid.ColumnDefinitions>
         <TabControl Style="{DynamicResource TabControlStyle1}" Grid.ColumnSpan="4" Margin="-3,-46,3,46">
             <TabItem Header="Matches">
-                <views:MatchesListingView Height="359"/>
+                <views:MatchesListingView Height="359" />
             </TabItem>
             <TabItem Header="Table">
                 <views:TeamsListingView/>
