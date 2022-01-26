@@ -8,13 +8,14 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using TournamentSoccer.Commands;
 using TournamentSoccer.Models;
+using static TournamentSoccer.Validation.Validation;
 
 namespace TournamentSoccer.ViewModel
 {
     public class AddTeamViewModel : ViewModelBase
     {
         private ObservableCollection<PersonViewModel> _people { get; set; }
-        
+
         public PersonViewModel SelectedPerson { get; set; }
 
         public IEnumerable<PersonViewModel> People => _people;
@@ -38,8 +39,6 @@ namespace TournamentSoccer.ViewModel
         private string _personLastName;
         private string _personFunction;
         private int _personAge;
-        private string _personType;
-
 
         public string TeamName
         {
@@ -49,7 +48,7 @@ namespace TournamentSoccer.ViewModel
             }
             set
             {
-                _teamName = value;
+                _teamName = ChangeFirstLetterToUpper(value);
                 OnPropertyChanged(nameof(TeamName));
             }
         }
@@ -63,7 +62,7 @@ namespace TournamentSoccer.ViewModel
             }
             set
             {
-                _personName = value;
+                _personName = ChangeFirstLetterToUpper(value);
                 OnPropertyChanged(nameof(PersonName));
             }
         }
@@ -77,7 +76,7 @@ namespace TournamentSoccer.ViewModel
             }
             set
             {
-                _personLastName = value;
+                _personLastName = ChangeFirstLetterToUpper(value);
                 OnPropertyChanged(nameof(PersonLastName));
             }
         }
@@ -91,7 +90,7 @@ namespace TournamentSoccer.ViewModel
             }
             set
             {
-                _personFunction = value;
+                _personFunction = ChangeFirstLetterToUpper(value);
                 OnPropertyChanged(nameof(PersonFunction));
             }
         }
@@ -105,24 +104,10 @@ namespace TournamentSoccer.ViewModel
             }
             set
             {
-                _personAge = value;
+                _personAge = ChangeToAppriopriateAge(value);
                 OnPropertyChanged(nameof(PersonAge));
             }
         }
-
-        /*
-        public string PersonType
-        {
-            get
-            {
-                return _personType;
-            }
-            set
-            {
-                _personType = value;
-                OnPropertyChanged(nameof(PersonType));
-            }
-        }*/
 
         public void Add(Person person)
         {
@@ -134,36 +119,6 @@ namespace TournamentSoccer.ViewModel
             _people.Remove(person);
         }
 
-
-        /*
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void OnPropertyChange(string propertyname)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyname));
-            }
-        }
-
-
-
-        private bool canexecutemethod(object parameter)
-        {
-            if (parameter != null)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        private void executemethod(object parameter)
-        {
-            PersonType = (string)parameter;
-        }*/
     }
 }
 

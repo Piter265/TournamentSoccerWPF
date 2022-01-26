@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using TournamentSoccer.Commands;
+using static TournamentSoccer.Validation.Validation;
 
 namespace TournamentSoccer.ViewModel
 {
@@ -31,7 +32,7 @@ namespace TournamentSoccer.ViewModel
             }
             set
             {
-                _stadiumName = value;
+                _stadiumName = ChangeFirstLetterToUpper(value);
                 OnPropertyChanged(nameof(StadiumName));
             }
         }
@@ -45,7 +46,7 @@ namespace TournamentSoccer.ViewModel
             }
             set
             {
-                _stadiumCity = value;
+                _stadiumCity = ChangeFirstLetterToUpper(value);
                 OnPropertyChanged(nameof(StadiumCity));
             }
         }
@@ -62,5 +63,6 @@ namespace TournamentSoccer.ViewModel
                 OnPropertyChanged(nameof(StadiumTribuneSize));
             }
         }
+
     }
 }

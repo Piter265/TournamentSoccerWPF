@@ -13,7 +13,6 @@ namespace TournamentSoccer.Models
         public int Losses { get; set; }
         public int Draws { get; set; }
         public List<Person> People { get; set; }
-        public bool Disability { get; set; }
 
         public Team()
         {

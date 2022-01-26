@@ -57,11 +57,12 @@ namespace TournamentSoccer.Commands
 
             _tournament.LoadRefeeres();
 
-            var matches = _tournament.DrawAndAddMatches(algorithm);
+            List<Match> matches = _tournament.DrawMatches(algorithm);
 
             matches.ToList().ForEach(match => MatchesListingViewModel.Matches.Add(match));
 
         }
+
 
     }
 }

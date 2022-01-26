@@ -8,35 +8,142 @@
              Height="450" Width="807" 
              MaxHeight="450" MaxWidth="807" 
              ResizeMode="NoResize">
-    <Grid>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="12,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="77"><Run Text="Club Name"/><Run Language="pl-pl" Text=":"/></TextBlock>
+    <Grid Background="#0F0F2D" >
+        <TextBlock Foreground="#ceedda" x:Name="textBlock" HorizontalAlignment="Left" Margin="12,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="77"><Run Text="Club Name"/><Run Language="pl-pl" Text=":"/></TextBlock>
         <TextBox x:Name="teamNameTextBox" Text="{Binding TeamName, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="100,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="12,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"><Run FontWeight="Bold" Text="Club Attributes"/></TextBlock>
-        <Button x:Name="submitBtn" Content="Submit" Command="{Binding Submit}" HorizontalAlignment="Left" Margin="719,378,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.698,0.703" Padding="5" Height="28" Width="50" Click="submitBtn_Click"/>
-        <Button x:Name="cancelBtn" Content="Cancel" HorizontalAlignment="Left" Margin="648,378,0,0" VerticalAlignment="Top" Padding="5" Height="28" Width="48" RenderTransformOrigin="0.188,0.001" Click="cancelBtn_Click"/>
-        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="270,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78"><Run Text="Name"/><Run Text=":"/></TextBlock>
+        <TextBlock x:Name="textBlock2" Foreground="#ceedda" HorizontalAlignment="Left" Margin="12,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"><Run FontWeight="Bold" Text="Club Attributes"/></TextBlock>
+        <Button x:Name="submitBtn" Content="Submit" Command="{Binding Submit}" HorizontalAlignment="Left" Margin="691,361,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.698,0.703" Padding="5" Height="35" Width="106" Click="submitBtn_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="TextElement.FontFamily" Value="Arial"/>
+                    <Setter Property="Background" Value="#FE6584"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FE4C70"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+                        Width="80"
+                        Height="30"
+                        CornerRadius="12"
+                        Background="{TemplateBinding Background}">
+
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="cancelBtn" Content="Cancel" HorizontalAlignment="Left" Margin="589,360,0,0" VerticalAlignment="Top" Padding="5" Height="36" Width="90" RenderTransformOrigin="0.188,0.001" Click="cancelBtn_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="TextElement.FontFamily" Value="Arial"/>
+                    <Setter Property="Background" Value="#FE6584"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FE4C70"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+                        Width="80"
+                        Height="30"
+                        CornerRadius="12"
+                        Background="{TemplateBinding Background}">
+
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <TextBlock x:Name="textBlock_Copy" Foreground="#ceedda" HorizontalAlignment="Left" Margin="270,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78"><Run Text="Name"/><Run Text=":"/></TextBlock>
         <TextBox x:Name="nameTextBox" Text="{Binding PersonName, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="358,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBlock x:Name="textBlock1_Copy2" HorizontalAlignment="Left" Margin="270,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.592,1.698"><Run Language="pl-pl" Text="Lastname:"/></TextBlock>
+        <TextBlock x:Name="textBlock1_Copy2" Foreground="#ceedda" HorizontalAlignment="Left" Margin="270,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.592,1.698"><Run Language="pl-pl" Text="Lastname:"/></TextBlock>
         <TextBox x:Name="lastNameTextBox" Text="{Binding PersonLastName, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="358,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="positionTextBox" Text="{Binding PersonFunction, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="358,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBlock x:Name="textBlock1_Copy4" HorizontalAlignment="Left" Margin="270,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.551,1.323"><Run Language="pl-pl" Text="Age:"/></TextBlock>
-        <TextBox Text="{Binding PersonAge, UpdateSourceTrigger=PropertyChanged}" x:Name="ageTextBox" HorizontalAlignment="Left" Margin="358,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-
+        <TextBlock x:Name="textBlock1_Copy4" Foreground="#ceedda" HorizontalAlignment="Left" Margin="270,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.551,1.323"><Run Language="pl-pl" Text="Age:"/></TextBlock>
+        <TextBox Text="{Binding PersonAge, UpdateSourceTrigger=PropertyChanged}" x:Name="ageTextBox" HorizontalAlignment="Left" Margin="358,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
         <ListView x:Name="listView" Margin="10,225,357,10" ItemsSource="{Binding People}" SelectedItem="{Binding SelectedPerson}">
-            <ListView.View>
-                <GridView>
+            <ListView.View >
+                <GridView >
                     <GridViewColumn Header="Name"  DisplayMemberBinding="{Binding PersonName}" Width="120"/>
                     <GridViewColumn Header="Last Name"  DisplayMemberBinding="{Binding PersonLastName}" Width="120"/>
                     <GridViewColumn Header="Function"  DisplayMemberBinding="{Binding PersonFunction}" Width="100"/>
                     <GridViewColumn Header="Age"  DisplayMemberBinding="{Binding PersonAge}" Width="37"/>
+
+
                 </GridView>
             </ListView.View>
+
+
         </ListView>
-        <TextBlock x:Name="textBlock2_Copy1" HorizontalAlignment="Left" Margin="10,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"><Run FontWeight="Bold" Text="Added Players:"/></TextBlock>
-        <Button Command="{Binding AddToTeam}" x:Name="addToTeamBtn" HorizontalAlignment="Left" Margin="392,179,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.698,0.703" Padding="5" Height="28" Width="86"/>
-        <RadioButton x:Name="playerBtn" Content="Player" HorizontalAlignment="Left" Margin="270,11,0,0" VerticalAlignment="Top" Height="15" Width="51" Checked="playerBtn_Checked" Click="playerBtn_Click"/>
-        <RadioButton x:Name="coachBtn" Content="Coach" HorizontalAlignment="Left" Margin="426,11,0,0" VerticalAlignment="Top" Height="15" Width="52" Checked="coachBtn_Checked" Click="coachBtn_Click"/>
-        <TextBlock x:Name="textBlock1_Copy3" HorizontalAlignment="Left" Margin="270,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.551,1.323"><Run Language="en-gb" Text="Position"/><Run Text=":"/></TextBlock>
-        <Button x:Name="deleteFromTeam" Content="Delete Player" Command="{Binding DeleteFromTeam}" HorizontalAlignment="Left" Margin="127,196,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.698,0.703" Padding="5" Height="28" Width="96"/>
+        <TextBlock x:Name="textBlock2_Copy1" Foreground="#ceedda" HorizontalAlignment="Left" Margin="12,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"><Run FontWeight="Bold" Text="Added Players:"/></TextBlock>
+        <Button Command="{Binding AddToTeam}" x:Name="addToTeamBtn" HorizontalAlignment="Left" Margin="536,30,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.698,0.703" Padding="5" Height="34" Width="86">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="TextElement.FontFamily" Value="Arial"/>
+                    <Setter Property="Background" Value="#FE6584"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FE4C70"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+                        Width="80"
+                        Height="30"
+                        CornerRadius="12"
+                        Background="{TemplateBinding Background}">
+
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <RadioButton x:Name="playerBtn" Foreground="#ceedda" Content="Player" HorizontalAlignment="Left" Margin="270,11,0,0" VerticalAlignment="Top" Height="15" Width="51" Checked="playerBtn_Checked" IsChecked="True"/>
+        <RadioButton x:Name="coachBtn" Foreground="#ceedda" Content="Coach" HorizontalAlignment="Left" Margin="426,11,0,0" VerticalAlignment="Top" Height="15" Width="52" Checked="coachBtn_Checked"/>
+        <TextBlock x:Name="textBlock1_Copy3" Foreground="#ceedda" HorizontalAlignment="Left" Margin="270,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.551,1.323"><Run Language="en-gb" Text="Function"/><Run Text=":"/></TextBlock>
+        <Button x:Name="deleteFromTeam" Content="Delete Player" Command="{Binding DeleteFromTeam}" HorizontalAlignment="Left" Margin="127,189,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.698,0.703" Padding="5" Height="31" Width="96">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="TextElement.FontFamily" Value="Arial"/>
+                    <Setter Property="Background" Value="#FE6584"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FE4C70"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+                        Width="80"
+                        Height="30"
+                        CornerRadius="12"
+                        Background="{TemplateBinding Background}">
+
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
     </Grid>
 </Window>

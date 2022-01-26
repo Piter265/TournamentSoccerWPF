@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TournamentSoccer.Models;
 using TournamentSoccer.ViewModel;
 
 namespace TournamentSoccer.Commands
 {
-    public class DeleteTeamCommand : CommandBase
+    public class LoadRefereesCommand : CommandBase
     {
         private readonly LaunchTournamentViewModel _launchTournamentViewModel;
 
-        public DeleteTeamCommand(LaunchTournamentViewModel launchTournamentViewModel)
+        public LoadRefereesCommand(LaunchTournamentViewModel launchTournamentViewModel)
         {
             _launchTournamentViewModel = launchTournamentViewModel;
         }
@@ -29,8 +30,7 @@ namespace TournamentSoccer.Commands
 
         public override void Execute(object parameter)
         {
-            _launchTournamentViewModel.DeleteTeam(_launchTournamentViewModel.SelectedTeam);
+            Tournament.GetInstance().LoadRefeeres();
         }
     }
 }
-

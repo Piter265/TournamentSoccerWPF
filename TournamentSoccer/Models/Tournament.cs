@@ -43,7 +43,7 @@ namespace TournamentSoccer.Models
         }
 
 
-        public List<Match> DrawAndAddMatches(IRandAlgorithm algorithm)
+        public List<Match> DrawMatches(IRandAlgorithm algorithm)
         {
             return algorithm.DrawMatches(Teams, Referees, Stadiums);
         }

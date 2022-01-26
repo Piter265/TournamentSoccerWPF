@@ -19,17 +19,21 @@ namespace TournamentSoccer.Commands
         {
             _launchTournamentViewModel = launchTournamentViewModel;
             _addTeamViewModel = addTeamViewModel;
+            _addTeamViewModel.PropertyChanged += OnViewModelPropertyChanged;
         }
 
 
         private void OnViewModelPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-
+            if (e.PropertyName == nameof(_addTeamViewModel.TeamName))
+            {
+                OnExecutedChanged();
+            }
         }
 
         public override bool CanExecute(object parameter)
         {
-            return true;
+            return !string.IsNullOrEmpty(_addTeamViewModel.TeamName);
         }
 
         public override void Execute(object parameter)

@@ -12,19 +12,11 @@ namespace TournamentSoccer.ViewModel
     public class MatchesListingViewModel : ViewModelBase
     {
         public static List<Match> Matches { get; set; } = new List<Match>();
-        private readonly Tournament _tournament = Tournament.GetInstance();
         private MatchesListingView _matchesListingView;
 
         public MatchesListingViewModel(MatchesListingView matchesListingView)
         {
             _matchesListingView = matchesListingView;
-        }
-
-
-        public static void UpdateList()
-        {
-            /*ItemsSource =
-            MatchesListingViewModel.Matches;*/
         }
     }
 }

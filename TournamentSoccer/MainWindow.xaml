@@ -88,9 +88,6 @@
             <TabItem Header="Table">
                 <views:TeamsListingView/>
             </TabItem>
-            <TabItem Header="Players">
-                <views:PlayersListingView/>
-            </TabItem>
         </TabControl>
         <Button x:Name="saveTournamentBtn" Content="Save Tournament" HorizontalAlignment="Left" Margin="483,350,0,0" VerticalAlignment="Top" Width="102" Grid.Column="2" Grid.ColumnSpan="2"/>
     </Grid>

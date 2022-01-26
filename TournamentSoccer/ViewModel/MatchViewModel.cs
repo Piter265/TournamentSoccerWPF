@@ -20,6 +20,7 @@ namespace TournamentSoccer.ViewModel
         public string YellowCards => _match.YellowCards;
         public string RedCards => _match.RedCards;
         public string RefereeName => _match.Referee.Name + _match.Referee.LastName;
+        public string StadiumName => _match.Stadium.Name.ToString();
 
         public MatchViewModel(Match match)
         {

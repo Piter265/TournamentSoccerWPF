@@ -12,7 +12,7 @@ namespace TournamentSoccer.FilesHandlers
 {
     public class LoadFromFile
     {
-        protected Tournament _tournament;
+        private Tournament _tournament;
 
         public LoadFromFile(Tournament tournament)
         {

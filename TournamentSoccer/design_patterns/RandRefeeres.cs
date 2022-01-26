@@ -33,18 +33,18 @@ namespace TournamentSoccer.design_patterns
 
     public class RandReferees
     {
-        static string[] Names = Enum.GetValues(typeof(NamesEnum))
-            .Cast<NamesEnum>()
-            .Select(x => x.ToString())
-            .ToArray();
+        private static string[] Names = Enum.GetValues(typeof(NamesEnum))
+             .Cast<NamesEnum>()
+             .Select(x => x.ToString())
+             .ToArray();
 
-        static string[] Lastanames = Enum.GetValues(typeof(LastanamesEnum))
-        .Cast<LastanamesEnum>()
-        .Select(x => x.ToString())
-        .ToArray();
+        private static string[] Lastanames = Enum.GetValues(typeof(LastanamesEnum))
+         .Cast<LastanamesEnum>()
+         .Select(x => x.ToString())
+         .ToArray();
 
 
-        static string[] Functions = Enum.GetValues(typeof(FunctionsEnum))
+        private static string[] Functions = Enum.GetValues(typeof(FunctionsEnum))
         .Cast<FunctionsEnum>()
         .Select(x => x.ToString())
         .ToArray();

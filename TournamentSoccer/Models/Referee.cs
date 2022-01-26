@@ -18,30 +18,15 @@ namespace TournamentSoccer.Models
             this.Function = Function;
         }
 
-
-        public void SetName(string name)
-        {
-            this.Name = name;
-        }
-        public string GetName()
-        {
-            return this.Name;
-        }
-
-
-        public void SetLastNameName(string lastName)
-        {
-            this.LastName = lastName;
-        }
-        public string GetLastName()
-        {
-            return this.Name;
-        }
-
         public override Person clone()
         {
             return (Referee)this.MemberwiseClone();
 
+        }
+
+        public override string ToString()
+        {
+            return Name + " " + LastName;
         }
     }
 }

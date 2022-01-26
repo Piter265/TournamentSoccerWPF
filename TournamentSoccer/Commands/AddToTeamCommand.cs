@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TournamentSoccer.Models;
 using TournamentSoccer.ViewModel;
+using static TournamentSoccer.Validation.Validation;
 
 namespace TournamentSoccer.Commands
 {
@@ -37,10 +38,6 @@ namespace TournamentSoccer.Commands
             {
                 OnExecutedChanged();
             }
-            /*if (e.PropertyName == nameof(_addTeamViewModel.PersonType))
-            {
-                OnExecutedChanged();
-            }*/
         }
 
         public override bool CanExecute(object parameter)
@@ -48,7 +45,9 @@ namespace TournamentSoccer.Commands
             return !string.IsNullOrEmpty(_addTeamViewModel.PersonName) &&
                 !string.IsNullOrEmpty(_addTeamViewModel.PersonLastName) &&
                 !string.IsNullOrEmpty(_addTeamViewModel.PersonFunction) &&
-                !string.IsNullOrEmpty(Convert.ToString(_addTeamViewModel.PersonAge));
+                !string.IsNullOrEmpty(Convert.ToString(_addTeamViewModel.PersonAge)) &&
+                _addTeamViewModel.PersonAge >= 15 &&
+                _addTeamViewModel.PersonAge < 50;
         }
 
         public override void Execute(object parameter)

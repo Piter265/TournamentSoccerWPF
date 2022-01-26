@@ -18,16 +18,30 @@ namespace TournamentSoccer.Commands
         {
             _launchTournamentViewModel = launchTournamentViewModel;
             _addStadiumViewModel = addStadiumViewModel;
+            _addStadiumViewModel.PropertyChanged += OnViewModelPropertyChanged;
         }
 
         private void OnViewModelPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-
+            if (e.PropertyName == nameof(_addStadiumViewModel.StadiumName))
+            {
+                OnExecutedChanged();
+            }
+            if (e.PropertyName == nameof(_addStadiumViewModel.StadiumCity))
+            {
+                OnExecutedChanged();
+            }
+            if (e.PropertyName == nameof(_addStadiumViewModel.StadiumTribuneSize))
+            {
+                OnExecutedChanged();
+            }
         }
 
         public override bool CanExecute(object parameter)
         {
-            return true;
+            return !string.IsNullOrEmpty(_addStadiumViewModel.StadiumName) &&
+                !string.IsNullOrEmpty(_addStadiumViewModel.StadiumCity) &&
+                !string.IsNullOrEmpty(Convert.ToString(_addStadiumViewModel.StadiumTribuneSize));
         }
 
         public override void Execute(object parameter)
