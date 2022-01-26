@@ -45,9 +45,7 @@ namespace TournamentSoccer.Commands
         }
 
         public override void Execute(object parameter)
-        {
-           // _launchTournamentViewModel.AddStadium(new Stadium());
-            
+        {           
             var director = new StadiumDirector();
 
             if (_addStadiumViewModel.MatchStadium)

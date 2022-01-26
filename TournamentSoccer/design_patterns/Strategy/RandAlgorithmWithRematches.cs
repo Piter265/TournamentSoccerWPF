@@ -9,8 +9,6 @@ namespace TournamentSoccer.design_patterns
 {
     public class RandAlgorithmWithRematches : IRandAlgorithm
     {
-
-
         public List<Match> DrawMatches(List<Team> teams, List<Referee> referees, List<Stadium> stadiums)
         {
             List<Match> matches = new List<Match>();

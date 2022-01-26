@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TournamentSoccer.Models;
 
 namespace TournamentSoccer.Commands
 {
     public class SaveTournamentCommand : CommandBase
     {
-        public SaveTournamentCommand()
+        private Tournament _tournament;
+        public SaveTournamentCommand(Tournament tournament)
         {
-
+            _tournament = tournament;
         }
 
         private void OnViewModelPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -25,7 +27,7 @@ namespace TournamentSoccer.Commands
 
         public override void Execute(object parameter)
         {
-            
+            _tournament.SaveTournamentToFile();
         }
     }
 }

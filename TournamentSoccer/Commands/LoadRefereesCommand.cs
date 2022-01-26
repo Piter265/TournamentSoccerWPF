@@ -11,6 +11,7 @@ namespace TournamentSoccer.Commands
     public class LoadRefereesCommand : CommandBase
     {
         private readonly LaunchTournamentViewModel _launchTournamentViewModel;
+        private readonly Tournament _tournament;
 
         public LoadRefereesCommand(LaunchTournamentViewModel launchTournamentViewModel)
         {
@@ -30,7 +31,7 @@ namespace TournamentSoccer.Commands
 
         public override void Execute(object parameter)
         {
-            Tournament.GetInstance().LoadRefeeres();
+           // Tournament.GetInstance().LoadRefeeres();
         }
     }
 }

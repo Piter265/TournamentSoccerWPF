@@ -25,8 +25,7 @@ namespace TournamentSoccer.Models
             Function = function;
             Age = age;
         }
-
-        // Deep copy
+        
         public abstract Person clone();
     }
 }

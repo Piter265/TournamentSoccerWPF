@@ -30,23 +30,6 @@ namespace TournamentSoccer.Commands
         public override void Execute(object parameter)
         {
             _launchTournamentViewModel.DeleteStadium(_launchTournamentViewModel.SelectedStadium);
-            /*
-            var director = new TeamDirector();
-
-            if (_addTeamViewModel.Disabilities)
-            {
-                var builder = new UniqueTeamBuilder();
-                director.TeamBuilder = builder;
-                director.BuildUniqueTeam(_addTeamViewModel.TeamName, people);
-                _launchTournamentViewModel.Add(new Team(builder.GetTeam()));
-            }
-            else
-            {
-                var builder = new ClassicalTeamBuilder();
-                director.TeamBuilder = builder;
-                director.BuildClassicalTeam(_addTeamViewModel.TeamName, people);
-                _launchTournamentViewModel.Add(new Team(builder.GetTeam()));
-            }*/
         }
     }
 }

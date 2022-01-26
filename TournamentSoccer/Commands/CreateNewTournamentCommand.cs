@@ -28,8 +28,6 @@ namespace TournamentSoccer.Commands
 
         public override void Execute(object parameter)
         {
-            //List<Team> teams = new List<Team>();
-
             if(_launchTournamentViewModel.Teams.Count % 2 != 0 || _launchTournamentViewModel.Teams.Count() == 0 || _launchTournamentViewModel.Stadiums.Count() == 0)
             {
                 return;
@@ -40,7 +38,6 @@ namespace TournamentSoccer.Commands
                 .ForEach(team => {
                     Team newTeam = new Team(team.TeamName, team.People);
                     _tournament.AddTeam(newTeam);
-                    //teams.Add(newTeam);
                 });
 
             _launchTournamentViewModel.Stadiums
@@ -51,7 +48,6 @@ namespace TournamentSoccer.Commands
                 });
 
             IRandAlgorithm algorithm;
-
             if (_launchTournamentViewModel.Rematches)
             {
                 algorithm = new RandAlgorithmWithRematches();
@@ -66,9 +62,8 @@ namespace TournamentSoccer.Commands
             List<Match> matches = _tournament.DrawMatches(algorithm);
 
             matches.ToList().ForEach(match => MatchesListingViewModel.Matches.Add(match));
-
+            _tournament.Matches = MatchesListingViewModel.Matches;
         }
-
 
     }
 }

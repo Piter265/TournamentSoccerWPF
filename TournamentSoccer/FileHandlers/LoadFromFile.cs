@@ -6,7 +6,9 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
+using TournamentSoccer.FileHandlers;
 using TournamentSoccer.Models;
+using TournamentSoccer.ViewModel;
 
 namespace TournamentSoccer.FilesHandlers
 {
@@ -31,7 +33,28 @@ namespace TournamentSoccer.FilesHandlers
             }
 
             string jsonString = File.ReadAllText(fileName);
-            _tournament = JsonSerializer.Deserialize<Tournament>(jsonString);
+            DataFromJSON data = JsonSerializer.Deserialize<DataFromJSON>(jsonString);
+
+            data.Matches.ForEach(d =>
+            {
+                _tournament.Matches.Add(d);
+                MatchesListingViewModel.Matches.Add(d);
+            });
+
+            data.Teams.ForEach(d =>
+            {
+                _tournament.Teams.Add(d);
+            });
+
+            data.Referees.ForEach(d =>
+            {
+                _tournament.Referees.Add(d);
+            });
+
+            data.Stadiums.ForEach(d =>
+            {
+                _tournament.Stadiums.Add(d);
+            });
 
             return true;
         }
