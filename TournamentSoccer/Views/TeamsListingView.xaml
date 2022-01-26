@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <ListView Margin="10 10" ItemsSource="{Binding Teams}">
+        <ListView Margin="10 10" ItemsSource="{Binding Teams}" Background="#FF2F2F81">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="400" Header="Name" DisplayMemberBinding="{Binding Name}"/>

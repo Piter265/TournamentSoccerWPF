@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:TournamentSoccer.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <ListView ItemsSource="{Binding MatchesCollection}">
+    <Grid Background="#0F0F2D">
+        <ListView ItemsSource="{Binding MatchesCollection}" Foreground="#0F0F2D" SelectionChanged="ListView_SelectionChanged" Background="#FF2F2F81">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="150" Header="" DisplayMemberBinding="{Binding TeamName1}" />
@@ -29,6 +29,7 @@
                     </GridViewColumn>
                 </GridView>
             </ListView.View>
+          
         </ListView>
     </Grid>
 </UserControl>
