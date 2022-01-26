@@ -37,7 +37,7 @@ namespace TournamentSoccer.Views
 
         private void createNewTournamentBtn_Click(object sender, RoutedEventArgs e)
         {
-            if(_launchTournamentViewModel.Teams.Count % 2 == 0)
+            if(_launchTournamentViewModel.Teams.Count % 2 == 0 && _launchTournamentViewModel.Teams.Count()>0 && _launchTournamentViewModel.Stadiums.Count()>0)
             {
                 MainWindow main = new MainWindow();
                 main.Show();
@@ -45,7 +45,7 @@ namespace TournamentSoccer.Views
             }
             else
             {
-                MessageBox.Show("Number of teams must be odd", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Add more teams or stadiums", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
 
@@ -53,6 +53,18 @@ namespace TournamentSoccer.Views
         {
             AddStadiumView addStadium = new AddStadiumView(_launchTournamentViewModel);
             addStadium.Show();
+        }
+
+        private void CheckBox_Click(object sender, RoutedEventArgs e)
+        {
+            if (_launchTournamentViewModel.Rematches == false)
+            {
+                _launchTournamentViewModel.Rematches = true;
+            }
+            else
+            {
+                _launchTournamentViewModel.Rematches = false;
+            }
         }
     }
 }

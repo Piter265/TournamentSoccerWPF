@@ -15,20 +15,20 @@ namespace TournamentSoccer.ViewModel
     {
         public ObservableCollection<TeamViewModel> Teams { get; set; }
         public ObservableCollection<StadiumViewModel> Stadiums { get; set; }
-        public IEnumerable<Referee> Referees => Tournament.GetInstance().Referees;
 
         private Tournament _tournament = Tournament.GetInstance();
 
         public TeamViewModel SelectedTeam { get; set; }
         public StadiumViewModel SelectedStadium { get; set; }
 
-        public bool Rematches { get; set; }
+        public bool Rematches { get; set; } = false;
 
         public ICommand DeleteTeamCommand { get; }
         public ICommand DeleteStadiumCommand { get; }
 
         public ICommand CreateNewTournament { get; }
         public ICommand LoadRefereesCommand { get; }
+        public ICommand SaveTournamentCommand { get; }
 
         public LaunchTournamentViewModel()
         {
@@ -38,6 +38,7 @@ namespace TournamentSoccer.ViewModel
             Stadiums = new ObservableCollection<StadiumViewModel>();
             DeleteStadiumCommand = new DeleteStadiumCommand(this);
             LoadRefereesCommand = new LoadRefereesCommand(this);
+            SaveTournamentCommand = new SaveTournamentCommand();
         }
 
         public void AddTeam(Team team)

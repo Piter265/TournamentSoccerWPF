@@ -12,7 +12,7 @@ namespace TournamentSoccer.ViewModel
     public class AddStadiumViewModel : ViewModelBase
     {
         public ICommand AddStadiumCommand { get; }
-        public bool MatchStadium { get; set;   }
+        public bool MatchStadium { get; set; } = true;
 
         public AddStadiumViewModel(LaunchTournamentViewModel launchTournamentViewModel)
         {

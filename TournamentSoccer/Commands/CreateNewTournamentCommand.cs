@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using TournamentSoccer.design_patterns;
 using TournamentSoccer.Models;
 using TournamentSoccer.ViewModel;
@@ -28,6 +29,11 @@ namespace TournamentSoccer.Commands
         public override void Execute(object parameter)
         {
             //List<Team> teams = new List<Team>();
+
+            if(_launchTournamentViewModel.Teams.Count % 2 != 0 || _launchTournamentViewModel.Teams.Count() == 0 || _launchTournamentViewModel.Stadiums.Count() == 0)
+            {
+                return;
+            }
 
             _launchTournamentViewModel.Teams
                 .ToList()

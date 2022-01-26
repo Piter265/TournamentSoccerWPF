@@ -19,12 +19,11 @@ namespace TournamentSoccer.ViewModel
         public PersonViewModel SelectedPerson { get; set; }
 
         public IEnumerable<PersonViewModel> People => _people;
-        public bool PlayerType { get; set; }
+        public bool PlayerType { get; set; } = true;
 
         public ICommand Submit { get; }
         public ICommand AddToTeam { get; }
         public ICommand DeleteFromTeam { get; }
-        public bool Disabilities { get; set; }
 
         public AddTeamViewModel(LaunchTournamentViewModel launchTournamentViewModel)
         {

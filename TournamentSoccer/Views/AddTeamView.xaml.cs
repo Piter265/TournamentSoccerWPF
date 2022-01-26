@@ -54,11 +54,13 @@ namespace TournamentSoccer.Views
         private void playerBtn_Click(object sender, RoutedEventArgs e)
         {
             _addTeamViewModel.PlayerType = true;
+
         }
 
         private void coachBtn_Click(object sender, RoutedEventArgs e)
         {
             _addTeamViewModel.PlayerType = false;
+
         }
     }
 }

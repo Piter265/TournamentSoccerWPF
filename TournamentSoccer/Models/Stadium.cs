@@ -10,7 +10,7 @@ namespace TournamentSoccer.Models
     {
         public string Name { get; set; }
         public string City { get; set; }
-        public int TribuneSize { get; set; } = 0;
+        public int TribuneSize { get; set; }
         public string TurfType { get; set; }
         public string StadiumSize { get; set; }
         public bool OpenedRoof { get; set; } = true;
