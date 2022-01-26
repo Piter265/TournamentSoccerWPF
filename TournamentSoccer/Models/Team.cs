@@ -12,6 +12,8 @@ namespace TournamentSoccer.Models
         public int Wins { get; set; }
         public int Losses { get; set; }
         public int Draws { get; set; }
+        public int Points { get; set; }
+        public string Balance { get; set; }
         public List<Person> People { get; set; }
 
         public Team()

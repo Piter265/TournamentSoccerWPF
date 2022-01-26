@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TournamentSoccer.Models;
+using TournamentSoccer.ViewModel;
 
 namespace TournamentSoccer.Commands
 {
@@ -27,6 +28,7 @@ namespace TournamentSoccer.Commands
 
         public override void Execute(object parameter)
         {
+            _tournament.Matches = new List<Match>(MatchesListingViewModel.Matches);
             _tournament.SaveTournamentToFile();
         }
     }

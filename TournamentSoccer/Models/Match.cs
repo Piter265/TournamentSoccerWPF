@@ -12,12 +12,12 @@ namespace TournamentSoccer.Models
     public class Match
     {
 
-        public string Goals { get; set; }
-        public string Assists { get; set; }
-        public string Shots { get; set; }
-        public string ShotsOnTarget { get; set; }
-        public string YellowCards { get; set; }
-        public string RedCards { get; set; }
+        public string Goals { get; set; } = "0-0";
+        public string Assists { get; set; } = "0-0";
+        public string Shots { get; set; } = "0-0";
+        public string ShotsOnTarget { get; set; } = "0-0";
+        public string YellowCards { get; set; } = "0-0";
+        public string RedCards { get; set; } = "0-0";
 
 
         public Referee Referee { get; set; }

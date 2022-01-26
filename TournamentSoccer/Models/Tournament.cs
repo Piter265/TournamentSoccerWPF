@@ -48,11 +48,6 @@ namespace TournamentSoccer.Models
             return algorithm.DrawMatches(Teams, Referees, Stadiums);
         }
 
-        public void AddMatches()
-        {
-            
-        }
-
         public void AddTeam(Team team)
         {
             Teams.Add(team);
