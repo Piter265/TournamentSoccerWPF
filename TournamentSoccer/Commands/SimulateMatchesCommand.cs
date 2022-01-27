@@ -29,8 +29,19 @@ namespace TournamentSoccer.Commands
         public override void Execute(object parameter)
         {
             MatchesListingViewModel.Matches = _tournament.simulateMatches(MatchesListingViewModel.Matches);
+            //czyszczenie wyników teamów
+
+            var teams = _tournament.Teams;
+            _tournament.Teams = new List<Team>();
+            teams.ForEach(team =>
+            {
+                _tournament.Teams.Add(new Team(team.Name, team.People));
+            });
+
+
             MatchesListingViewModel.refreshList();
-            TeamsListingViewModel.sortTeams();
+
+            TeamsListingViewModel.sortTeams(_tournament.Teams);
             TeamsListingViewModel.refreshList();
         }
     }

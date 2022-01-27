@@ -27,18 +27,19 @@ namespace TournamentSoccer.ViewModel
             _teamsListingView.teamsList.ItemsSource = Teams;
         }
 
-        public static void sortTeams()
+        public static void sortTeams(List <Team> teams)
         {
-            Teams = updateStatsInTeamsAndGetSortedTeams(MatchesListingViewModel.Matches);
+            Teams = teams;
+            updateStatsInTeamsAndSortTeams(MatchesListingViewModel.Matches);
+            Teams = getSortedTeams(Teams);
         }
 
-        private static List<Team> updateStatsInTeamsAndGetSortedTeams(List<Match> matches)
+        private static void updateStatsInTeamsAndSortTeams(List<Match> matches)
         {
             matches.ForEach(match =>
             {
                 updateTeamStats(match);
             });
-            return getSortedTeamsFromMatches(matches);
         }
 
         private static void updateTeamStats(Match match)
@@ -51,45 +52,61 @@ namespace TournamentSoccer.ViewModel
             if (Convert.ToInt32(goals[0]) > Convert.ToInt32(goals[1]))
             {
                 match.Team1.Points += 3;
-                match.Team1.Wins += 1;
-                match.Team2.Losses += 1;
+                Teams.ForEach(team =>
+                {
+                    if (team.Equals(match.Team1))
+                    {
+                        team.Points += 3;
+                        team.Wins += 1;
+                    }
+                    else if (team.Equals(match.Team2)) team.Losses += 1;
+                });
             }
             else if (Convert.ToInt32(goals[0]) < Convert.ToInt32(goals[1]))
             {
-                match.Team2.Points += 3;
-                match.Team2.Wins += 1;
-                match.Team1.Losses += 1;
+                Teams.ForEach(team =>
+                {
+                    if (team.Equals(match.Team2))
+                    {
+                        team.Points += 3;
+                        team.Wins += 1;
+                    }
+                    else if (team.Equals(match.Team1)) team.Losses += 1;
+                });
             }
             else
             {
-                match.Team1.Points += 1;
-                match.Team2.Points += 1;
-                match.Team1.Draws += 1;
-                match.Team2.Draws += 1;
+                Teams.ForEach(team =>
+                {
+                    if (team.Equals(match.Team1))
+                    {
+                        team.Points += 1;
+                        team.Draws += 1;
+                    }
+                    else if (team.Equals(match.Team2))
+                    {
+                        team.Draws += 1;
+                        team.Points += 1;
+                    }
+                });
             }
 
             int team1Scored = Convert.ToInt32(balanceTeam1[0]) + Convert.ToInt32(goals[0]);
             int team1Losed = Convert.ToInt32(balanceTeam1[1]) + Convert.ToInt32(goals[1]);
-            match.Team1.Balance = team1Scored + "-" + team1Losed;
+            Teams.ForEach(team =>
+            {
+                if (team.Equals(match.Team1))team.Balance = team1Scored + "-" + team1Losed;
+            });
 
             int team2Scored = Convert.ToInt32(balanceTeam2[0]) + Convert.ToInt32(goals[1]);
             int team2Losed = Convert.ToInt32(balanceTeam2[1]) + Convert.ToInt32(goals[0]);
-            match.Team2.Balance = team2Scored + "-" + team2Losed;
-        }
-
-        private static List<Team> getSortedTeamsFromMatches(List <Match> matches)
-        {
-            HashSet<Team> teams = new HashSet<Team>();
-            matches.ForEach(match =>
+            Teams.ForEach(team =>
             {
-                teams.Add(match.Team1);
-                teams.Add(match.Team2);
+                if (team.Equals(match.Team2)) team.Balance = team2Scored + "-" + team2Losed;
             });
-
-            return getSortedTeams(teams);
         }
 
-        private static List<Team> getSortedTeams(HashSet <Team> teams)
+        private static List<Team> getSortedTeams(List <Team> teams)
         {
             return teams.OrderByDescending(team => team.Points)
                 .ThenBy(team=>Convert.ToInt32(team.Balance.Split("-")[0]))
