@@ -62,6 +62,7 @@ namespace TournamentSoccer.Commands
             List<Match> matches = _tournament.DrawMatches(algorithm);
 
             matches.ToList().ForEach(match => MatchesListingViewModel.Matches.Add(match));
+            MatchesListingViewModel.refreshList();
             //_tournament.Matches = MatchesListingViewModel.Matches;
         }
 

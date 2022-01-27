@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TournamentSoccer.design_patterns;
 using TournamentSoccer.FilesHandlers;
+using TournamentSoccer.Others;
 using TournamentSoccer.ViewModel;
 
 namespace TournamentSoccer.Models
@@ -93,5 +94,9 @@ namespace TournamentSoccer.Models
             savetoFile.SaveData();
         }
 
+        public List<Match> simulateMatches(List <Match> matches)
+        {
+            return TournamentSimulation.SimulateMatches(matches);
+        }
     }
 }

@@ -33,7 +33,7 @@ namespace TournamentSoccer
             this.Close();
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void loadTournamentButton_Click(object sender, RoutedEventArgs e)
         {
             if (!Tournament.GetInstance().LoadTournamentFromFile())
             {
@@ -45,8 +45,6 @@ namespace TournamentSoccer
                 mainWindow.Show();
                 this.Close();
             }
-
-
         }
     }
 }

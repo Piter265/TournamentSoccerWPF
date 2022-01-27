@@ -82,13 +82,14 @@
             <ColumnDefinition Width="87*"/>
         </Grid.ColumnDefinitions>
         <TabControl Style="{DynamicResource TabControlStyle1}" Grid.ColumnSpan="4" Margin="-3,-46,3,46">
-            <TabItem Header="Matches">
+            <TabItem x:Name="matchesTab" Header="Matches">
                 <views:MatchesListingView Height="322"/>
             </TabItem>
-            <TabItem Header="Matches">
+            <TabItem x:Name="teamsTab" Header="Teams">
                 <views:TeamsListingView Height="322"/>
             </TabItem>
         </TabControl>
-        <Button x:Name="saveTournamentBtn" Content="Save Tournament" HorizontalAlignment="Left" Margin="467,327,0,0" VerticalAlignment="Top" Width="102" Grid.Column="2" Grid.ColumnSpan="2" Click="saveTournamentBtn_Click"/>
+        <Button x:Name="saveTournamentBtn" Command="{Binding SaveTournamentCommand}" Content="Save Tournament" HorizontalAlignment="Left" Margin="467,327,0,0" VerticalAlignment="Top" Width="102" Grid.Column="2" Grid.ColumnSpan="2"/>
+        <Button x:Name="simulateMatchesBtn" Command="{Binding SimulateMatchesCommand}" Content="Simulate" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102" Grid.Column="2" Margin="323,327,0,0"/>
     </Grid>
 </Window>

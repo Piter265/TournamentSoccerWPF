@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TournamentSoccer.Models;
+using TournamentSoccer.ViewModel;
 
 namespace TournamentSoccer
 {
@@ -21,15 +22,12 @@ namespace TournamentSoccer
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly Tournament _tournament = Tournament.GetInstance();
         public MainWindow()
         {
             InitializeComponent();
+
+            DataContext = new MainViewModel();
         }
 
-        private void saveTournamentBtn_Click(object sender, RoutedEventArgs e)
-        {
-            _tournament.SaveTournamentToFile();
-        }
     }
 }

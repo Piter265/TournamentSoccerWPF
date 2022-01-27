@@ -25,7 +25,7 @@ namespace TournamentSoccer.Views
         {
             InitializeComponent();
 
-            DataContext = new TeamsListingViewModel();
+            DataContext = new TeamsListingViewModel(this);
         }
     }
 }
