@@ -73,9 +73,16 @@
         <TextBox x:Name="positionTextBox" Text="{Binding PersonFunction, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="358,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBlock x:Name="textBlock1_Copy4" Foreground="#ceedda" HorizontalAlignment="Left" Margin="270,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.551,1.323"><Run Language="pl-pl" Text="Age:"/></TextBlock>
         <TextBox Text="{Binding PersonAge, UpdateSourceTrigger=PropertyChanged}" x:Name="ageTextBox" HorizontalAlignment="Left" Margin="358,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
-        <ListView x:Name="listView" Margin="10,225,357,10" ItemsSource="{Binding People}" SelectedItem="{Binding SelectedPerson}" Background="#EEE7E5">
+        <ListView x:Name="listView" Margin="10,225,357,10" ItemsSource="{Binding People}" SelectedItem="{Binding SelectedPerson}" BorderBrush="#040412" Background="#FF92A5C5">
             <ListView.View >
                 <GridView >
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style>
+                            <Setter Property="Control.Background" Value="#FF92A5C5"/>
+                            <Setter Property="Control.BorderBrush" Value="#20254f"/>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+                    
                     <GridViewColumn Header="Name"  DisplayMemberBinding="{Binding PersonName}" Width="120"/>
                     <GridViewColumn Header="Last Name"  DisplayMemberBinding="{Binding PersonLastName}" Width="120"/>
                     <GridViewColumn Header="Function"  DisplayMemberBinding="{Binding PersonFunction}" Width="100"/>

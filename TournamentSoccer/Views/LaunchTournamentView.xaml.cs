@@ -66,5 +66,7 @@ namespace TournamentSoccer.Views
                 _launchTournamentViewModel.Rematches = false;
             }
         }
+
+
     }
 }

@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:viewmodel="clr-namespace:TournamentSoccer.ViewModel" xmlns:views="clr-namespace:TournamentSoccer.Views" d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"
         mc:Ignorable="d"
         Title="MainWindow" Height="452" Width="800"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        Background="#0F0F2D">
     <Window.Resources>
         <SolidColorBrush x:Key="TabItem.Selected.Background" Color="#FFFFFF"/>
         <SolidColorBrush x:Key="TabItem.Selected.Border" Color="#ACACAC"/>
@@ -74,18 +75,44 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Grid Margin="5,49,5,-6" >
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10*"/>
-            <ColumnDefinition Width="192*"/>
-            <ColumnDefinition Width="501*"/>
-            <ColumnDefinition Width="87*"/>
-        </Grid.ColumnDefinitions>
-        <TabControl Style="{DynamicResource TabControlStyle1}" Grid.ColumnSpan="4" Margin="-3,-46,3,46">
+    <Grid Margin="5,49,5,-6" Background="#FF0F0F2D" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="11*"/>
+            <RowDefinition Height="120*"/>
+        </Grid.RowDefinitions>
+
+
+        <TabControl Style="{DynamicResource TabControlStyle1}" Margin="-3,-46,3,66" Background="#FF0F0F2D" Grid.RowSpan="2">
             <TabItem Header="Matches">
-                <views:MatchesListingView Height="322"/>
+                <views:MatchesListingView Height="309" Background="#FF92A5C5" Margin="4,0,-3,0"/>
             </TabItem>
         </TabControl>
-        <Button x:Name="saveTournamentBtn" Content="Save Tournament" HorizontalAlignment="Left" Margin="467,327,0,0" VerticalAlignment="Top" Width="102" Grid.Column="2" Grid.ColumnSpan="2" Click="saveTournamentBtn_Click"/>
+        <Button x:Name="saveTournamentBtn" Content="Save Tournament" HorizontalAlignment="Left" Margin="596,294,0,0" VerticalAlignment="Top" Width="157" Click="saveTournamentBtn_Click" Grid.Row="1">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="TextElement.FontFamily" Value="Arial"/>
+                    <Setter Property="Background" Value="#FE6584"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FE4C70"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+                        Width="120"
+                        Height="32"
+                        CornerRadius="12"
+                        Background="{TemplateBinding Background}" Margin="6,0,7,0">
+
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
     </Grid>
 </Window>
