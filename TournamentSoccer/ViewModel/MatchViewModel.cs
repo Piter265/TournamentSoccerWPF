@@ -9,22 +9,22 @@ namespace TournamentSoccer.ViewModel
 {
     public class MatchViewModel
     {
-        private Match _match;
+        public Match Match { get; }
 
-        public string TeamName1 => _match.Team1.Name;
-        public string TeamName2 => _match.Team2.Name;
-        public string Goals => _match.Goals;
-        public string Asists => _match.Assists;
-        public string Shots => _match.Shots;
-        public string ShotsOnTarget => _match.ShotsOnTarget;
-        public string YellowCards => _match.YellowCards;
-        public string RedCards => _match.RedCards;
-        public string RefereeName => _match.Referee.Name + _match.Referee.LastName;
-        public string StadiumName => _match.Stadium.Name.ToString();
+        public string TeamName1 => Match.Team1.Name;
+        public string TeamName2 => Match.Team2.Name;
+        public string Goals => Match.Goals;
+        public string Asists => Match.Assists;
+        public string Shots => Match.Shots;
+        public string ShotsOnTarget => Match.ShotsOnTarget;
+        public string YellowCards => Match.YellowCards;
+        public string RedCards => Match.RedCards;
+        public string RefereeName => Match.Referee.Name + " " + Match.Referee.LastName;
+        public string StadiumName => Match.Stadium.Name;
 
         public MatchViewModel(Match match)
         {
-            _match = match;
+            Match = match;
         }
     }
 }

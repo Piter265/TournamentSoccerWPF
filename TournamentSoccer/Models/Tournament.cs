@@ -63,7 +63,7 @@ namespace TournamentSoccer.Models
         {
             Stadiums.Add(stadium);
         }
-
+        //check needed functions
         public void DeleteStadium(Stadium stadium)
         {
             Stadiums.Remove(stadium);

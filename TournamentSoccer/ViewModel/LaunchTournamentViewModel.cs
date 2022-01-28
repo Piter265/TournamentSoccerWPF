@@ -25,9 +25,7 @@ namespace TournamentSoccer.ViewModel
 
         public ICommand DeleteTeamCommand { get; }
         public ICommand DeleteStadiumCommand { get; }
-
         public ICommand CreateNewTournament { get; }
-        public ICommand LoadRefereesCommand { get; }
 
         public LaunchTournamentViewModel()
         {
@@ -36,7 +34,6 @@ namespace TournamentSoccer.ViewModel
             CreateNewTournament = new CreateNewTournamentCommand(this, _tournament);
             Stadiums = new ObservableCollection<StadiumViewModel>();
             DeleteStadiumCommand = new DeleteStadiumCommand(this);
-            LoadRefereesCommand = new LoadRefereesCommand(this);
         }
 
         public void AddTeam(Team team)

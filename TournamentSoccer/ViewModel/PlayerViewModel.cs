@@ -9,17 +9,17 @@ namespace TournamentSoccer.ViewModel
 {
     public class PlayerViewModel : ViewModelBase
     {
-        private readonly Player _player;
+        public Player Player { get; }
 
 
-        public string Name => _player.Name;
-        public string LastName => _player.LastName;
-        public int Age => _player.Age;
-        public string Function => _player.Function;
+        public string Name => Player.Name;
+        public string LastName => Player.LastName;
+        public int Age => Player.Age;
+        public string Function => Player.Function;
 
         public PlayerViewModel(Player player)
         {
-            _player = player;
+            Player = player;
         }
 
         public override string ToString()

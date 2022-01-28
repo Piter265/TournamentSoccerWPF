@@ -9,10 +9,10 @@ namespace TournamentSoccer.Models
     public class Team
     {
         public string Name { get; set; }
-        public int Wins { get; set; } = 0;
-        public int Losses { get; set; } = 0;
-        public int Draws { get; set; } = 0;
-        public int Points { get; set; } = 0;
+        public int Wins { get; set; }
+        public int Losses { get; set; }
+        public int Draws { get; set; }
+        public int Points { get; set; }
         public string Balance { get; set; } = "0-0";
         public List<Person> People { get; set; }
 
@@ -20,17 +20,16 @@ namespace TournamentSoccer.Models
         {
 
         }
+        public Team(string name, List<Person> people)
+        {
+            Name = name;
+            People = new List<Person>(people);
+        }
 
         public Team(Team team)
         {
             this.Name = team.Name;
             this.People = new List<Person>(team.People);
-        }
-
-        public Team(string name, List<Person> people)
-        {
-            Name = name;
-            People = new List<Person>(people);
         }
 
         public override bool Equals(object obj)

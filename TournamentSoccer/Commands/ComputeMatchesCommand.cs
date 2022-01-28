@@ -26,7 +26,7 @@ namespace TournamentSoccer.Commands
 
         public override void Execute(object parameter)
         {
-            MatchesListingViewModel.cleanStatsInTeams();
+            TeamsListingViewModel.cleanStatsInTeams();
             TeamsListingViewModel.sortTeams();
             TeamsListingViewModel.refreshList();
         }

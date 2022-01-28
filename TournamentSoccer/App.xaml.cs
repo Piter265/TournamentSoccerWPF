@@ -21,15 +21,5 @@ namespace TournamentSoccer
         {
             
         }
-
-        protected override void OnStartup(StartupEventArgs e)
-        {
-
-        }
-
-        /* protected override void RegisterTypes(IContainerRegistry containerRegistry)
-         {
-             containerRegistry.Register<IView, AddTeamView>();
-         }*/
     }
 }

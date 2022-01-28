@@ -63,7 +63,6 @@ namespace TournamentSoccer.Commands
 
             matches.ToList().ForEach(match => MatchesListingViewModel.Matches.Add(match));
             MatchesListingViewModel.refreshList();
-            //_tournament.Matches = MatchesListingViewModel.Matches;
         }
 
     }

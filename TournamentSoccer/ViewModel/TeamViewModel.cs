@@ -9,20 +9,20 @@ namespace TournamentSoccer.ViewModel
 {
     public class TeamViewModel
     {
-        private readonly Team _team;
+        public Team Team { get; }
 
-        public string TeamName => _team.Name;
-        public int TeamWins => _team.Wins;
-        public int TeamLosses => _team.Losses;
-        public int TeamDraws => _team.Draws;
-        public int PlayersQuantity => _team.People.Where(person => person is Player).Count();
-        public int CoachQuantity => _team.People.Where(person => person is Coach).Count();
+        public string TeamName => Team.Name;
+        public int TeamWins => Team.Wins;
+        public int TeamLosses => Team.Losses;
+        public int TeamDraws => Team.Draws;
+        public int PlayersQuantity => Team.People.Where(person => person is Player).Count();
+        public int CoachQuantity => Team.People.Where(person => person is Coach).Count();
 
-        public List<Person> People => _team.People;
+        public List<Person> People => Team.People;
 
         public TeamViewModel(Team team)
         {
-            _team = team;
+            Team = team;
         }
     }
 }

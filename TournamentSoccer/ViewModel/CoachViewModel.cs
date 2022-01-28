@@ -9,16 +9,16 @@ namespace TournamentSoccer.ViewModel
 {
     public class CoachViewModel : ViewModelBase
     {
-        private readonly Coach _coach;
+        public Coach Coach { get; }
 
-        public string Name => _coach.Name;
-        public string LastName => _coach.LastName;
-        public int Age => _coach.Age;
-        public string Function => _coach.Function;
+        public string Name => Coach.Name;
+        public string LastName => Coach.LastName;
+        public int Age => Coach.Age;
+        public string Function => Coach.Function;
 
         public CoachViewModel(Coach coach)
         {
-            _coach = coach;
+            Coach = coach;
         }
     }
 }

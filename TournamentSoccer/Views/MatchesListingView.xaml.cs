@@ -24,8 +24,8 @@ namespace TournamentSoccer.Views
         public MatchesListingView()
         {
             InitializeComponent();
-            var obj = new MatchesListingViewModel(this);
-            DataContext = obj;
+
+            DataContext = new MatchesListingViewModel(this);
         }
 
     }

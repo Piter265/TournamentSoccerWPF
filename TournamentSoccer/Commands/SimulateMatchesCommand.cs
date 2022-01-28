@@ -28,7 +28,7 @@ namespace TournamentSoccer.Commands
 
         public override void Execute(object parameter)
         {
-            MatchesListingViewModel.cleanStatsInTeams();
+            TeamsListingViewModel.cleanStatsInTeams();
             MatchesListingViewModel.Matches = _tournament.simulateMatches(MatchesListingViewModel.Matches);
             //czyszczenie wyników teamów
 

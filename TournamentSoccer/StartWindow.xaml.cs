@@ -29,7 +29,7 @@ namespace TournamentSoccer
 
         private void startNewTournamentBtn_click(object sender, RoutedEventArgs e)
         {
-            LaunchTournamentView launchTournament = new LaunchTournamentView();
+            LaunchTournamentView launchTournament = new LaunchTournamentView();//1
             launchTournament.Show();
             this.Close();
         }
@@ -44,7 +44,6 @@ namespace TournamentSoccer
             {
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
-
                 this.Close();
             }
         }

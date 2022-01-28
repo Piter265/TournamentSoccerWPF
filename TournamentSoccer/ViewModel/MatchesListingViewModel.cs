@@ -26,21 +26,5 @@ namespace TournamentSoccer.ViewModel
             _matchesListingView.matchesList.Items.Refresh();
         }
 
-        public static void cleanStatsInTeams()
-        {
-            TeamsListingViewModel.Teams.ForEach(team =>
-            {
-                resetStatsInTeam(team);
-            });
-        }
-
-        private static void resetStatsInTeam(Team team)
-        {
-            team.Wins = 0;
-            team.Losses = 0;
-            team.Draws = 0;
-            team.Points = 0;
-            team.Balance = "0-0";
-        }
     }
 }
