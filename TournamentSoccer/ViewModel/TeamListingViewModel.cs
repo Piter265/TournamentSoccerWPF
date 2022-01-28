@@ -91,11 +91,15 @@ namespace TournamentSoccer.ViewModel
 
             int team1Scored = Convert.ToInt32(balanceTeam1[0]) + Convert.ToInt32(goals[0]);
             int team1Losed = Convert.ToInt32(balanceTeam1[1]) + Convert.ToInt32(goals[1]);
-            match.Team1.Balance = team1Scored + "-" + team1Losed;
 
             int team2Scored = Convert.ToInt32(balanceTeam2[0]) + Convert.ToInt32(goals[1]);
             int team2Losed = Convert.ToInt32(balanceTeam2[1]) + Convert.ToInt32(goals[0]);
-            match.Team2.Balance = team2Scored + "-" + team2Losed;
+
+            Teams.ForEach(team =>
+            {
+                if (team.Equals(match.Team1)) team.Balance = team1Scored + "-" + team1Losed;
+                else if (team.Equals(match.Team2)) team.Balance = team2Scored + "-" + team2Losed;
+            });
         }
 
         private static void SortTeams()
