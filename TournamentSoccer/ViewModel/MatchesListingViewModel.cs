@@ -25,5 +25,9 @@ namespace TournamentSoccer.ViewModel
         {
             _matchesListingView.matchesList.Items.Refresh();
         }
+
+        
+
+        
     }
 }
