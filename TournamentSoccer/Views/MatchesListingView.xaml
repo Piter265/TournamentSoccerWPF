@@ -7,7 +7,19 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <DataGrid x:Name="matchesList" ItemsSource="{Binding Matches, Mode=TwoWay}" Margin="0,10,10,0" AutoGenerateColumns="False">
+        <DataGrid x:Name="matchesList" ItemsSource="{Binding Matches, Mode=TwoWay}" Margin="0,10,10,0" AutoGenerateColumns="False" Background="#FF92A5C5">
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="#FF92A5C5"/>
+                    <Setter Property="BorderBrush" Value="#20254f"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Setter Property="Background" Value="#FF92A5C5"/>
+                    <Setter Property="BorderBrush" Value="#20254f"/>
+                </Style>
+            </DataGrid.RowStyle>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="" Binding="{Binding Team1.Name, UpdateSourceTrigger=PropertyChanged}" Width="140"/>
                 <DataGridTextColumn Header="VS"/>

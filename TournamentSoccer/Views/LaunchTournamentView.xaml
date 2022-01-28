@@ -62,9 +62,15 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <ListView Margin="10,92,464,208" ItemsSource="{Binding Teams}" SelectedItem="{Binding SelectedTeam}" Background="#EEE7E5" BorderBrush="#FF4C6899">
+        <ListView Margin="10,92,464,208" ItemsSource="{Binding Teams}" SelectedItem="{Binding SelectedTeam}" BorderBrush="#040412" Background="#FF92A5C5">
             <ListView.View>
                 <GridView>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style>
+                            <Setter Property="Control.Background" Value="#FF92A5C5"/>
+                            <Setter Property="Control.BorderBrush" Value="#20254f"/>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
                     <GridViewColumn Header="Team Name" DisplayMemberBinding="{Binding TeamName}" Width="190"/>
                     <GridViewColumn Header="Players" DisplayMemberBinding="{Binding PlayersQuantity}" Width="55"/>
                     <GridViewColumn Header="Coaches" DisplayMemberBinding="{Binding CoachQuantity}" Width="55"/>
@@ -99,12 +105,18 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <ListView Margin="10,272,466,26" ItemsSource="{Binding Stadiums}" SelectedItem="{Binding SelectedStadium}" Background="#EEE7E5">
+        <ListView Margin="10,272,466,26" ItemsSource="{Binding Stadiums}" SelectedItem="{Binding SelectedStadium}" BorderBrush="#040412" Background="#FF92A5C5">
             <ListView.ItemContainerStyle>
                 <Style/>
             </ListView.ItemContainerStyle>
             <ListView.View>
                 <GridView>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style>
+                            <Setter Property="Control.Background" Value="#FF92A5C5"/>
+                            <Setter Property="Control.BorderBrush" Value="#20254f"/>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
                     <GridViewColumn Header="Stadium Name" DisplayMemberBinding="{Binding StadiumName}" Width="158"/>
                     <GridViewColumn Header="Stadium City" DisplayMemberBinding="{Binding StadiumCity}" Width="158"/>
                 </GridView>

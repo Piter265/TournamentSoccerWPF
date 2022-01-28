@@ -8,9 +8,15 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <ListView x:Name="teamsList" Margin="10 10" ItemsSource="{Binding Teams}">
+        <ListView x:Name="teamsList" Margin="10 10" ItemsSource="{Binding Teams}" Background="#FF92A5C5" BorderBrush="#FF223A64">
             <ListView.View>
                 <GridView>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style>
+                            <Setter Property="Control.Background" Value="#FF92A5C5"/>
+                            <Setter Property="Control.BorderBrush" Value="#20254f"/>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
                     <GridViewColumn Width="400" Header="Name" DisplayMemberBinding="{Binding Name}"/>
                     <GridViewColumn Width="40" Header="Wins" DisplayMemberBinding="{Binding Wins}"/>
                     <GridViewColumn Width="40" Header="Draws" DisplayMemberBinding="{Binding Draws}"/>
