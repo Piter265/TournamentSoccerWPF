@@ -8,6 +8,12 @@ namespace TournamentSoccer.Models
 {
     public class Referee : Person
     {
+        public Referee()
+        {
+
+        }
+
+
         public Referee(string name, string lastName, string function, int age) : base(name, lastName, function, age)
         {
             this.Name = Name;

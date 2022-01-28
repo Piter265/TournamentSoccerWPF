@@ -8,6 +8,12 @@ namespace TournamentSoccer.Models
 {
     public class Player : Person
     {
+        public Player()
+        {
+
+        }
+
+
         public Player(string name, string lastName, string function, int age) : base(name, lastName, function, age)
         {
 
