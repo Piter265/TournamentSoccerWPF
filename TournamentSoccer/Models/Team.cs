@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace TournamentSoccer.Models
@@ -16,6 +17,7 @@ namespace TournamentSoccer.Models
         public string Balance { get; set; } = "0-0";
         public List<Person> People { get; set; }
 
+        [JsonConstructor]
         public Team()
         {
 

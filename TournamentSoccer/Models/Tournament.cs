@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using TournamentSoccer.design_patterns;
 using TournamentSoccer.FilesHandlers;
@@ -22,10 +23,13 @@ namespace TournamentSoccer.Models
 
         private static Tournament _instance;
 
+      
         private Tournament()
         {
-
+            
         }
+
+        
 
         public static Tournament GetInstance()
         {

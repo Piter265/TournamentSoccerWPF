@@ -32,5 +32,6 @@ namespace TournamentSoccer
             DataContext = new MainViewModel(_tournament) ;
         }
 
+
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace TournamentSoccer.Models
@@ -15,6 +16,7 @@ namespace TournamentSoccer.Models
         public string StadiumSize { get; set; }
         public bool OpenedRoof { get; set; } = true;
 
+        [JsonConstructor]
         public Stadium()
         {
 

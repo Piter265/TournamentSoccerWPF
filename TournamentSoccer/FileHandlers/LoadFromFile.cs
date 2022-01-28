@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -33,7 +34,7 @@ namespace TournamentSoccer.FilesHandlers
             }
 
             string jsonString = File.ReadAllText(fileName);
-            DataFromJSON data = JsonSerializer.Deserialize<DataFromJSON>(jsonString);
+            DataFromJSON data = JsonConvert.DeserializeObject<DataFromJSON>(jsonString);
 
             data.Matches.ForEach(d =>
             {

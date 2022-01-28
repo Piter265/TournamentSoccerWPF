@@ -60,14 +60,14 @@ namespace TournamentSoccer.design_patterns
             List<Referee> referees = new List<Referee>();
 
 
-            Person baseRef = new Referee("A", "B", "C", 31);
+            Referee baseRef = new Referee("A", "B", "C", 31);
 
             // Draw 10 referes
             for (int i = 1; i <= 10; i++)
             {
                 Random rand = new Random();
 
-                Referee referee = (Referee)baseRef.clone();
+                Referee referee = new Referee(baseRef);
                 int randNum;
 
                 randNum = rand.Next(0, Names.Length);

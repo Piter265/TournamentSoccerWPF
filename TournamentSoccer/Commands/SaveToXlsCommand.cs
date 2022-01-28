@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using TournamentSoccer.Models;
 using TournamentSoccer.ViewModel;
 
@@ -28,8 +29,9 @@ namespace TournamentSoccer.Commands
 
         public override void Execute(object parameter)
         {
-            _tournament.Teams = TeamsListingViewModel.Teams;
-            _tournament.Matches = MatchesListingViewModel.Matches;
+            //_tournament.Teams = TeamsListingViewModel.Teams;
+            //_tournament.Matches = MatchesListingViewModel.Matches;
+            MessageBox.Show("Available soon...", "XLS message", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }

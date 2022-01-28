@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace TournamentSoccer.Models
 {
     public class Player : Person
     {
+        [JsonConstructor]
         public Player()
         {
 
@@ -19,9 +21,9 @@ namespace TournamentSoccer.Models
 
         }
 
-        public override Person clone()
-        {
-            return (Player)this.MemberwiseClone();
-        }
+        //public override Person clone()
+        //{
+        //    return (Player)this.MemberwiseClone();
+        //}
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using TournamentSoccer.Models;
 using System.Text.Json;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace TournamentSoccer.FilesHandlers
 {
@@ -18,12 +19,17 @@ namespace TournamentSoccer.FilesHandlers
             _tournament = tournament;
         }
 
-        public async void SaveData()
+        public void SaveData()
         {
             string fileName = "tournament.json";
-            using FileStream createStream = File.Create(fileName);
-            await JsonSerializer.SerializeAsync(createStream, _tournament);
-            await createStream.DisposeAsync();
+            File.WriteAllText(fileName, JsonConvert.SerializeObject(_tournament));
+
+            //string fileName = "tournament.json";
+            //using FileStream createStream = File.Create(fileName);
+            ////await JsonSerializer.SerializeAsync(createStream, _tournament);
+            //await createStream.DisposeAsync();
+
+
         }
     }
 }
