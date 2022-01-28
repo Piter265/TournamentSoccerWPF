@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TournamentSoccer.Views"
         mc:Ignorable="d"
-        Title="startWindow" Height="150" Width="200"
+        Title="Tournament Soccer - Create" Height="150" Width="200"
         ResizeMode="NoResize">
     <Grid  Background="#0F0F2D">
         <Grid.ColumnDefinitions>

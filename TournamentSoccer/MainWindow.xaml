@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:viewmodel="clr-namespace:TournamentSoccer.ViewModel" xmlns:views="clr-namespace:TournamentSoccer.Views" d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"
         mc:Ignorable="d"
-        Title="MainWindow" Height="452" Width="864"
+        Title="Tournament Soccer" Height="452" Width="864"
         ResizeMode="NoResize"
         Background="#0F0F2D">
     <Window.Resources>

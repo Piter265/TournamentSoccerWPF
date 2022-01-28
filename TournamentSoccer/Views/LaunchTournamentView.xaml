@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TournamentSoccer.Views"
         mc:Ignorable="d" Height="450" Width="800"
+        Title="Tournament Soccer - Create"
         ResizeMode="NoResize">
     <Grid Background="#0F0F2D">
         <TextBlock x:Name="textBlock" Foreground="#ceedda" HorizontalAlignment="Left" Margin="21,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15" FontWeight="Bold"><Run Language="pl-pl" Text="Launch"/><Run Text=" Tournament"/><LineBreak/><Run/></TextBlock>

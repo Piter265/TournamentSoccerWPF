@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using TournamentSoccer.Models;
 using TournamentSoccer.ViewModel;
 
@@ -31,6 +32,7 @@ namespace TournamentSoccer.Commands
             _tournament.Matches = MatchesListingViewModel.Matches;
             _tournament.Teams = TeamsListingViewModel.Teams;
             _tournament.SaveTournamentToFile();
+            MessageBox.Show("Tournament was saved", "Save", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }
