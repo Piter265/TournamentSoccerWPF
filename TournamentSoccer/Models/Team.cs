@@ -45,5 +45,10 @@ namespace TournamentSoccer.Models
                 return (Name.Equals(p.Name));
             }
         }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }

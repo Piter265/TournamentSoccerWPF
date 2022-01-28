@@ -8,10 +8,10 @@ using TournamentSoccer.ViewModel;
 
 namespace TournamentSoccer.Commands
 {
-    public class SaveTournamentCommand : CommandBase
+    public class SaveToXlsCommand : CommandBase
     {
         private Tournament _tournament;
-        public SaveTournamentCommand(Tournament tournament)
+        public SaveToXlsCommand(Tournament tournament)
         {
             _tournament = tournament;
         }
@@ -28,9 +28,8 @@ namespace TournamentSoccer.Commands
 
         public override void Execute(object parameter)
         {
-            _tournament.Matches = new List<Match>(MatchesListingViewModel.Matches);
             _tournament.Teams = TeamsListingViewModel.Teams;
-            _tournament.SaveTournamentToFile();
+            _tournament.Matches = MatchesListingViewModel.Matches;
         }
     }
 }

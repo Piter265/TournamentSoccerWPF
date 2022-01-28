@@ -38,14 +38,14 @@ namespace TournamentSoccer.FilesHandlers
             data.Matches.ForEach(d =>
             {
                 _tournament.Matches.Add(d);
-                MatchesListingViewModel.Matches.Add(d);
             });
+            MatchesListingViewModel.Matches = _tournament.Matches;
 
             data.Teams.ForEach(d =>
             {
                 _tournament.Teams.Add(d);
             });
-
+            TeamsListingViewModel.Teams = _tournament.Teams;
             data.Referees.ForEach(d =>
             {
                 _tournament.Referees.Add(d);

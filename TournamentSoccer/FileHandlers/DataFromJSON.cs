@@ -7,7 +7,7 @@ using TournamentSoccer.Models;
 
 namespace TournamentSoccer.FileHandlers
 {
-    class DataFromJSON
+    public class DataFromJSON
     {
         public List<Match> Matches { get; set; } = new List<Match>();
         public List<Team> Teams { get; set; } = new List<Team>();

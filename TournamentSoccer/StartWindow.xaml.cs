@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TournamentSoccer.Models;
+using TournamentSoccer.ViewModel;
 using TournamentSoccer.Views;
 
 namespace TournamentSoccer
@@ -43,6 +44,7 @@ namespace TournamentSoccer
             {
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
+
                 this.Close();
             }
         }

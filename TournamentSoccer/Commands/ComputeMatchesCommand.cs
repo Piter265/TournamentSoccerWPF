@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TournamentSoccer.Models;
 using TournamentSoccer.ViewModel;
 
 namespace TournamentSoccer.Commands
 {
-    public class SaveTournamentCommand : CommandBase
+    public class ComputeMatchesCommand : CommandBase
     {
-        private Tournament _tournament;
-        public SaveTournamentCommand(Tournament tournament)
+        public ComputeMatchesCommand()
         {
-            _tournament = tournament;
+
         }
 
         private void OnViewModelPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -28,9 +26,9 @@ namespace TournamentSoccer.Commands
 
         public override void Execute(object parameter)
         {
-            _tournament.Matches = new List<Match>(MatchesListingViewModel.Matches);
-            _tournament.Teams = TeamsListingViewModel.Teams;
-            _tournament.SaveTournamentToFile();
+            MatchesListingViewModel.cleanStatsInTeams();
+            TeamsListingViewModel.sortTeams();
+            TeamsListingViewModel.refreshList();
         }
     }
 }

@@ -15,11 +15,16 @@ namespace TournamentSoccer.ViewModel
 
         public ICommand SaveTournamentCommand { get; }
         public ICommand SimulateMatchesCommand { get; }
+        public ICommand ComputeMatchesCommand { get; }
+        public ICommand SaveToXlsCommand { get; }
+
 
         public MainViewModel()
         {
             SaveTournamentCommand = new SaveTournamentCommand(_tournament);
             SimulateMatchesCommand = new SimulateMatchesCommand(_tournament);
+            ComputeMatchesCommand = new ComputeMatchesCommand();
+            SaveToXlsCommand = new SaveToXlsCommand(_tournament);
         }
     }
 }
