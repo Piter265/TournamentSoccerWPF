@@ -11,7 +11,7 @@ namespace TournamentSoccer.ViewModel
 {
     public class MainViewModel : ViewModelBase
     {
-        private Tournament _tournament = Tournament.GetInstance();
+        private Tournament _tournament;
 
         public ICommand SaveTournamentCommand { get; }
         public ICommand SimulateMatchesCommand { get; }
@@ -19,11 +19,13 @@ namespace TournamentSoccer.ViewModel
         public ICommand SaveToXlsCommand { get; }
 
 
-        public MainViewModel()
+        public MainViewModel(Tournament tournament)
         {
+            _tournament = tournament;
+
             SaveTournamentCommand = new SaveTournamentCommand(_tournament);
             SimulateMatchesCommand = new SimulateMatchesCommand(_tournament);
-            ComputeMatchesCommand = new ComputeMatchesCommand();
+            ComputeMatchesCommand = new ComputeMatchesCommand(_tournament);
             SaveToXlsCommand = new SaveToXlsCommand(_tournament);
         }
     }

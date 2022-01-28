@@ -54,24 +54,14 @@ namespace TournamentSoccer.Models
             Teams.Add(team);
         }
 
-        public void DeleteTeam(Team team)
-        {
-            Teams.Remove(team);
-        }
-
         public void AddStadium(Stadium stadium)
         {
             Stadiums.Add(stadium);
         }
-        //check needed functions
-        public void DeleteStadium(Stadium stadium)
-        {
-            Stadiums.Remove(stadium);
-        }
 
         public void LoadRefeeres()
         {
-            Referees = new List<Referee>(RandReferees.drawReferees());
+            Referees = new List<Referee>(RandReferees.DrawReferees());
         }
 
         public bool LoadTournamentFromFile()
@@ -94,7 +84,7 @@ namespace TournamentSoccer.Models
             savetoFile.SaveData();
         }
 
-        public List<Match> simulateMatches(List <Match> matches)
+        public List<Match> SimulateMatches(List <Match> matches)
         {
             return TournamentSimulation.SimulateMatches(matches);
         }

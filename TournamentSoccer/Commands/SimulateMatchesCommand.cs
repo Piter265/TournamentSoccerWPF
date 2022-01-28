@@ -28,22 +28,10 @@ namespace TournamentSoccer.Commands
 
         public override void Execute(object parameter)
         {
-            TeamsListingViewModel.cleanStatsInTeams();
-            MatchesListingViewModel.Matches = _tournament.simulateMatches(MatchesListingViewModel.Matches);
-            //czyszczenie wyników teamów
+            TeamsListingViewModel.CleanStatsInTeams();
 
-            /*var teams = _tournament.Teams;
-            _tournament.Teams = new List<Team>();
-            teams.ForEach(team =>
-            {
-                _tournament.Teams.Add(new Team(team.Name, team.People));
-            });*/
-
-
-            MatchesListingViewModel.refreshList();
-            /*
-            TeamsListingViewModel.sortTeams();
-            TeamsListingViewModel.refreshList();*/
+            MatchesListingViewModel.Matches = _tournament.SimulateMatches(MatchesListingViewModel.Matches);
+            MatchesListingViewModel.RefreshList();
         }
     }
 }

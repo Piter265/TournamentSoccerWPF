@@ -28,7 +28,7 @@ namespace TournamentSoccer.Commands
 
         public override void Execute(object parameter)
         {
-            _tournament.Matches = new List<Match>(MatchesListingViewModel.Matches);
+            _tournament.Matches = MatchesListingViewModel.Matches;
             _tournament.Teams = TeamsListingViewModel.Teams;
             _tournament.SaveTournamentToFile();
         }

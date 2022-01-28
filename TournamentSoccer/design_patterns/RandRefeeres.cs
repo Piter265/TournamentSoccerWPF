@@ -55,7 +55,7 @@ namespace TournamentSoccer.design_patterns
 
         }
 
-        public static List<Referee> drawReferees()
+        public static List<Referee> DrawReferees()
         {
             List<Referee> referees = new List<Referee>();
 

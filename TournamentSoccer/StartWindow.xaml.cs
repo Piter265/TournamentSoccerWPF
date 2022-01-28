@@ -22,6 +22,8 @@ namespace TournamentSoccer
     /// </summary>
     public partial class StartWindow : Window
     {
+        private Tournament _tournament = Tournament.GetInstance();
+
         public StartWindow()
         {
             InitializeComponent();
@@ -29,20 +31,20 @@ namespace TournamentSoccer
 
         private void startNewTournamentBtn_click(object sender, RoutedEventArgs e)
         {
-            LaunchTournamentView launchTournament = new LaunchTournamentView();//1
+            LaunchTournamentView launchTournament = new LaunchTournamentView(_tournament);
             launchTournament.Show();
             this.Close();
         }
 
         private void loadTournamentButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!Tournament.GetInstance().LoadTournamentFromFile())
+            if (!_tournament.LoadTournamentFromFile())
             {
                 return;
             }
             else
             {
-                MainWindow mainWindow = new MainWindow();
+                MainWindow mainWindow = new MainWindow(_tournament);
                 mainWindow.Show();
                 this.Close();
             }

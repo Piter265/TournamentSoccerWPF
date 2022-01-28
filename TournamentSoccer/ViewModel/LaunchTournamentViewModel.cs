@@ -16,7 +16,7 @@ namespace TournamentSoccer.ViewModel
         public ObservableCollection<TeamViewModel> Teams { get; set; }
         public ObservableCollection<StadiumViewModel> Stadiums { get; set; }
 
-        private Tournament _tournament = Tournament.GetInstance();
+        private Tournament _tournament;
 
         public TeamViewModel SelectedTeam { get; set; }
         public StadiumViewModel SelectedStadium { get; set; }
@@ -27,8 +27,9 @@ namespace TournamentSoccer.ViewModel
         public ICommand DeleteStadiumCommand { get; }
         public ICommand CreateNewTournament { get; }
 
-        public LaunchTournamentViewModel()
+        public LaunchTournamentViewModel(Tournament tournament)
         {
+            _tournament = tournament;
             Teams = new ObservableCollection<TeamViewModel>();
             DeleteTeamCommand = new DeleteTeamCommand(this);
             CreateNewTournament = new CreateNewTournamentCommand(this, _tournament);

@@ -39,13 +39,14 @@ namespace TournamentSoccer.FilesHandlers
             {
                 _tournament.Matches.Add(d);
             });
-            MatchesListingViewModel.Matches = _tournament.Matches;//check is needed above
+            MatchesListingViewModel.Matches = _tournament.Matches;
 
             data.Teams.ForEach(d =>
             {
                 _tournament.Teams.Add(d);
             });
             TeamsListingViewModel.Teams = _tournament.Teams;
+
             data.Referees.ForEach(d =>
             {
                 _tournament.Referees.Add(d);

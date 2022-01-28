@@ -21,7 +21,7 @@ namespace TournamentSoccer.ViewModel
             _matchesListingView = matchesListingView;
         }
 
-        public static void refreshList()
+        public static void RefreshList()
         {
             _matchesListingView.matchesList.Items.Refresh();
         }

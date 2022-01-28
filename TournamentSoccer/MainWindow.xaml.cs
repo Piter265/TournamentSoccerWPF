@@ -22,11 +22,14 @@ namespace TournamentSoccer
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private Tournament _tournament;
+        public MainWindow(Tournament tournament)
         {
             InitializeComponent();
 
-            DataContext = new MainViewModel();
+            _tournament = tournament;
+
+            DataContext = new MainViewModel(_tournament) ;
         }
 
     }

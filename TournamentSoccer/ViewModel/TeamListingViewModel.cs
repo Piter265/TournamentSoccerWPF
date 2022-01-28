@@ -16,34 +16,32 @@ namespace TournamentSoccer.ViewModel
         public TeamsListingViewModel(TeamsListingView teamsListingView)
         {
             _teamsListingView = teamsListingView;
-            //Teams = getTeamsFromMatches(updateStatsInTeams(MatchesListingViewModel.Matches));
-            //Teams = getSortedTeams(Teams);
         }
 
-        public static void refreshList()
+        public static void RefreshList()
         {
             _teamsListingView.teamsList.Items.Refresh();
             _teamsListingView.teamsList.ItemsSource = null;
             _teamsListingView.teamsList.ItemsSource = Teams;
         }
 
-        public static void sortTeams()
+        public static void UpdateTeamsAndSortThem(Tournament tournament)
         {
-            Teams = Tournament.GetInstance().Teams;
+            Teams = tournament.Teams;
 
-            updateStatsInTeamsAndGetSortedTeams(MatchesListingViewModel.Matches);
+            UpdateStatsInTeamsFromMatches(MatchesListingViewModel.Matches);
         }
 
-        private static void updateStatsInTeamsAndGetSortedTeams(List<Match> matches)
+        private static void UpdateStatsInTeamsFromMatches(List<Match> matches)
         {
             matches.ForEach(match =>
             {
-                updateTeamStats(match);
+                UpdateTeamStats(match);
             });
-            getSortedTeams();
+            SortTeams();
         }
 
-        private static void updateTeamStats(Match match)
+        private static void UpdateTeamStats(Match match)
         {
             string[] goals;
 
@@ -99,20 +97,8 @@ namespace TournamentSoccer.ViewModel
             int team2Losed = Convert.ToInt32(balanceTeam2[1]) + Convert.ToInt32(goals[0]);
             match.Team2.Balance = team2Scored + "-" + team2Losed;
         }
-        /*
-        private static List<Team> getSortedTeamsFromMatches(List<Match> matches)
-        {
-            HashSet<Team> teams = new HashSet<Team>();
-            matches.ForEach(match =>
-            {
-                teams.Add(match.Team1);
-                teams.Add(match.Team2);
-            });
 
-            return getSortedTeams(teams);
-        }*/
-
-        private static void getSortedTeams()
+        private static void SortTeams()
         {
             var teams = Teams.OrderByDescending(team => team.Points)
                 .ThenBy(team => Convert.ToInt32(team.Balance.Split("-")[0]))
@@ -120,15 +106,15 @@ namespace TournamentSoccer.ViewModel
             Teams = teams;
         }
 
-        public static void cleanStatsInTeams()
+        public static void CleanStatsInTeams()
         {
             Teams.ForEach(team =>
             {
-                resetStatsInTeam(team);
+                ResetStatsInTeam(team);
             });
         }
 
-        private static void resetStatsInTeam(Team team)
+        private static void ResetStatsInTeam(Team team)
         {
             team.Wins = 0;
             team.Losses = 0;

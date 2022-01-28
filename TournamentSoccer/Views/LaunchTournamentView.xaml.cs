@@ -22,11 +22,14 @@ namespace TournamentSoccer.Views
     public partial class LaunchTournamentView : Window
     {
         public readonly LaunchTournamentViewModel _launchTournamentViewModel;
-        public LaunchTournamentView()
+        private Tournament _tournament;
+        public LaunchTournamentView(Tournament tournament)
         {
             InitializeComponent();
 
-            _launchTournamentViewModel = new LaunchTournamentViewModel();
+            _tournament = tournament;
+
+            _launchTournamentViewModel = new LaunchTournamentViewModel(_tournament);
 
             DataContext = _launchTournamentViewModel;
         }
@@ -41,7 +44,7 @@ namespace TournamentSoccer.Views
         {
             if (_launchTournamentViewModel.Teams.Count % 2 == 0 && _launchTournamentViewModel.Teams.Count() > 0 && _launchTournamentViewModel.Stadiums.Count() > 0)
             {
-                MainWindow main = new MainWindow();
+                MainWindow main = new MainWindow(_tournament);
                 main.Show();
                 this.Close();
             }
